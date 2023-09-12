@@ -1,0 +1,3342 @@
+OK, so, um, we will be looking at some system
+
+and integration level testing issues today.
+
+Uh, so we're gonna be looking at, um, system testing.
+
+Uh, we look at reviews, so code reviews and other
+
+sorts of software reviews and some quality software quality issues
+
+in general.
+
+And, uh, anything out of this I don't finish today,
+
+I'll I'll record so that we don't get, uh, any
+
+further behind schedule.
+
+So in one of the early lectures we saw, uh,
+
+the test pyramid that's been, uh, proposed for classifying tests
+
+and down the bottom.
+
+We've got things that, um, are largely testing just one
+
+thing.
+
+One component.
+
+So a unit independent of anything else?
+
+Uh, they're designed to be fast to run.
+
+Uh, and as we head towards the top, uh, we've
+
+got things that test more components together.
+
+So integration tests and system tests, and they also tend
+
+to be, uh, slower.
+
+We tend to, um uh the further we get towards
+
+the top, the fewer things we tend to mock.
+
+And the closer we get to a real production system.
+
+So when we're testing, uh, a single unit, So when
+
+we're doing unit tests, we're focused on testing just that
+
+one thing.
+
+And so everything aside from the the class or method
+
+that we're we're looking at, uh we tend to mock
+
+everything else.
+
+Um, as we head towards integration tests and system tests,
+
+uh, we'll often have multiple classes working together, So we,
+
+um, won't necessarily mock those.
+
+Uh, we may still be making use of some mock
+
+resources, So if we've got things that are, um, inconvenient
+
+or slow to run or unreliable so often, that's things
+
+like databases.
+
+Uh, or, uh, things on the file system file system
+
+tends to be a lot slower than, uh, memory based
+
+resources, Uh, or things that would normally be accessed over
+
+the net.
+
+Uh, those sorts of things we will still tend to
+
+to mock for a lot of tests.
+
+Uh, but eventually, somewhere, we'll try and run tests that
+
+are, as near to the, um, final product, so as
+
+near to a production system as possible and with as
+
+few things mocked as possible.
+
+So this is just, um, bit of a summary of
+
+that.
+
+So unit tests.
+
+We look at the behaviour of a single unit.
+
+Integration tests are when we're looking at, um typically people
+
+say something's a sort of an integration test when it's
+
+looking at how two things work together and, uh, specifically
+
+often what we're looking at is the flow of data
+
+and information between two components and, uh, what their interfaces
+
+are.
+
+So we'll see what some of the issues that can
+
+go wrong in integration.
+
+Testing?
+
+R uh, And we're asking, Do these two or sometimes
+
+more things work properly together?
+
+Um, so there's no hard and fast dividing line between
+
+something that's a unit test and something that's an integration
+
+test.
+
+Um, if you've got a unit test, uh, it is
+
+You certainly won't mock absolutely everything.
+
+Uh, I mean, plenty of unit tests use classes other
+
+than the, uh, the class under test.
+
+I mean, say you've got a class under test.
+
+It's a it's an address book class or something.
+
+Uh, and you also use strings.
+
+Well, string is a separate class.
+
+Uh, is that now not a unit test?
+
+No, it's still a unit test.
+
+If you're focused on one small part of a larger
+
+hole and you're trying to, uh, test its behaviour as
+
+much as possible in isolation from other things, it's still
+
+a unit test.
+
+Um, but if you're definitely looking at the integration between
+
+two things, uh, then we'd probably call it an integration
+
+test.
+
+Uh, and when we head towards the top of that
+
+testing pyramid, uh, we would be looking at what are
+
+called system tests or sometimes subsystem tests.
+
+Uh, often, if you've got a a complex system, it
+
+may be made up of multiple, almost independent components.
+
+Uh, so say multiple programmes running together.
+
+You might have, um, uh, different programmes running on different
+
+computers.
+
+Uh, we'd probably still call them s system level tests.
+
+Uh, some people might say subsystem, Um, and at that
+
+level, we're often testing the entire system against its requirements
+
+and specifications.
+
+So when we were looking at unit tests, um, it's
+
+typically up to the developer or possibly a senior developer.
+
+What?
+
+The specification for a class and or a method is,
+
+um so when we're designing a whole system, we we
+
+don't know the specification of every single method that we're
+
+gonna use.
+
+But, um uh, once we get to system tests, uh,
+
+we will be looking at whatever our original requirements and
+
+specifications were for the whole system.
+
+We've talked a few times now about nonfunctional requirements.
+
+So things like, um, security scalability, maintainability performance.
+
+Uh, and a lot of those, uh, what are called
+
+emergent properties.
+
+There's no one component in isolation that gives the system
+
+that property.
+
+So they're not a property of any single component.
+
+Uh, but they emerge from the way multi multiple components
+
+interact as a whole.
+
+So that means for a lot of those properties, we
+
+can't test them.
+
+We can't test a single class to say, um, you
+
+know, the system will meet its speed requirements or its
+
+security requirements.
+
+Based on what we do with this class, we'll have
+
+to look at many classes, maybe even the whole system.
+
+Uh, working together.
+
+Uh, it doesn't necessarily mean that when you fail a
+
+nonfunctional requirement, sometimes you can pin the defects down to
+
+a particular class.
+
+So you might say our website has to respond to
+
+queries within 0.1 of a second or something.
+
+So there should should always be some visible change to
+
+the user.
+
+Whenever they take an action, there should be some visible
+
+change on screen within point.
+
+One of a second, uh, when something goes wrong.
+
+So it takes longer than that.
+
+Um, you can sometimes say, Well, this particular class definitely
+
+has a a fault in it because it's very slow.
+
+But, um, for the system to be fast, uh, a
+
+whole heap of classes will all have to work at
+
+a reasonable speed.
+
+So towards the bottom of the test pyramid, uh, will
+
+tend to be focused more on testing, uh, functional requirements
+
+or specifications.
+
+So things that say, if you put this in, you'll
+
+get this out or you'll get such and such a
+
+change of state.
+
+Uh, but as you move towards the top of the
+
+pyramid, once you've got multiple things working together, it becomes
+
+possible to test for these non functional requirements.
+
+So I I I guess the, um, the gist of
+
+this is some things you definitely have to be testing
+
+at a system level.
+
+But, um, you may be able to find ah, breaches
+
+or failures of that, even at a low level.
+
+So let's take as an example security.
+
+If you want your whole system to be secure, then
+
+there's a few sorts of security test that, uh, you
+
+might want to look at, so we'll look at those
+
+in a while.
+
+Um, it's still possible to write, uh, one class that
+
+say, uh completely defeats whatever security requirements you have.
+
+So it does something completely insecure and breaks everything.
+
+Um, so the fact that we do test these at
+
+a system level, uh, doesn't mean we should just ignore
+
+smaller levels.
+
+We we have to do both.
+
+Uh, when we look at reviews and static analysis, we'll
+
+see.
+
+Uh, we'll see things that, uh, apply at both the
+
+system level and a unit level.
+
+So as far as testing strategy goes, um, a fairly
+
+typical approach is that we start by testing small things
+
+and we move towards testing bigger things just because at
+
+the point where we start a system, we don't have
+
+the whole system available for test.
+
+Uh, occasionally, if it's extraordinarily well specified, we might have,
+
+um, uh, specifications for things that haven't been written yet.
+
+Uh, and so we can, uh, we can make use
+
+of those in tests.
+
+So we'll look at, um, uh, stubs in integration tests,
+
+which are an example of that.
+
+But typically what we do is we start by testing
+
+small things, putting them together and gradually testing bigger and
+
+bigger things.
+
+So this is just repeating what I said about mock.
+
+We tend to use a lot of mocks or doubles
+
+at the low level.
+
+We reduce the number of mocks of things that are
+
+mocked as we head towards higher levels.
+
+And, uh, eventually, we try and have, um, as few
+
+mocks as possible so that we can test the system
+
+in something as close to the production environment as possible.
+
+Occasionally, people ask, do we need, uh, both unit tests
+
+and integration tests where we look at, uh, how the
+
+two things, uh, work together.
+
+And the answer is we definitely do, uh, you can
+
+have two things that seem to work very well in
+
+isolation.
+
+Uh, and yet you can still discover problems when you
+
+combine them.
+
+Um, so we definitely do want unit testing, but we
+
+do need integration testing.
+
+So it's a chance for us to discover faults in
+
+the interface between two components.
+
+Um, it's also sometimes the case that you're using, uh,
+
+components you didn't write.
+
+So a database is a good example of that.
+
+Uh, very few people are going to write their own
+
+database system instead.
+
+What you'll write is a bunch of classes that make
+
+use of a database.
+
+And some of your integration tests will be looking at
+
+how your classes interact with that database.
+
+Uh, if we don't do any integration testing, then it's
+
+very easy to get failures that, um, do arise from
+
+the way that, uh, components interact together.
+
+Uh, and if you don't discover them until your system
+
+is, uh, almost complete, then that can be very expensive.
+
+Another question that sometimes arises is people ask, um, is
+
+there any specific order that we should do integration testing
+
+in, Um, and there's a There's a couple of answers
+
+to this.
+
+Um, often, as I said, people tend to work from
+
+the bottom up, but, uh, there are occasions when other
+
+strategies might be appropriate.
+
+Um, I said we'd consider some examples of, uh, defects
+
+that you can find in integration.
+
+Testing, uh, one is where, say, uh, one component calls
+
+methods from another component, and that has to be done,
+
+uh, in some exact order.
+
+Occasionally, you might find that components have inconsistent interpretation of
+
+parameters or values that's happened in real world software.
+
+So one case that happened in, uh, the Martian lender
+
+that, uh, NASA launched was, um uh, a parameter represented
+
+units of force, but, uh, two different components interpret it,
+
+interpreted it differently.
+
+One interpreted it as, uh, new and the other as,
+
+uh, uh, pounds.
+
+So the the US typical measure for, uh, for force.
+
+Uh, so that's definitely one sort of issue that can
+
+arise.
+
+Another is that, um, you'll have components that, uh, conflict
+
+due to side effects.
+
+So we said that, um, whenever you execute a functional
+
+method, things that are returned to you are we just
+
+consider them return values.
+
+Anything else that the method does?
+
+Is there any changes it makes to state or to
+
+the system are side effects.
+
+And that includes things like, uh, say writing files on
+
+disc.
+
+Um, so one example of that is it's, um It
+
+would be an example of pretty poor design, but you
+
+could have, um, two components that interfere with each other.
+
+Uh, because they both try and make use of a
+
+temporary file with the same name, so that would result
+
+in interference.
+
+Uh, a more likely one is.
+
+You could have components that are trying to communicate over
+
+the network and maybe both.
+
+Try and listen on the same, uh, network, Um, port.
+
+So kind of like the, uh, the same address, uh,
+
+other sorts of integration failures that we can come across.
+
+Um, so this is just reiterating that, um uh, sometimes
+
+we'll have failures where there's no one component that you
+
+can say is wrong on its own.
+
+But, um uh, multi multiple components interacting can, er give
+
+rise to a failure when considered against, uh, a specification.
+
+So those are the sorts of things we're we're looking
+
+for in integration.
+
+Testing.
+
+Uh, what's our What's gonna be our choice of strategy
+
+for doing our integration?
+
+So there's a few possibilities.
+
+One is don't do any integration testing until, uh, your
+
+system is, uh, complete.
+
+Another is start at the, uh, the small level and
+
+try and, uh, build things.
+
+Um, build things up.
+
+Another is, try and start at the top and work
+
+downwards.
+
+Uh, and the last one is, Do both do some
+
+tests starting from the top level of the system, some
+
+from the bottom, and try and meet in the middle.
+
+Uh, what, you come across in integration testing is a
+
+couple of bits of terminology that we'll need to know
+
+about.
+
+So, uh, you may come across the terms driver and
+
+stub stub you can think of as being pretty much
+
+the same thing as a mock.
+
+So it just means, uh, an entire module that has
+
+a component that has the same interface as a module
+
+under test, but is simpler.
+
+Uh, so, uh, the stub simulates something that you're calling
+
+so that your test code is calling into, um, and
+
+you'll often also have to make use of what are
+
+sometimes called drivers.
+
+Uh, these are just, um if we're considering the arrange
+
+act, assert, uh, pattern of testing, uh, then setting up
+
+your drivers comes under the arranged part of things.
+
+Um, you've got some some component that would normally be
+
+made use of within a larger system.
+
+So the driver is just whatever code has to be
+
+written, Um, that will invoke the thing that you're testing.
+
+OK, so those options that we looked at one is
+
+to do no integration testing until all modules have been
+
+completed and then try and test everything at once.
+
+Uh, this is a pretty bad way of doing things.
+
+It's very expensive.
+
+uh, if you could have identified faults earlier, Uh, it
+
+turns out to be much more expensive to, uh, fix
+
+them at the point of, uh, deploying a system so
+
+we'll actually see some figures on that later.
+
+Um, and it becomes much harder to try and, uh,
+
+localise exactly where faults are when something goes wrong.
+
+Um, it still does happen.
+
+I worked at a university once where, uh, they were
+
+introducing a new, uh, student, uh, management, uh, system.
+
+And, uh, they did no sort of small scale testing
+
+of it.
+
+Uh, they decided they were just gonna cut over from
+
+the previous systems.
+
+The new system a week before semester started and were
+
+terribly surprised when, uh, everything went wrong.
+
+So, uh, people definitely do still try this, um, top
+
+down integration.
+
+So a top layer of a system is something that
+
+isn't called by called by anything else.
+
+It it uses or calls into other bits of the
+
+system.
+
+Uh, an example of that is often the, uh, the
+
+user interface part of a system.
+
+So if you've got a a programme that runs on
+
+your desktop machine, then, um uh, the, uh, the user
+
+interface isn't necessarily caused by other things.
+
+Rather, it invokes other components.
+
+So often we consider the, uh, the user interface to
+
+be kind of the top level of the system.
+
+Uh, for web pages, the, uh, the web front end
+
+that, you see, uh, you can regard as being part
+
+of the top layer of the system.
+
+So for top-down integration, you actually start by testing that.
+
+And you know that initially, lots of your tests are,
+
+uh will require you to, uh, create mock.
+
+So, uh, in integration, testing, they're called stubs.
+
+But, uh, as things are completed, uh, eventually, uh, you
+
+will write more and more of the subsystems that are
+
+used.
+
+Uh, and you continue on until, uh, there are no
+
+more stubs and everything is done.
+
+So here's the how that looks.
+
+Uh, you start with your top level.
+
+You're right stubs to represent the things that it makes
+
+use of, or calls, and he gradually fill those stubs
+
+in.
+
+Um, so an advantage of that can be If you've
+
+got your system requirements and specifications, then your tests can,
+
+uh, uh, come directly off of those.
+
+Or if you're using, uh, agile, then you may have,
+
+uh, user stories and use cases to describe your system.
+
+And again, the tests can come directly from those user
+
+stories, so that's an advantage.
+
+But our problem is that, um, the tests won't really
+
+be testing the whole system.
+
+Uh, for well, for a long time until the the
+
+system is actually completed.
+
+Uh, another is, um you're gonna have to put effort
+
+into writing those stubs.
+
+Uh, so you'll be writing lots and lots of mocks,
+
+some of which you'll probably throw away.
+
+Uh, it might not be worth the effort.
+
+Um, there is a a variation on this called, uh,
+
+modified top-down testing.
+
+And that's where you try and divide your system up
+
+into multiple, almost independent layers.
+
+Uh, and you test each layer individually before you merge
+
+them.
+
+Uh, that still has a disadvantage that you'll have to
+
+write.
+
+Uh, both stubs and drivers, though.
+
+OK, so top down is one way of doing things.
+
+Uh, another is bottom up.
+
+Uh, I'd say this tends to be fairly common.
+
+You start by implementing, uh, the modules or systems at
+
+the lowest level.
+
+So things that don't actually call, uh, anything else that
+
+you're developing?
+
+Uh, you're right.
+
+Test drivers.
+
+So these are, um, part of the arrange part of
+
+the, uh, arrange a set pattern.
+
+Their fixtures, uh, that are gonna call into your level,
+
+and you start replacing the drivers with actual implementations and
+
+working your way upwards.
+
+So if X is the thing that you're testing, you've
+
+got a bit of code that sets up whatever environment
+
+X needs invokes it and, uh, checks whether it, uh,
+
+has the correct behaviour.
+
+And you, uh, right, more and more higher level modules
+
+that make use of the lower ones.
+
+And, uh, you can then replace the drivers that you
+
+used to have.
+
+Uh, sometimes, though, you might want to keep those drivers
+
+around because they do make things.
+
+Um, uh, it does mean that you can just use
+
+them in your tests.
+
+Um, you can leave them there.
+
+Uh, there's not necessarily any need to get rid of
+
+them.
+
+So an advantage of this is you test things as
+
+they're ready, which is good.
+
+Uh, a disadvantage is that, um, that top level I
+
+said the top level often contains, um, often consists of
+
+the user interface.
+
+Um, the user interfaces a fairly important part of a
+
+bit of software.
+
+It's what the users are gonna see.
+
+Uh, and if you're doing a strictly bottom up kind
+
+of integration, uh, then it will be the very last
+
+thing that you test.
+
+Uh, and you might want to spend more time and
+
+effort on it than that.
+
+So a common thing to do is to actually combine
+
+top down and bottom up.
+
+Uh, you work from both ends.
+
+You, uh you do start working on a user interface.
+
+Uh, you also start working on, uh, the bottom, most
+
+components, uh, that your team are writing, uh, and you
+
+try and work inwards.
+
+So, uh, you would have some kind of a partial
+
+implementation of your top level.
+
+So likely your user interface.
+
+Uh, you'll have it making use of, um, mocks or
+
+stubs wherever it needs.
+
+Uh, your right parts of your bottom level, Uh, and
+
+same as before.
+
+You will replace drug drivers and stubs with real code,
+
+uh, until everything can be done.
+
+Uh, and this is just, um, outlining a typical way
+
+that integration testing is done.
+
+You work out what strategy you're gonna use.
+
+Uh, you put your components together.
+
+You run your tests.
+
+Uh, you keep records of how things whether things succeeded
+
+or failed, and you keep on going through the cycle
+
+until everything is done.
+
+So what integration strategy is best to use that will
+
+vary from system to system.
+
+Um, factors that to consider are how much test harness
+
+code you'll need to write.
+
+So, uh, how many stubs and drivers, uh, another is,
+
+uh, if there are any, uh, critical parts of the
+
+system that you think need, uh, extra focus.
+
+Uh, so if there are things that, um, you think
+
+are particularly risky, uh, maybe they they could be, uh,
+
+components that your particular software development team perhaps has less
+
+experience with or that involves something experimental or use a
+
+a different uh uh, Say a different package or language
+
+to what you're used to.
+
+Uh, then those are things that you might want to
+
+spend more time and effort on testing.
+
+Uh, and, uh, once you know where in the hierarchy
+
+of layers that appear, uh, that can define what sort
+
+of approach you're going to take to integration.
+
+Other factors are, um, if you're writing software that, um
+
+is gonna run on specific hardware.
+
+Um, often hardware is a is a particular risk, because
+
+you wanna make sure that, um, uh, your code is
+
+gonna run on whatever platform it eventually has to work
+
+on.
+
+Um, it's usually a bad idea if you leave, uh,
+
+deploying to the platform till the very end.
+
+Uh, you might want to lean towards working from the
+
+bottom up.
+
+So if you've got a combined hardware and software system,
+
+uh, availability of components, sometimes you actually won't have, uh,
+
+everything that you need, uh, at the start of the
+
+development process.
+
+So there might be, uh, significant bits of the system
+
+that, um, say have to be purchased or have to
+
+be developed by some other organisation.
+
+Uh, so it's then forced upon you that you're gonna
+
+have to stub those components out until you can get
+
+hold of them.
+
+And finally, uh, there might be scheduling restrictions.
+
+Uh, so there might be restrictions on, um, how much
+
+time you've got to do something or, um, on say,
+
+when your user interface team is available to work on
+
+things.
+
+Uh, so that can also impact, uh, what kind of
+
+integration approach you're going to take, Uh, bottom up is
+
+considered to be a fairly good approach for, um, particularly
+
+object oriented design methodologies and object oriented design.
+
+Uh, you consider the system as a whole, uh, as
+
+being, uh, as being, uh, a bunch of interacting objects.
+
+And each object has some kind of, uh, uh, sort
+
+of autonomy.
+
+It's got, um, state and identity of its own.
+
+Uh, bottom up tends to work quite well for that,
+
+uh, top down.
+
+We said an advantage there is.
+
+The test cases are often, uh, uh, easy to write.
+
+But they're not gonna be testing things until the sys
+
+properly until the system is complete.
+
+Um, so I'd say probably the most common approach is
+
+that, uh, send which approach that I mentioned where you
+
+work from both top and bottom, and you work inwards.
+
+OK, so that's integration.
+
+Testing?
+
+Um, I will say, uh, sometimes people ask, um, does
+
+an integration test actually look any different code wise to
+
+the sorts of, uh, code we've seen in unit tests?
+
+The answer is, uh, not really.
+
+We're we're still writing tests.
+
+Uh, if you're working in Java, you can still use
+
+J unit to write your integration tests.
+
+Um It's just a question of, um, what goes into
+
+your the arranged part of your test?
+
+Uh, so, for, uh, uh, for unit tests, we'll tend
+
+to have a lot of mocks for integration tests.
+
+We may have, um, two, uh, classes under test or
+
+components under test.
+
+Uh, will, uh, instantiate both of them, uh, and write
+
+code where one of them calls another.
+
+And check that the result is what we expect.
+
+So, um, the code for integration test doesn't necessarily look
+
+terribly different to any sort of unit test that we've
+
+seen.
+
+OK, so I'm gonna mention a couple of other sorts
+
+of tests that, um, sometimes come up.
+
+Uh, so regression testing, Uh, a regression test.
+
+It's not a particular type of test.
+
+Rather, it's just it refers to, uh, why you're running
+
+something.
+
+You run regression tests whenever you change software.
+
+Uh, and you want to be sure that, uh, everything
+
+still works the way it did before.
+
+So if you are required to implement, um, a bug
+
+fix, uh, what you usually want to know is not
+
+only did you, um, fix whatever bug was being reported,
+
+but you didn't, um, break something else.
+
+So you start by, uh, running all of the, uh,
+
+the quick to run tests.
+
+So unit tests and maybe some regression tests.
+
+Uh, you make your change, and then you run your
+
+tests again to make sure that you didn't introduce, uh,
+
+new problems.
+
+Uh, in some organisations, you might come across smoke testing.
+
+Uh, this also answers a question some people ask, which
+
+is, um, how often should we run our integration tests
+
+and system tests?
+
+So we know that for unit tests, it's a good
+
+idea to run them pretty much as frequently as you
+
+can.
+
+You know, whenever developers are making a change, you should
+
+run your unit tests again.
+
+Uh, but what about the more expensive tests?
+
+Well, a common approach is to try and run them
+
+at least once a day, so to have, uh, a
+
+daily build that does, um, what's called a smoke test?
+
+The air.
+
+It's a bit like the idea of, uh, running machinery
+
+and making sure that, uh, no components burn out and
+
+start smoking.
+
+So everything that needs to be put together to build
+
+the whole system or whatever, however much you've got, it
+
+got of it that far, um, gets included.
+
+So all source code, all libraries, all data files you
+
+need, uh, they all go into, uh, the daily build.
+
+Uh, you run things like, uh, end to end tests
+
+or system tests or some of your more expensive, Um,
+
+uh, integration tests.
+
+Uh, and you're trying to identify serious problems here that
+
+are going to Yeah, that indicate, uh, an issue that's
+
+occurred in the in the current day and could throw
+
+the project behind schedule.
+
+So the aim is to, uh, run the entire product.
+
+Uh, once a day, uh, you could be doing top
+
+down or bottom up, or any integration strategy.
+
+You like there, but, uh, whatever is whatever you've got
+
+developed so far, uh, you try and test it all,
+
+uh, we've briefly in early lectures mentioned end to end
+
+testing.
+
+Uh, some people classify this as a sort of system
+
+test.
+
+Uh, the idea is that, uh, it checks how a
+
+system or component behaves in a user focus scenario.
+
+So something like a use case or a user story,
+
+Uh, usually in an environment that's as close to production
+
+as you can reasonably get, Uh, and you find out
+
+whether the system behaves as expected.
+
+Uh, one difference is that for what?
+
+People?
+
+So what people tend to call system tests are usually
+
+very closely related to the requirements and specs for your
+
+system.
+
+Um, and not all people.
+
+Not all development teams will necessarily have, uh, a fixed
+
+list of requirements and specifications.
+
+They might be adopting an agile process.
+
+And, uh, everything is done in terms of user stories.
+
+So, uh, agile teams might not have many things that
+
+they call system tests.
+
+They might have much more of these, uh, end to
+
+end tests.
+
+So the end to end tests are demonstrating that a
+
+particular use case, um, can be run effectively that a
+
+particular process that the system is, uh supposed to do
+
+can be executed.
+
+So one kind of a use case you might have
+
+for, uh, say an online store is you might say
+
+a user should be able to log in, go to
+
+the product page, add a product to the shopping cart,
+
+pay for items and log out, and you might have
+
+an end to end test.
+
+That, uh, runs through all the steps in that process
+
+and confirms that it it does work properly.
+
+Uh, a few other sorts of testing types you might
+
+come across, uh, validation.
+
+Testing, uh, is a term some people use to mean,
+
+um, testing that, um, the final system that you've got
+
+does actually meet clients needs.
+
+So the system does, in fact, fill it fulfil whatever,
+
+uh, its intended use was, uh you may come across,
+
+uh, the terms alpha and beta testing.
+
+Uh, in a way, these are kind of similar to
+
+validation testing, and they focus on customer usage.
+
+Uh, alpha testing is where you get, uh, employees of
+
+your own.
+
+So your development organisation to try and simulate how, uh,
+
+how the eventual users might, uh, use the software, Uh,
+
+where you do beta testing.
+
+Uh, you actually release the software to a limited number
+
+of real users, Uh, and get them to use it.
+
+So beta, an advantage of beta testing is, um uh,
+
+I suppose you've got some products.
+
+Like, uh, say Microsoft word.
+
+Um, if you don't do any beta testing, that would
+
+be the case where you just release it to all
+
+customers.
+
+And as they report bugs, you fix them.
+
+Uh, beta testing.
+
+You might have, um, particular organisations that are willing to
+
+try and test out at at advance.
+
+Or, um uh uh Yeah, an advanced edition of this
+
+software, uh, and are willing to try it out for
+
+real.
+
+Uh, and you can iron out some of the bugs
+
+before it's released to the market as a whole.
+
+So those are a few other sorts of testing that
+
+you may come across, Alright, we'll look in detail at
+
+some of the sorts of system tests you might do.
+
+We've seen a few already, So, uh, in the, uh,
+
+the long answer question.
+
+Um, and in one of the early lectures we've looked
+
+at, um, or we've mentioned load testing, stress testing and
+
+robustness testing.
+
+Uh, load testing looks at the software and its response
+
+to, um, expected amounts of data, uh, or rates of
+
+data or volumes, or whatever is reasonable for your system.
+
+So it asks, uh, if we have things that are
+
+within the expected range that our software is supposed to
+
+handle.
+
+Does it still perform tasks correctly?
+
+That differs a bit from stress testing, which looks at
+
+what happens when we exceed, uh, the expected limits of
+
+our system So we often want that.
+
+Um, even though we've exceeded the limits of our system,
+
+it still should, um it still should avoid some bad
+
+behaviours like crashing.
+
+Uh, it should exhibit what's called graceful degradation.
+
+Uh, the full functionality of the system might not be
+
+there, but it should still say respond to users.
+
+Uh, it shouldn't crash.
+
+It should give sensible error messages.
+
+So exactly what graceful degradation means should go into our
+
+system requirements.
+
+Uh, we may look at robustness testing, uh, which is
+
+another sort of graceful degradation.
+
+It looks at, um, how well our system can handle
+
+malformed inputs.
+
+So when we're writing classes and methods we've seen that
+
+we want to be, um, we often want to be
+
+fairly strict with our specifications, so we may have preconditions.
+
+We may say, if you're gonna call this method or
+
+make use of this class at all, you must do
+
+A, B and C.
+
+Otherwise, there's just no guarantees the system will work at
+
+all.
+
+Uh, so when you're when you're writing API s when
+
+you're writing something that's gonna be used by other developers,
+
+uh, you kind of wanna be, um you want You
+
+want to be strict with them.
+
+Uh, all of all of the developers have to agree
+
+on exactly, uh, how different bits of code are gonna
+
+work together.
+
+They have to be clear on what's what's required.
+
+What's a prerequisite?
+
+Uh, what Post?
+
+Uh, post conditions are guaranteed.
+
+But once you get to the stage where the system
+
+is being used by actual users, um, you have to,
+
+uh, cater to the fact that they will occasionally give
+
+your system bad inputs or not know how to use
+
+it, uh, or not expect it to crash.
+
+So there's a lot of a lot of undesirable behaviours
+
+that we might want to avoid.
+
+We don't want our software to exhibit, uh, say a
+
+segmentation fault.
+
+There's actually a few reasons for that, but one is
+
+it gives a pretty bad impression to your users if
+
+your software crashes.
+
+Uh, we don't want, um, security holes to be accessible
+
+when, um, people give our system, uh, malformed data.
+
+Uh, typically, also, we don't want it to throw, uh,
+
+exceptions that the user sees So a raw stack trace,
+
+uh, so some, uh, long set of, uh, method calls
+
+and an exception is not something that most end users
+
+will understand how to deal with by the time we
+
+get to things that, um, uh, a user is interacting
+
+with, uh, all of those stack traces.
+
+So all exceptions should have been captured.
+
+Uh, and we should give some useful message to the
+
+user that they can actually, uh, respond to.
+
+So, uh, we might wrap up, Uh, we might catch
+
+exceptions and instead display a message saying, you know, an
+
+internal problem has happened to the software, Um, call user
+
+support and quote, uh, this particular number Or we might,
+
+um, uh, allow them to download, say, the stack trace
+
+into a file that they can attach to an email
+
+when they're, uh, contacting user support.
+
+Um, so, yeah, we we don't want our users to
+
+see the ugly internals of the system.
+
+It definitely does happen.
+
+I mean, I've seen, um, Web pages in, uh, parts
+
+of the U.
+
+W A, uh, curriculum management system.
+
+Where, uh, if you click through to the wrong page,
+
+you'll see, uh, stack traces of, uh, all sorts of
+
+bits of failed components.
+
+Um, aside from the fact that, uh, it's ugly and
+
+gives a bad impression of your software to users.
+
+Uh, it can also be a security hole in that
+
+It's, um, giving users details about the internals of your
+
+software that they really shouldn't know.
+
+Um, so for these nonfunctional requirements, what do they look
+
+like?
+
+Well, they still look just like, um, they still fall
+
+into the pattern that we've seen before of a range
+
+A assert.
+
+You set things up, you you invoke behaviour, and you
+
+check to see if it was right.
+
+Uh, the difference is that, um, sometimes now when you're
+
+looking at the at system desks, Uh, rather than invoking
+
+a method, you're gonna be invoking a whole programme or,
+
+uh, some process or, uh, something like that.
+
+So we could be invoking the whole programme and measuring
+
+how long it takes to do something.
+
+Uh, we could be starting up, uh, a web app
+
+making requests against it and measuring responses to those requests.
+
+Uh, non functional requirements.
+
+What else?
+
+Uh, it includes usability requirements.
+
+So usability requirements are something we can't really automate.
+
+So for those we said, um, they might have to
+
+be manual.
+
+You might have, um, uh, software that needs to be
+
+manually set up.
+
+You let users use it after a training session.
+
+You see how well they did on it?
+
+But for plenty of integration tests, we'll just launch a
+
+programme and measure and maybe look at its output or
+
+measure how long it took something like that.
+
+Um, if we're working in Java, say, uh, Java has
+
+perfectly good methods for launching programmes.
+
+We can We can launch things from Java if we
+
+want.
+
+Uh, but there are a bunch of languages.
+
+Uh, they tend to be called scripting languages.
+
+Things like, uh, bash python and pearl that are very,
+
+very convenient for executing programmes in, uh, Java is a
+
+fairly verbose language.
+
+Uh, you tend to have to write more code than
+
+you might expect to do something simple, like launching a
+
+programme, uh, in scripting languages.
+
+So bash, shell script, plasma and pearl.
+
+Uh, launching a programme is often very, very quick.
+
+Uh, and they've often got quite good, um, test utilities
+
+for measuring things like, uh, how long the programme took,
+
+how much memory it used, Uh, that kind of thing.
+
+So even if our system is written in Java, once
+
+we get to the point of writing system level tests.
+
+Uh, we might end up using another language to write
+
+those in.
+
+So we might write them in a pearl or a
+
+python test framework.
+
+Uh, so yes.
+
+Um, given that people doing this unit will have done
+
+probably, uh, some python and some java.
+
+You'd probably be familiar with the fact that, uh, python
+
+is a pretty succinct language.
+
+Uh, you can get quite a lot done in a
+
+in a little bit of code.
+
+Java does tend to be more so.
+
+There are advantages to writing your tests in something like
+
+Python.
+
+What are some other nonfunctional requirements we might have?
+
+Well, we might have, um, requirements about, um, recover ability.
+
+How?
+
+Well, our system can be recovered from backups.
+
+So one thing that is an increasing issue.
+
+If people are gonna be here, it would be nice
+
+if they were paying attention.
+
+If you've got other things to do, you don't need
+
+to turn up in person to the lecture.
+
+You can watch the recording.
+
+Um, OK, so one thing you might wanna do is
+
+recovery testing.
+
+Um, one problem that's increasingly an issue is, uh, ransomware
+
+today.
+
+So the case where, uh malicious Attackers managed to access,
+
+uh, a system from outside.
+
+Uh, they'll encrypt all of all of, uh, our business
+
+data and say, if you want it released, you'll have
+
+to pay us, Uh uh, a ransom.
+
+Um, in that sort of a case, you want to
+
+know that you can easily, uh, recover all of your
+
+data from backups, uh, and reinstate it without having to,
+
+uh, to pay a ransom.
+
+So recovery testing is, uh, uh, it's a It's an
+
+important It's an important thing to do if you, uh,
+
+a routing software that's expected to be highly available.
+
+Uh, security testing is particularly important for anything that's gonna
+
+be accessible over the Internet.
+
+So you want to verify that your system meets security
+
+requirements that it can't be improperly accessed by outsiders?
+
+Uh, and performance testing.
+
+Uh, so you could regard load testing as a kind
+
+of performance testing it's looking at.
+
+Um uh, how does your does your software meet any,
+
+um, speed require or memory usage requirements?
+
+How do we do all of those?
+
+Um, well, for load and stress testing, what we typically
+
+do, uh, we generate random traffic or data for our
+
+system uh, and just measure, uh, whatever it is we're
+
+trying to measure.
+
+So how long it takes how responsive it is, Uh,
+
+for robustness testing.
+
+Uh, the technique called fuzzing can be very effective.
+
+So that involves generating, uh, bad, uh, potentially bad input.
+
+And seeing how the programme copes with it, uh, other
+
+sorts of randomised testing can also be pretty effective for,
+
+uh, robustness testing for security testing.
+
+Security is something where testing alone is not going to
+
+give a system good security.
+
+So you can't, uh you can't decide that, Uh, you're
+
+gonna try and make a system secure.
+
+Uh, just through the tests that you do good system
+
+security requires that, um, developers be aware of security requirements
+
+all the way through the software development life cycle.
+
+Um, the specific testing parts of it.
+
+Uh, there's a few common sorts.
+
+So one is, uh, vulnerability scanning.
+
+So this is, uh, popular for, uh, websites or things
+
+that are exposed as servers on the internet.
+
+You make use of automated software.
+
+Uh, so just programmes that are called vulnerability scanners, uh,
+
+that look for the signatures of, uh, mis configured software
+
+or, uh uh, known insecure versions of packages, Uh, and
+
+all sorts of other bugs, uh, and problems that you
+
+can introduce.
+
+Uh, they analyse your live running system to see whether
+
+they can find evidence of those, and they report them.
+
+So a few examples of those there's, um, uh, some
+
+popular commercial ones, like and expos.
+
+Uh, and there's also are versions that are either open
+
+source or have an open source version.
+
+Uh, and they include things like N map and metas
+
+spit.
+
+So all of these, you can, uh, start your system
+
+running.
+
+Uh, you run one of the scanners against it, and
+
+you look to see what problems it finds.
+
+Uh, another sort is, uh, penetration testing.
+
+Uh, this is where you're simulating a malicious attacker trying
+
+to, uh, penetrate your system.
+
+Uh, so often it's done by hiring, uh, firms that
+
+specialise in penetration.
+
+Testing.
+
+Uh, so you're effectively paying someone to, uh, uh, evaluate
+
+your system?
+
+Uh, often, they will do things such as, um, uh,
+
+they'll do vulnerability scans as part as part of this.
+
+Uh, they'll attempt to find vulnerabilities in your system, and
+
+they'll try and gain access to the system and either,
+
+uh, show demonstrate that they can, uh, access information that
+
+they shouldn't be able to, uh, so that's breaching confidentiality.
+
+Or that they can change information that they shouldn't be
+
+able to so that the breaching data integrity, uh, or
+
+that they can, uh, take your service down.
+
+They can make it unavailable.
+
+So that's a a fairly common sort of security testing.
+
+And, uh, finally fuzzing that we've already looked at, uh,
+
+is often a good way of identifying security vulnerabilities.
+
+So, um, there are a lot of security vulnerabilities that
+
+arise from, um, memory bugs.
+
+So improper access to memory locations in your code, Those
+
+can often be exploited so as to compromise security.
+
+Uh, and, uh, feeding a programme.
+
+Um, bad input can be an effective way of, uh,
+
+finding those sort of memory bugs.
+
+So those are those are specific sorts of security testing.
+
+But as I said, we do want to put those,
+
+um, we do want to make use of those as
+
+part of our, uh, a whole software life cycle approach
+
+to achieving security goals.
+
+So a few of the other things that we might
+
+want to do are, uh, at the early stages of
+
+our project.
+
+So at design or analysis stages, we might want to
+
+do what's called threat modelling.
+
+So that's, um, uh, going through a structured approach of
+
+trying to identify, uh, what the security threats are to
+
+your system and what mitigations could be put in place
+
+to avoid them and and recording that for use As
+
+the project continues, we may want to do security reviews.
+
+Uh, so some of you might be might be familiar
+
+already with doing code reviews, having another person, uh, look
+
+at your code for problems.
+
+So for security reviews, we're specifically looking for things that
+
+can cause security vulnerabilities.
+
+Um, in addition to just code, we could be looking
+
+at, uh, design documents.
+
+We could be looking at, uh, uh, system specifications, protocol
+
+specifications.
+
+Uh, and the idea is that someone besides the original
+
+person, uh, should try and look through these things with
+
+a fine tooth comb, uh, going through and trying to
+
+find, uh, anything that could be insecure or problematic.
+
+And, uh, we can make use of programmes which are
+
+called static analyzers.
+
+So we perform what's called static code analysis.
+
+Uh, so these are programmes which look over your system
+
+uh, and try and find problems without running the code.
+
+So we said that vulnerability scanners are things you run
+
+against the live system.
+
+Uh, and they're trying to find sort of the fingerprints
+
+of, um, badly configured software or insecure versions of things.
+
+Static code analysis is looking at the, uh, uh, looking
+
+at your actual code without running it, Um, we might
+
+do compliance or performance testing or security auditing.
+
+Uh, these are both are usually done when there's some
+
+kind of, uh, standard.
+
+So maybe an industry standard or an ISO standard that
+
+your software is supposed to conform to.
+
+So you might do, uh, uh, compliance testing to check
+
+whether, uh, your system conforms to, say, a particular standard
+
+for storage of data.
+
+Uh, and you might have a security audit.
+
+Uh, this is often done by, uh, an external group.
+
+So, um, not the original developers, but either another department
+
+or another organisation completely, uh, who?
+
+Go through the system carefully and look whether it, uh,
+
+complies with a particular standard.
+
+So security is probably, uh, I would say one of
+
+the, uh is one of the trickiest of the non
+
+functional requirements to get right.
+
+There's a lot of things that can go wrong.
+
+Uh, and as a result, there's a lot of different
+
+techniques that we try and apply to avoid those problems.
+
+Right.
+
+It is four past four, so we'll have short six
+
+minute break.
+
+Uh, so when he wants to grab a water or
+
+something, we'll come back at 10 past four.
+
+Ok, um, for this bit of lecture, we're gonna be
+
+looking at, um, static reviews and analysis.
+
+So testing is something that we do, uh, against, uh,
+
+a running system.
+
+So testing you can think of as a sort of
+
+dynamic analysis.
+
+You're actually running your code.
+
+Um, in this bit of the course, we're looking at,
+
+um, things you can do to improve the quality of
+
+the system without actually running it.
+
+So that includes, uh, uh, having people review it manually
+
+or using software which, um, uh, looks at the static
+
+artefacts of the system.
+
+So, by review, um, we mean review as a fairly
+
+catch all term for any sort of manually conducted assessment,
+
+uh, for any sort of static software artefact.
+
+So, uh, we've said that, uh, if you write test
+
+cases, uh, you should get someone to review your test
+
+cases.
+
+Uh, if you're writing code, it's quite common in lots
+
+of organisations that, uh, before your code is, uh, merged
+
+into, uh, version control.
+
+Someone else should, uh, uh, review your code, uh, requirements
+
+and specification documents.
+
+They're often reviewed, uh, test plans.
+
+Uh, pretty much anything that you can write or create
+
+as part of a project.
+
+Uh, there's the option for, uh, having it carefully reviewed
+
+by someone other than the original person who wrote it.
+
+So if the review isn't manual, but it's automated.
+
+Uh, rather than calling that a review, we usually call
+
+it static analysis.
+
+Uh, and as I said, both of these are, uh,
+
+different from testing per se because testing, uh, we're working
+
+with a running system.
+
+So we're observing the dynamic properties of a system.
+
+There's different sorts of review that you might come across.
+
+Uh, the most common one that you're likely to encounter
+
+is what's just called a code review.
+
+And it just means that someone besides you has a
+
+look at your code.
+
+Uh, and you can do code reviews at varying levels
+
+of formality.
+
+Uh, in some organisations, uh, there might be a specific
+
+checklist of things that the reviewer is working through or
+
+criteria that they're checking against, uh, in other organisations?
+
+Maybe not.
+
+So it is the most common.
+
+Uh, we'll also see it's actually the least effective of
+
+all the sorts of review.
+
+So, uh, just because a lot of people do it
+
+doesn't mean that it's the best use of time.
+
+Um, a code walkthrough.
+
+Uh, so with a code review, someone else looks at
+
+your code.
+
+Uh, but you don't have to necessarily be there.
+
+No meeting is necessarily involved.
+
+Uh, you write your code, they look at it.
+
+A code walkthrough.
+
+On the other hand, uh, is effectively a meeting.
+
+It could be online.
+
+It could be in person.
+
+But the developer and at least one reviewer, uh, work
+
+through the code.
+
+Uh, the developer is typically developer led, so the developer
+
+leads the reviewers through the code, and reviewers try to
+
+identify faults.
+
+Um, this tends to be, uh, a bit more effective
+
+than, uh, code reviews.
+
+Uh, but the more informal it is, also, the less
+
+effective it tends to be.
+
+A disadvantage for being developer led is, um uh, a
+
+developer.
+
+Even If it's not conscious, they might tend to focus.
+
+Uh, since they're leading the review, they might tend to
+
+focus on, uh, the things that the code does well
+
+and tend to gloss over things, which it perhaps does,
+
+uh, less.
+
+Well, uh, code inspections, on the other hand, are are
+
+fairly formal.
+
+So these are towards the more formal end of sorts
+
+of reviews.
+
+Uh, they're a very detailed step by step group review
+
+of, uh, some work product.
+
+So, uh, source file or, uh, requirements, document or specifications
+
+Document.
+
+And each step is checked against criteria.
+
+So it does take, uh, time to do it requires
+
+preparation and follow up.
+
+Um, ideally, you want your reviewers not to waste time
+
+by, um reading through all the code during the meeting.
+
+Rather, they should prepare for it by trying to identify,
+
+uh, questions for the developer or problems that they can
+
+see beforehand.
+
+Uh, and audits are another type of review.
+
+Uh, they're typically carried out by someone other than the
+
+developers.
+
+So not another, not a colleague, uh, within the development
+
+team.
+
+But often, uh, either a different department or a completely
+
+different, uh, organisation.
+
+Uh, usually the focus of an audit is not specifically
+
+to find bugs, but to, uh, to check how well
+
+your product meets some particular standard.
+
+Uh, but it certainly can result in defects being identified.
+
+So why should we do reviews at all?
+
+Um, well, there there's plenty of empirical evidence showing that,
+
+uh, doing reviews are effective.
+
+They're cheaper than finding defects via testing.
+
+Uh, and you find more defects than through testing, so
+
+as far as them being cheaper, Um, there are several
+
+studies that look at how expensive it is to find
+
+bugs, uh, by review versus by testing, uh, versus by
+
+fixing them once the product is released.
+
+Uh, one study found that, um, the bugs that were
+
+found in testing took, uh, around.
+
+Uh, they were 15, about 15 times more expensive, uh,
+
+to fix than problems that were identified during an inspection.
+
+Uh, if the defect wasn't found until it was found
+
+by a customer at that point, uh, the bugs were
+
+68 times more expensive.
+
+So the later in the development process when a bug
+
+is found, the more expensive it's typically gonna be to
+
+fix.
+
+Uh, it's going to take more effort to localise where
+
+the problem is, uh, to diagnose exactly what's going wrong
+
+to fix it and to make sure that your fix
+
+doesn't interfere with other things.
+
+The system should be doing another study done based on
+
+work at I B.
+
+M found that, um uh, if you waited till release
+
+in this case, they discovered that, um uh, fixing defects
+
+after release, uh, was 40 times more expensive than if
+
+it was done by reviewing problems.
+
+Uh, so reviewing design documents, uh, and looking for issues
+
+at design time.
+
+So even though they take work to do and work
+
+to set up, uh, reviews are a cost effective way
+
+of fixing things, and they're also actually much more effective.
+
+So, uh, there's research that's been done to compare how
+
+good different techniques are at finding bugs and informal code
+
+reviews, which I said are probably one of the most
+
+common ways of doing reviews are actually the one of
+
+the least effective of all methods of finding bugs.
+
+Uh, so writing tests of various sorts, uh, is a
+
+little more effective.
+
+Uh, various sorts of inspections are more effective still, and
+
+the most effective technique was the high volume beta test.
+
+So that's where you're releasing software to, um uh, you're
+
+not doing a full full release, but you're giving an
+
+advanced version to, in this case, many sites.
+
+So more than 1000 sites and they're looking for bugs.
+
+Um, I mean, that kind of stands to reason.
+
+Uh, you will find lots of bugs by people actually
+
+using it.
+
+But the issue is that, um that's also gonna be
+
+the most expensive way of finding bugs because it's done
+
+right at the end.
+
+So the takeaway from that table is that, um, unit
+
+tests and regression tests actually have, uh, a pretty low
+
+rate of detection of finding bugs, uh, and informal reviews.
+
+Likewise, uh, formal inspections.
+
+So these are the ones where I said, uh, they
+
+do require, uh, a reasonable amount of effort to do,
+
+uh, have a much higher detection rate around 55 to
+
+60%.
+
+Uh, and there's research to suggest that organisations that adopt
+
+uh, a wide selection of these techniques, uh, can find
+
+uh can result in detection rates, uh, as high as
+
+95%.
+
+So many organisations rely just on testing and code reviews.
+
+They're therefore gonna be missing many, many defects.
+
+They're gonna have quite a low detection rate.
+
+Uh, and a lot of defects are only gonna be
+
+detected or fixed, Fixed at fairly late stages of development.
+
+Uh, when things are going to be expensive to do.
+
+So, um, a lot of organisations have a uh uh
+
+A somewhat shortsighted view.
+
+Uh, they may say, Oh, it's gonna take a lot
+
+of effort to, uh, set up, uh, proper code inspections.
+
+Uh, but in the long run, not doing not adopting
+
+a wide range of these techniques is expensive for your
+
+organisation.
+
+Uh, even if you do only do informal reviews, there
+
+are, uh, some benefits that you get.
+
+Besides, just finding defects, uh, one is communication and knowledge
+
+transfer.
+
+So if you are the only person that looks at
+
+your code potentially, you're the only person who knows how
+
+it works.
+
+But if you have, uh, some sort of code review,
+
+uh, then other people are in your team.
+
+Get to find out about how that code works and
+
+details of implementation and design get shared amongst members of
+
+a team.
+
+Um, having code reviewed is often a good, uh, component
+
+of training.
+
+So when a new person joins an organisation.
+
+Uh, having their code reviewed is, uh, a good way
+
+of introducing to them to, um, whatever stat coding standards
+
+your organisation uses and code review is also a good
+
+opportunity for skill improvement, not just for the people being
+
+reviewed, but also for reviewers.
+
+So reviewers can often, uh, benefit from seeing techniques or
+
+approaches that, uh, they haven't used before.
+
+So our leaving aside audits, which have a slightly different
+
+purpose.
+
+Uh, we had our our basic techniques for code review,
+
+code walkthrough and code inspection.
+
+Uh, and the pros and cons are, as I said,
+
+for code reviews.
+
+Well, they're very popular.
+
+A lot of people are familiar with them.
+
+They're pretty cheap to do.
+
+Uh, but they're also not terribly effective.
+
+Um, if you've got a specific checklist of things to
+
+look for, that does make them a little more effective.
+
+So, uh, organisations will often have, uh, a set of
+
+questions that reviewers should be looking at, uh, designed to
+
+get them thinking about, um, uh, all sorts of quality
+
+aspects related to the code they're looking at.
+
+Um, sometimes you'll get questions which are fairly general.
+
+Uh, and they can be applied to, uh, uh, all
+
+sorts of languages.
+
+Other times there will be, uh, or in addition, you
+
+may have checklists and best practises for specific languages.
+
+So if you're working in Java, uh, there are a
+
+bunch of things that people frequently can get wrong in
+
+Java.
+
+Uh, one example is, uh, writing equals methods and writing
+
+clone methods.
+
+So organisations might have, um, specific things in Java to
+
+check for when you're looking at that language.
+
+So that's the the plan code review.
+
+Um, walk through is fairly straightforward.
+
+Um, the inspection.
+
+So I think I think inspect the idea of an
+
+inspection was first come up with, um I think in
+
+the sixties.
+
+So sometimes you'll hear them called Fagan inspections.
+
+Uh, because Michael E.
+
+Fagan was the person who, uh, sort of first formalised
+
+the idea.
+
+Um, it involves preparing, so everyone gets to look at
+
+whatever, uh, code or, uh, artefact.
+
+There is beforehand before the meeting.
+
+Um, they're given an overview.
+
+So they're told what the context of what they're looking
+
+at during the meeting, you'll have your detailed step by
+
+step inspection.
+
+Uh, and a fairly important part is that, Um uh,
+
+the developer, uh, there's actual follow up, and, um, checking
+
+to see whether whatever recommendations the inspection made were put
+
+into place.
+
+So sometimes in some organisations, code review will be very
+
+informal.
+
+A reviewer might say, You know, you should do X,
+
+y and Z, but there'll be no actual clear record
+
+of what was recommended and no checks to make sure
+
+things were implemented for a a code inspection.
+
+Uh, there is Careful, uh, careful.
+
+Follow up to make sure that, um, whatever was recommended
+
+was implemented.
+
+Um, And for inspections, uh, they're not led by the
+
+original programmer.
+
+Uh, there's effectively a a chairperson or moderator, uh, leading
+
+the process.
+
+So for reviews, generally, there's, um, a few best practises.
+
+Um, one is you should be considerate of the reviewers.
+
+So, um, reviewers shouldn't be having to fix things that
+
+the developer could have easily spotted for themselves Or that
+
+could have been spotted through, uh, automated, um, analysis.
+
+So the original developer should already have tried to make
+
+sure that, um, their code meets whatever your or organisational
+
+standards are, uh, that it's been formatted properly for readability.
+
+Uh, reviewers shouldn't be, um even for even for a
+
+plain code view.
+
+It's still expensive.
+
+You're still using someone else's time to do it.
+
+Uh, so the reviewer shouldn't be doing the developer's job
+
+for them.
+
+The, uh, original developer does have to does have to
+
+put work in to make sure that, um, something's at
+
+the appropriate for review.
+
+Um, also, uh, reviewers shouldn't be spending their time looking
+
+for things that a programme could pick up.
+
+So simple things are if your organisation has style rules
+
+about how variables are named or methods or whatever, So
+
+those those are things, uh, that a programme can detect,
+
+uh, human reviewers shouldn't be spending their time on them.
+
+Uh, you already should have done.
+
+Uh, So you should have run code Priti Fiers or
+
+Beti Fiers formats.
+
+Linters static analysis.
+
+Uh, whatever can be done by a programme.
+
+Should have already been done by the time a reviewer
+
+sees it.
+
+Ah, another review.
+
+Best practise is that, um uh you do want to
+
+keep track of things even if you can't fix them
+
+straight away.
+
+So reviewers might well pick up issues or they might
+
+make suggestions or recommendations that you can't implement right now
+
+for your current release of software.
+
+Um, but you still should be capturing them for future
+
+use.
+
+So a common way to do that is if your
+
+organisation uses, um, some kind of issue tracking system.
+
+So jira is a fairly common one.
+
+Uh uh.
+
+Github issues people will probably have seen.
+
+So github has a way of tracking issues.
+
+Uh, bugzilla.
+
+There's all sorts of issue trackers, Uh, anything that comes
+
+up in a code review, it's a good idea to
+
+try and, um, add it to the issue tracking system.
+
+So it's not lost.
+
+Uh, and it's also good practise to document, uh, what
+
+the reviewer said, What recommendations they made what comments they
+
+made.
+
+Um, even if this is just via email, uh, it
+
+is better to at least have recorded it in some
+
+way than not to record it at all.
+
+So those are a few best practises, um, in the
+
+labs.
+
+Uh, actually, I think we've already have you done the
+
+code review lab?
+
+Was that what was last week's lab?
+
+It was code review.
+
+Yes.
+
+So you've actually already, um uh, had a look at
+
+that.
+
+Um, So the code that you looked there looked at
+
+There was, um, in many ways very, very terrible.
+
+There's, uh, a lot of bad things in this code.
+
+Um, so if it was done by anything other than
+
+a very junior developer, you'd probably be, uh, quite disappointed
+
+in it.
+
+But, um, on the other hand, uh, there's lots of
+
+scope there for making suggestions and, uh uh, coming up
+
+with improvements.
+
+So I'll put up um, uh, the solutions to that,
+
+uh, after today's lecture, uh and, uh, well, at least
+
+some suggested issues that you might have found, Um, so
+
+that you can take a look at those.
+
+And a lot of the issues here are to do
+
+with what you might call, um, uh, fragility of the
+
+code.
+
+It's, uh, is just not written in a very robust
+
+way.
+
+Uh, and it repeats information.
+
+And, uh, whenever you repeat stuff, you're making your code
+
+a bit more fragile because the pos there's the possibility
+
+that it will get, um, changed in some way in
+
+one place and not in another.
+
+Um, and another issue with this code, uh, you might
+
+in fact, just, uh, send this back completely rather than
+
+reviewing it.
+
+Uh, is that it is really bad.
+
+Badly formatted.
+
+It is not at all easy to read.
+
+It's got bizarre line ends.
+
+And so if as a senior developer you got that,
+
+you might just tell, uh, a more junior person.
+
+Please go clean this up.
+
+Uh, run a a format over this code before you
+
+submit it for review.
+
+OK, so reviews very effective worth doing.
+
+Probably worth putting more effort into them than, uh, a
+
+lot of organisations do.
+
+Um, what are our other static techniques for improving quality
+
+so things we can do without actually running the code?
+
+Uh, well, we said when it's done by a programme,
+
+uh, the equivalent of a programme doing a review, we
+
+tend to call static analysis.
+
+Um, it overlaps a bit with, um, what are sometimes
+
+called code metrics.
+
+Uh, so these are sort of statistics about the code.
+
+Uh, we'll we'll look at some examples.
+
+So static analysis is any kind of automated analysis of
+
+your your code or your documents or your plans.
+
+Um, I can't actually think of terribly, many things ways
+
+that you might aesthetically analyse, Uh, a plan document.
+
+But you I guess you could, um even things like
+
+spell checking and checking for readability.
+
+So getting fog indexes indices of readability would count as
+
+a sort of static analysis.
+
+Uh, but in general, we mean stuff that works.
+
+A programme that, uh, looks at the code and tries
+
+to identify defects or other properties of the system.
+
+So, uh, a property of a a programme might be
+
+it never de references a no pointer, Uh, and it
+
+covers a whole range of techniques from very, very simple.
+
+So in some languages, there are known, uh, known unsafe
+
+functions or functions that are prone to misuse.
+
+So C and C plus plus have, uh, quite a
+
+few of these.
+
+Uh, so just searching the code for, uh, non unsafe
+
+functions is very simple, but it counts as a, uh,
+
+as a simple form of static analysis.
+
+Uh, whereas other forms of static analysis do a lot
+
+of, um, uh, a lot of fairly complicated work to
+
+parse what they're looking at, uh, they can be as
+
+complicated as, if not more complicated than a compiler.
+
+Uh, so there's a whole range of techniques being covered
+
+there.
+
+Uh, I said you're looking at static artefacts.
+
+Um, often that's gonna be your code.
+
+But there are also static analysis programmes that take in,
+
+uh, binaries.
+
+So they'll take in, uh, the executable binaries or, um,
+
+libraries for your code.
+
+So there's, uh, one popular one called, uh, which, uh,
+
+is put out by the U National Security Agency.
+
+Uh, that's a popular framework for analysing binary executables.
+
+Um, so it is.
+
+These static techniques are quite different to, uh, dynamic analysis.
+
+So in the labs, we would have seen, um uh,
+
+code coverage examples.
+
+Uh, so we looked at Jaco, uh, which instruments Your
+
+code.
+
+You run some tests, your coco tells you which which
+
+bits of the code have actually been run.
+
+So that's a dynamic analysis technique.
+
+You need to run the software for that to work.
+
+Uh, other dynamic techniques.
+
+There's things called code sanitizers, uh, which can check for
+
+memory and concurrency problems.
+
+Those count as dynamic.
+
+Um, those can be much more precise than static analysis,
+
+uh, because they can pinpoint the exact moment of execution
+
+when something goes wrong.
+
+Static analysis is, um, uh, for a couple of reasons
+
+that we will see it's, um, often a bit more
+
+approximate than dynamic analysis.
+
+But the disadvantage of these dynamic techniques and this includes
+
+testing, is you.
+
+You do actually have to make sure that the place
+
+where the, uh, the defect occurs gets run.
+
+So if you've got bits of your this is why
+
+we spend quite a bit of time looking at code
+
+coverage and, uh, saying it's a good idea that you
+
+get good code coverage.
+
+Uh, because if you never run some bit of programme,
+
+it can have bugs lurking in it.
+
+And, uh, dynamic approaches like testing, uh, will never find
+
+it.
+
+Then, uh, static analysis.
+
+On the other hand, it's got access to the whole
+
+source code or the whole binary.
+
+So, theoretically, it's sort of got perfect coverage.
+
+You can see everything.
+
+Um, dynamic analysis tends to be slower.
+
+So static analysis, um, has some advantages over dynamic techniques.
+
+It does have some limitations.
+
+One is that, uh, theoretically, you can never write a
+
+a static analyzer that perfectly answers for all programmes.
+
+Um, exactly whether some property of it is true.
+
+So, uh, another example of we we had, um, you
+
+know, doesn't try and defer reference.
+
+Nos another is, uh, say, uh, in Java you can
+
+cast an object from, uh, one class to another.
+
+And, uh, if you do a bad cast you cast
+
+from a, uh, an object into an inappropriate type, you'll
+
+get a class cast exception.
+
+It's actually impossible to answer something that has no false
+
+positives and no false negatives and answers any non-trivial question
+
+about a programme.
+
+There's always going to be, uh, imperfections in, uh, any
+
+tool that you write.
+
+There's either gonna be some false positives or some false
+
+negatives.
+
+Um, so the bit of computer science theory, which proves
+
+that is, uh, what's is called, uh, R theorem.
+
+So in practise, all our tools are forced to approximate
+
+the behaviour of the programme.
+
+They're they're always going to have some false positives or
+
+some false negatives for some programmes.
+
+So a false positive is just where you say a
+
+programme has some property and it doesn't false negative.
+
+Uh, is where you say the programme doesn't have some
+
+property, but it does, um, in testing, uh, whether whether
+
+you consider something sort of a false positive or a
+
+false negative kind of depends on how you phrase the
+
+property that you're looking at.
+
+If we're looking for bad things, which we often are
+
+in in testing.
+
+So if we're looking for problems, uh, then often by
+
+a false positive will mean are cases where our problem
+
+is detected, but it turns out for some reason, at
+
+run time, it can't actually occur.
+
+And false negatives will be cases where, uh, the problem
+
+can occur or does occur.
+
+Ah, but isn't detected.
+
+And usually, uh, we'd like to err on the side
+
+of having false positives.
+
+Uh, we'd usually prefer it to avoid the situation where
+
+we, uh we miss potential problems.
+
+Uh, so this can be an issue One, um, complaint
+
+that people often have about static analysis tools is they
+
+report lots of potential problems that you know, for your
+
+software, uh, aren't actually an issue for some reason.
+
+Um so what you'll typically have for static analysis programmes
+
+is the ability to, um, tune them or tell them
+
+to ignore particular bits of code or particular properties.
+
+Um, most static analysis systems are are very tunable.
+
+There are a lot of knobs and levers that you
+
+can adjust, uh, so that it suits your particular project.
+
+So what are some examples of static analysis.
+
+Well, compilers actually count as a sort of static analysis.
+
+Uh, compilers will typically spot, uh, all sorts of issues.
+
+Uh, a big one is trying to, uh, assign things
+
+to an inappropriate type.
+
+So in python, um, variables don't have any sort of
+
+fixed kind of type.
+
+You can have one variable.
+
+You can assign, uh, an in into it.
+
+At one point later on, it can hold a string.
+
+It can hold all sorts of data for statically checked
+
+compiled languages.
+
+Uh, you often limit a variable to holding, uh, just
+
+one type, and the compiler will check that, uh, its
+
+type rules are never broken.
+
+Um, things like the Java compiler actually do, uh, a
+
+whole range of other things.
+
+They, um, try and avoid, um, whole families of memory
+
+safety errors.
+
+So Java is called a memory safe language.
+
+Uh, you can have another sort of static analysis.
+
+Is style checkers or linters?
+
+Uh, there's There's definitely some overlap between these.
+
+So, uh, if something's primarily designed to look for sort
+
+of breaches of style rules.
+
+So how your organisation wants to name classes or variables,
+
+or how long methods should be, or that kind of
+
+thing.
+
+Uh, then it it may get called a litre or
+
+a style checker.
+
+Uh, if it's focus is on trying to find bugs
+
+or unsafe properties, it might be called a bug finder.
+
+Uh, but there's a lot of tools that do a
+
+bit of both, Uh, and a final sort of static
+
+analysis is verifiers, uh, which prove that particular runtime errors
+
+are not going to occur.
+
+So Nolde referencing is an example of that, uh, you
+
+may have, um, compilers that, uh, or static analyzers that
+
+prove that you can never de reference no in a
+
+programme.
+
+Or they might prove that uh uh, you're never going
+
+to get deadlock between threads.
+
+Uh, there's a whole range of properties there.
+
+Uh, so style chicken.
+
+These are sort of just rules of good practise.
+
+Uh, so they include things like how your code is
+
+laid out where your brackets go, how things are named.
+
+Are there any, uh, dubious or problematic?
+
+Code constructs.
+
+So in python, it's generally considered, uh, poor style to
+
+use the eval function.
+
+Uh, because it's very hard to predict what it will
+
+do.
+
+Uh, so there's a bit of overlap with Bug finders.
+
+Uh, so a few A few style checkers you might
+
+come across are, uh there are some for C and
+
+C plus plus like clang, format and clang to, uh,
+
+there's some popular ones for python uh, Czech style.
+
+I think that's a Java one.
+
+And there's even, um, uh, style checkers for scripting languages.
+
+So shell check is there for bash in bug finders.
+
+Uh, like I said, there's some overlap overlap, But, um,
+
+these are focused on finding code constructs that can lead
+
+you into trouble.
+
+Um, a few of the popular Java ones are fine
+
+bugs and P MD Uh, P MD is a pretty
+
+broad static.
+
+It it has a lot of capabilities.
+
+It's a, um, a static analysis tool.
+
+It lets you, uh, not only fine bugs, but it
+
+calculates a lot of code metrics.
+
+So we'll see some of those, uh, and it lets
+
+you add your own custom detection rules as well.
+
+A popular one that's used in industry as cover.
+
+Uh, so that works with C C plus plus Java
+
+and C sharp, uh, used by an awful lot of
+
+companies.
+
+There's actually a a free version that you well, uh,
+
+if you host code on github, uh, or or have,
+
+um, your open source projects, Uh, who stood on, uh,
+
+potentially a few other, uh, providers as well, I think
+
+git lab, uh, you may be able to make use
+
+of, uh, cover to, uh, look for bugs in your
+
+code.
+
+Um, so those sorts of programmes they'll tend to get
+
+called style checkers or, uh, bug finders.
+
+Uh, there's no hard and fast line.
+
+But if you look at, um, what you might think
+
+of as sort of raw statistics about your your methods
+
+and classes and modules, um, those tend to get called
+
+code metrics.
+
+So examples of these are, uh, how many functions how
+
+many methods your method calls or or how many modules
+
+your module makes use of, uh, and likewise, uh, how
+
+many functions or methods are calling your particular method?
+
+Uh, or how many entry and exit points there are.
+
+So these are kind of you can sort of think
+
+of these as various kinds of code statistics.
+
+Uh, and there's a whole bunch of them for object
+
+oriented programmes.
+
+Other ones might include, um, complexity.
+
+Uh, a very simple one is length.
+
+So some one code metrics is is just how many
+
+lines there are in methods.
+
+Uh, and you'll have some, uh, uh, formats and style
+
+checkers that will warn you when you've got, um, one
+
+function that's more than about, say, 100 lines long.
+
+Uh, but they can also do things like, uh, calculate
+
+how complex the, uh control graph is, uh, for a
+
+function, uh, and suggest that if it comes out as
+
+highly complex, you might have written, uh, a somewhat over
+
+complex method there, and you might want to split it
+
+out.
+
+Um, some of these metrics might have some correlation with
+
+the quality of the code or how likely it is
+
+to contain errors.
+
+It's, um not a terribly strong correlation.
+
+Uh, you can say that usually very long functions or
+
+methods are are often more likely to contain bugs.
+
+And you can say that, um, methods or functions that
+
+have a very complicated control flow are likely to, uh,
+
+maybe more likely to contain bugs.
+
+Uh, but it's definitely It's a fairly loose correlation.
+
+You can very easily have short methods that contain bugs
+
+as well.
+
+Uh, but some organisations do like to keep track of
+
+these things.
+
+Uh, and for anyone who's interested in the, uh, the
+
+stats that we gave about, um uh, costs of, uh,
+
+moving bugs at, uh, review time versus release time.
+
+Uh, I there are footnotes in the slides for both
+
+of those.
+
+You can, uh, chase up the references in these two
+
+texts.
+
+OK, it is 4.
+
+50 so I will finish there.
+
+I will.
+
+Um, there is a small amount of material on a
+
+few other, uh, system level quality issues, but I'll, uh,
+
+I'll do that as a separate recording so we don't
+
+fall behind.
+
+Um, other other things coming up, Um, the project should
+
+be due.
+
+Should be out tomorrow.
+
+Uh, and there will be about 2.5 weeks to work
+
+on that.
+
+It shouldn't be an enormous amount of work, as long
+
+as you can put in sort of a a handful
+
+or so of hours into that over two weeks.
+
+You should be right.
+
+Um, and a reminder that the exam this year is,
+
+um, face to face.
+
+Uh, it'll be in a lab.
+
+It'll be submitted via mood.
+
+Um, you may have your exam time tables available to
+
+Yep.
+
+You do.
+
+So That means we've got an exact date.
+
+Uh, I don't think they will have given you the
+
+venue because, um uh, the school books, that but, um,
+
+we're going to be in, uh, engineering.
+
+So we've got a few labs booked in, uh uh,
+
+the engineering building.
+
+Uh, if you have, uh, through uni access special requirements
+
+for your exam, I'll put up a post, uh, about
+
+this on, uh, the forum.
+
+But, um, do let me know, Uh, the exams office
+
+for, uh, exams done on paper that are organised by
+
+the exams office.
+
+Uh, they keep track of all special requirements.
+
+Uh, but this is a school run exam.
+
+So, uh, I and the CS s e admin staff
+
+book the labs and organise everything.
+
+So you do need to, uh, inform us directly if
+
+there's, uh, any special requirements that you have.
+
+Uh, and we may hold that on the same day.
+
+We may have to do it, uh, a day later,
+
+because we've got limited, um, staff to invigilate, uh, the
+
+exam on the day.
+
+Alrighty.
+
+Thanks very much.
+
+And I will see you next week.
+
+I just told you that.
+
+Did you not hear me?
+
+Did I not say the project will be up tomorrow?
+
+About It'll be available tomorrow.
+
+And if you go through the previous lectures, I did
+
+discuss What sort of things are in the project?
+
+Yes.
+
+OK.
+
+Oh.
+

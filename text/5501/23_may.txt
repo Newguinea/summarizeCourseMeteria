@@ -1,0 +1,3386 @@
+OK, so I'm going to just finish off the material
+
+on, uh, the alloy specification language that we were looking
+
+at.
+
+Uh, then I will discuss a bit about the exam.
+
+Then if there is any topics that people wanna review
+
+feel welcome to bring those up.
+
+Uh, and no, Uh uh.
+
+But I'm happy to cover as many bits and pieces
+
+as people want.
+
+So if we, uh, if we keep going till the
+
+end of the lecture, then we'll do so if we,
+
+uh if people are mostly confident with what we've looked
+
+at, then we may finish early.
+
+OK, so we started looking at Alloy last week, so
+
+I'll talk a bit about how we might, uh, actually
+
+work through the process of developing an model and cover
+
+the commands that we use when we are doing so.
+
+So just recapping we've seen we can declare particular sorts
+
+of things in alloy Ah, Sigs and we can, uh,
+
+if you've done the lab, you'll have seen that we
+
+can make use of, uh, uh, some built-in sigs that
+
+already has.
+
+So it's already got an, uh, an in type, Uh,
+
+and it's got a few more types uh, built into,
+
+uh, modules called il and various, uh, various module names
+
+under, uh, And if we're working on a model and
+
+it starts to get large, we'd use modules to break
+
+up our own work as well.
+
+And, uh, sometimes if you if you've got a bunch
+
+of different, um, uh, if you've got a model but
+
+a few different ways of viewing it a few different
+
+sorts of, um uh, predicates.
+
+So we'll see those shortly.
+
+Uh, then sometimes it's handy to put the model in
+
+one file and keep your your predicates in another.
+
+Uh, we've seen that you can declare relations between different
+
+sorts of things and relations.
+
+Uh, sometimes they might you might use them to represent
+
+containment.
+
+So, uh, we might use them to represent, uh, one
+
+thing being in another.
+
+Uh, we might just label things.
+
+So if we've got, uh, people, uh, or computers, we
+
+might want to have some sort of a name for
+
+them.
+
+Maybe, uh, that's it is often not especially necessary for
+
+alloy models.
+
+So I said, um, we usually restrict ourselves to just
+
+the, um, the absolute essentials of what we're trying to
+
+model, uh, in alloy.
+
+So even though in practise, uh, you know, maybe this
+
+is a a person from an address book or some
+
+kind of social media system, Uh, in practise, Uh, when
+
+we come to implementing that, a person might have all
+
+sorts of other details.
+
+So maybe they've got I don't know, avatar or, uh,
+
+email address or all sorts of other things.
+
+Um, when we're modelling, we just restrict ourselves to the
+
+essentials of what's needed for our model.
+
+Um, so if we're trying to model people's connections on
+
+some kind of social media site, uh, then probably friends
+
+is important, But, uh, unless there's some particular property of,
+
+uh, avatars that we're trying to sort out, then we
+
+probably don't need that.
+
+So we can use relations for containment labelling, uh, grouping
+
+together so we can give things.
+
+Um, uh, we can, uh, give things a property or
+
+put them in a set because they're all so for
+
+animals or carnivores Or computers.
+
+Maybe, um, they're running some particular operating system, uh, or
+
+just for linking between multiple objects.
+
+So, in fact, we can use relations for pretty much
+
+any sort of relationship We like, uh, we saw that
+
+we can specify multiplicities for relations.
+
+So we can say that a directory has contents.
+
+The contents consists of and set means zero or more.
+
+So this says the contents is zero or more file
+
+system objects.
+
+Um, and by default, if we leave off the multiplicity
+
+for, uh, something inside the braces for a sig.
+
+Uh, that means, uh, the default is one.
+
+Uh, but, um, we can also put multiplicities in, uh,
+
+other spots so we could put them before the sig.
+
+So if we wanted to specify that, I don't know,
+
+there is only ah, well, here we've got one.
+
+So there is just one phoenix in the world we
+
+can put one before the sieg there, Uh, by default.
+
+Uh, I think if the default multiplicity of a sig
+
+is set zero or more, uh, it could be many.
+
+It could be one or more, but I think, um,
+
+I think by default, it's, um, zero or more.
+
+So alloy won't complain if there are particular models where
+
+it turns out there's no, I don't know, no directories
+
+or no nodes.
+
+So when we're working on a model and I said,
+
+um, that this can be a good way to reduce
+
+risk for some complicated sort of system that we might
+
+be working on That's running off the screen a bit.
+
+Uh, then we'd start by describing the entities we want
+
+to talk about.
+
+Uh, we'd add relations.
+
+Uh, and then we would go through an iterative process
+
+of, uh, looking at examples of what our model generates,
+
+uh, and tightening things up, uh, when they're too loose
+
+or loosening them when they're too tight.
+
+So the model is too loose if it lets in
+
+examples which aren't what you meant, uh, and it's too
+
+tight if it's, um, not generating, uh, examples that you
+
+think should be allowed.
+
+So how do we view them?
+
+We've got a command run.
+
+Um, so the way alloy does this is, uh, might
+
+seem a bit roundabout.
+
+Um, run is the command for showing examples of, uh,
+
+the, uh, the model you've specified.
+
+Uh, but to do run, you need to define a
+
+predicate first.
+
+Uh, we said predicates are things that, uh, evaluate true
+
+or false.
+
+Um, so the simplest predicate, uh, is just empty braces,
+
+so it doesn't actually do anything here.
+
+Um, this just ends up evaluating to to true, Uh,
+
+but, uh, slightly, annoyingly, you need it for a run
+
+to work.
+
+Um, the convention in alloy is if you've got some
+
+sort of a do nothing predicate like this, that's just
+
+empty.
+
+Uh, people often just call it show.
+
+And the idea is it doesn't place any limits on
+
+what you can see.
+
+Uh, and so people will write down something like run
+
+a show for, uh, And afterwards, uh, so you've got
+
+run name of a predicate, And, uh, then you can
+
+specify how big or small the examples are that you
+
+wanna see.
+
+Uh, you can give, uh, just a number.
+
+Uh, And if you give a number, that's a maximum
+
+size on, uh, all entities in your model, so you
+
+could say run example for five.
+
+And it and alloy will assume you're interested in, uh,
+
+examples of your model where there's no more than five
+
+things of any one type.
+
+Um, it also uses that limit, uh, as a limit
+
+on the size of things.
+
+Like in, um, I forget offhand.
+
+Whether it limits your inch to five or just their,
+
+um, their bit size to five.
+
+So two to the five.
+
+But, um uh is one of those two.
+
+So, uh, typically, we often want to just start with
+
+pretty small models and then build up a bit from
+
+there.
+
+So, uh, we run a few examples.
+
+Uh, if it looks like it's letting in undesired cases,
+
+then we try and work out what we need to
+
+tighten up.
+
+So maybe we haven't specified, um multiplicities correctly.
+
+Or maybe we just need to add in some more
+
+facts to constrain things.
+
+Uh, other times we might discover we get no examples
+
+at all.
+
+Uh, and if that's the case, it means that we've
+
+constrained our model too tightly.
+
+Uh, and there's something there that now, uh, there's something
+
+in our model that contradicts itself.
+
+And alloy isn't able to generate, uh, any examples at
+
+all.
+
+So, uh, we saw an example of a fact.
+
+We might want to say that, um, file system objects
+
+can be directories or files, and there are no other
+
+sorts of file system objects at all.
+
+So we would say as a fact file and directory
+
+together is equal to file system object.
+
+So, um, so that run command, uh, is the the
+
+main one that we use to get examples of our,
+
+uh, uh, our system.
+
+Occasionally, we might also want to make use of what
+
+are called assertions.
+
+Uh, so these are similar to the kinds of obsession
+
+you'll find in, um, Daphne or other languages.
+
+They claim that something is true.
+
+Uh, and the assertions themselves aren't part of the model.
+
+They're are a thing you add on to find out.
+
+Um, if your model is doing what you expect.
+
+So an example of an assertion is, uh I said,
+
+um, when we've got files and directories, one thing we
+
+want to specify is, uh, that, say a directory can't
+
+be part of its own contents.
+
+Uh, and I think in the lab or the lecturer,
+
+I forget which one.
+
+Uh, we saw how we might specify that.
+
+You can sort of just say, um uh, as a
+
+fact, I no directory is contained in its own contents.
+
+Um, you also want to rule out bigger loops.
+
+So you also want, um, uh, it's it's not enough
+
+to say a directory can't be, uh, one of its
+
+own contents.
+
+You could have a larger loop, so a directory could
+
+contain directory.
+
+A could contain directory B and directory B could contain
+
+a.
+
+So if you want something like that, then, um uh,
+
+the symbol here that we've got before contents.
+
+The circum flex there, uh is it's the the closure
+
+symbol in alloy.
+
+And it sort of means, uh, keep on doing something.
+
+Keep extending it.
+
+So this means, uh, if we're looking at some directory
+
+D uh, d circum flex contents means this directory's contents,
+
+uh, and the contents of anything in that contents, uh,
+
+and going on until, uh, you've finished.
+
+So, uh, if you say, uh uh What goes inside
+
+the assertion is, uh, the same sort of thing that
+
+you might find in a fact.
+
+But when it's in an assess, where, um, we're asking
+
+if this is true.
+
+So this is said, um says, Is it true?
+
+Uh, that for any directory, that directory itself does not
+
+appear.
+
+So it says, um uh, there's no there's no directory.
+
+Such that d appears in its own, uh, in in
+
+the closure of its own contents.
+
+So, um, if we're asking, uh, given a given some
+
+sort of a A fact, well, given some sort of
+
+a a statement like this, uh, we could ask whether
+
+it is true if we're If we're asking if it's
+
+true, it goes in an assertion.
+
+Uh, if it's something we want to force to be
+
+true, it goes in a fact.
+
+So facts are the laws of our miniature universe.
+
+Uh, they constrain things.
+
+So, um, if we've already got a model like this
+
+one, and, uh, we're unsure whether it allows, uh, loops
+
+in our directory, we could ask by putting in, uh,
+
+an assertion, Uh, and usually, um, usually, once you're done
+
+with, um, assertions, um, you may want to keep them,
+
+uh, or you may end up turning those into facts.
+
+In which case, uh, there's not really any point having
+
+a a fact and an assertion that say the same
+
+thing.
+
+So you would probably just turn this into a fact
+
+and take the assertion out.
+
+So, um, we might ask, given our model assert, a
+
+cyclic no D deer is such that d is in
+
+its own, uh, the closure of its contents, uh, given,
+
+given that model, that actually is going to allow, uh,
+
+things to appear in their in their own contents.
+
+So if we run that, uh, we would say, uh,
+
+how how large are the maximum examples that we wanna
+
+use while checking this model?
+
+So, uh, O A actually does create, uh, instances of
+
+all these entities when it's, uh, checking these assertions so
+
+it creates hundreds potentially thousands, depending on how big things
+
+are.
+
+Um, so if we've got, um, a maximum size of
+
+five, we're saying check up to a maximum size of,
+
+um, five of each entity, uh, whether that assertion holds,
+
+and in this case, we'd run it.
+
+I would say the assertion fails, uh, is not true
+
+that you can't have, uh, loops in your directories?
+
+Uh, and the analyzer will pop up an example, uh,
+
+showing where that assertion, uh, well, showing us an example
+
+of how that assertion, uh, can be falsified.
+
+So the assertions are things we think should be true,
+
+but we'd like alloy to check them.
+
+So all I will end up creating, um, lots of
+
+instances of our model.
+
+So, uh, if we've got, um, even just one entity
+
+like person, uh, then when we say a person can
+
+have friends and friends are a set of person, uh,
+
+alloy really does check every example it can construct up
+
+to a maximum of five people.
+
+So that means, um uh, each person has a set
+
+of friends.
+
+Uh, that set of friends can be up to five.
+
+Uh, So, uh, you get quite a large number if
+
+you imagine you've got, um, sort of 12345 people in
+
+a in A in a ring.
+
+And you look at every possible combination of, um, the
+
+lines you could draw between them.
+
+Uh, you get, um 522, uh, divided by two.
+
+If you've got, um, uh, a relation that goes both
+
+ways.
+
+Uh, so 1000 and 24 model instances, it doesn't take
+
+very long.
+
+So, uh, alloys got built in, um a, uh I
+
+think AC language based silver.
+
+Um, so I can easily check 1000 and 24 models,
+
+uh, very quickly, but the more relations you have, uh,
+
+and the more sigs that you've specified, uh, the more,
+
+uh, the bigger the number of models that you're gonna
+
+check.
+
+So, um, it'll usually get through hundreds of thousands in
+
+less than a second.
+
+But, uh, eventually, if your model does get quite large.
+
+You can see a bit of a lag when you
+
+start to ask whether things are true.
+
+Uh, so for that reason, you often might want to
+
+start off by just specifying, um, quite small sizes for
+
+your, uh uh, assertions.
+
+So, um, two or five, um is usually doable.
+
+So even if you've got, um, uh, say a few
+
+dozen sigs, then, uh, a scope of two or a
+
+scope of five is usually pretty manageable on, uh, most
+
+computers.
+
+Uh, but once you get up to 1000, uh, that's
+
+heading into infeasible territory.
+
+However, um, for a lot of the sorts of mistakes
+
+that people make in, um specifying and designing a system
+
+they often do show up, uh, in quite small scopes.
+
+So, uh, if you've made your specification too loose and
+
+you've allowed in, uh, say loops in your, uh, file
+
+system that's gonna show up, uh, all you need is,
+
+um, 22 entities.
+
+Uh, and and you could ask, is it true that
+
+you can ever have a loop?
+
+Uh, and even if you've just said, er, check a
+
+cyclic for 21 of the combinations that, um, alloy will
+
+find is the case where there's just two things in
+
+the universe.
+
+Uh, well, actually, no.
+
+You could do it for just one.
+
+So you could say, check a cyclic for one and
+
+Alloy will find the case where there's one directory and
+
+it's its own parent.
+
+And it will say that assertion is falsified.
+
+I found a counter example.
+
+So in practise, you can find a pretty high proportion
+
+of bugs.
+
+Uh, by checking just a a fairly small scope.
+
+Um, And, um, it's partly because the sort of mistakes
+
+that we we tend to make when we're, um, constructing,
+
+uh, constructing systems are things a bit like, um, off
+
+by one area or, um not specifying a relationship correctly,
+
+that kind of thing.
+
+Uh, and we often can find them in pretty small
+
+examples.
+
+It's just a matter of getting the right example.
+
+Uh, and so Alloy's advantage is it checks every possible
+
+combination of of our entities, uh, and checks our assertions
+
+for all of them.
+
+And usually, uh, if we're trying to debug something or
+
+test it, uh, usually, once we've sorted out, Uh, and
+
+this applies to, um, methods and algorithms and things like
+
+that as well as, um, alloy models.
+
+Usually, once we've got past, uh, the sort of bugs
+
+we find in the small cases, uh, the others will
+
+be The others will be fine.
+
+Um, So when we looked at ISP, we looked at,
+
+um, equivalence classes.
+
+Uh, the reason they're usually fine is because, um, I
+
+don't know if something works on, uh, takes a list
+
+as input.
+
+Uh, and where and our method works for lists of
+
+size 01 and two and three.
+
+Um, probably, uh, lists of other sizes aren't gonna be
+
+particularly different.
+
+Uh, you know, assuming our post condition our preconditions, Um
+
+ah, just apply to to all lists.
+
+Uh, so our method is probably fine.
+
+One issue is that we might have to check the
+
+upper bounds of things.
+
+So if we've got something that applies to lists and
+
+we really expect it to work for all lists, we
+
+might want to start to look at um, uh, the
+
+maximum sizes of arrays or lists.
+
+So, an example of this, uh, the binary search method
+
+that we have already seen had a bug in it.
+
+Uh, that was unfixed.
+
+Up until 2006 it worked for a raise up to
+
+size two to the 31.
+
+Uh, and after that, it gave incorrect results.
+
+But no-one had noticed, Uh, because, um uh, up until
+
+2006, when companies, uh, like Google started to create, um,
+
+extremely large, uh, arrays of things to represent, um, you
+
+know, all websites that they had records for, Uh, no
+
+one had noticed that that failed.
+
+And even when people did verification of it, uh, they
+
+were So people had proved it correct, but they were
+
+relying on assumptions, uh, that were actually untrue.
+
+So I said, sometimes if we're only we if we
+
+are, um, working with smallish data sets, we might sort
+
+of hand wave away the upper limits of things we
+
+might say.
+
+You know, this is probably gonna gonna work.
+
+Fine.
+
+It's, um, not a good use of our time to
+
+investigate.
+
+Um uh, a raise of this size.
+
+Uh, but it depends on your case.
+
+You want to reduce risk to a tolerable level.
+
+Uh, if you're working on small data sets, uh, then
+
+worrying about a razor size two to the 31 is,
+
+uh, probably not a good use of your time.
+
+But if you're Google or Facebook and you do regularly
+
+have extremely large data sets, um, then that is a
+
+reasonable risk.
+
+And you've, um you ought to look into it.
+
+So this is just looking in more detail at, uh,
+
+run.
+
+Uh, I said that, um, whenever we're running a model,
+
+so looking for examples of it, uh, we need to
+
+give it a predicate, Uh, by default.
+
+Most people just use, uh, an empty predicate.
+
+Which sort of lands?
+
+No, no philtres.
+
+But it's also impossible to, um to add in, uh,
+
+conditions about what you want to see.
+
+So you might have Let's just look at, um, where
+
+our no definition was OK, so you might have something
+
+like, uh, nodes in a list.
+
+Uh, you'd say I have a sort of entity node.
+
+It can contain zero or one nodes.
+
+As it's, uh uh, it's, uh, neighbour.
+
+It's next node.
+
+Uh, and if we want to, um, consider models where,
+
+uh, our nodes do actually have a successor.
+
+So it, uh, by default, We've said, um, a node
+
+can have a successor, but it might not.
+
+Uh, so that means, uh, a lawyer will show us
+
+examples where there is just one node.
+
+Um, if we say no, I I want to see
+
+examples larger than that.
+
+Uh, we could say, OK, given a node.
+
+Uh, it should, in fact, have, uh, a successor.
+
+So this says the cardinality of n dot Next is
+
+one.
+
+Uh, you could also say, uh, some.
+
+So you could also say, uh, some end or next
+
+that would work.
+
+So we said some means one or more.
+
+So you could say, uh uh Or or you could
+
+say, one.
+
+Any of those things would, um, would act to force
+
+there to be a successor.
+
+And alloy would therefore show you examples where, uh, the
+
+node does actually have something after it.
+
+So it's an example of a predicate.
+
+It looks a bit like a function.
+
+It has one or more arguments.
+
+You can have no arguments at all.
+
+Uh, and it it will evaluate to, uh, true or
+
+false.
+
+So it's as if it returns.
+
+Uh, the type bull.
+
+Uh, but, uh, one difference, uh, against Java is you
+
+might kind of think of the default result as maybe
+
+being false, but, um, in a if you put no
+
+constraints on a predicate by default, it returns true.
+
+So here are a few more constraints.
+
+Uh, we could insist on lists that have, uh, a
+
+size of exactly two.
+
+So we'd say, uh, the size of n dot Next.
+
+So given some node is one, but n dot next
+
+dot Next.
+
+So the the neighbour of its neighbour is zero.
+
+Uh, and we can rewrite those in, uh, a few
+
+different ways.
+
+So I said we could also use, um uh, one
+
+and no, uh, instead of getting the the cardinality.
+
+Um, in general, we can put pretty much any sort
+
+of, uh, expression we like inside predicates.
+
+Um, usually, it will make sense to talk about the
+
+things in our universe.
+
+Uh, you can have things that don't relate to it
+
+at all.
+
+So you could just put in, uh, some totally unrelated
+
+expression in your predicate.
+
+But in general, that's not gonna be terribly useful.
+
+Uh, you'll want, uh, whatever arguments you have or whatever
+
+sizes you're talking about to refer to entities in your
+
+model, you can also, uh, have pretty kids.
+
+You can talk about, um, whole sets of things.
+
+So you can take in, uh, something like So let's
+
+say we have a model, uh, cards.
+
+Uh, every card has a suit.
+
+Uh, we can talk about a predicate which takes in
+
+a set of cards and says, uh, for that for
+
+the suit of that hand.
+
+So, uh, here where we say hand dot suit, Um,
+
+if you think of alloy as being like java, then
+
+this, uh, the the the Java model of it starts
+
+to break down a bit.
+
+Uh, it becomes more useful to think of this as
+
+being a bit more like a database.
+
+So the dot sort of means join.
+
+So if we take in a hand, then this means,
+
+uh, give me, uh, the table that I would get
+
+when I, um, uh, sort of join hand and suit,
+
+uh, and make the size of that one.
+
+So, uh, alloy, uh, we'll get rid of duplicates.
+
+So if we've got hands that are all in the
+
+same suit, that means that, um uh, the size of
+
+hand dot suit is one.
+
+Uh, and we can also talk about how big the
+
+hand is.
+
+So we could say cardinality of hand is three.
+
+Uh, and again where we said, uh, hand dot suit
+
+equals one.
+
+We could also, uh, rephrase that.
+
+Uh, we could say, uh, one spelled out in words
+
+and then hand dot suit, and that would be the
+
+same thing.
+
+Uh, so the, uh, so pretty.
+
+It's a fairly, um, powerful.
+
+They're a fairly rich way of describing things.
+
+Uh, you can almost think of them as being, uh
+
+uh, a way of, uh, querying the model, Uh, a
+
+bit like how we might write queries for a database.
+
+So that's just an example of running things.
+
+Alright, So an example of, um, uh, running things is,
+
+uh, let's suppose that we've got, um, uh, a model
+
+of nodes in a list.
+
+Uh, and we start to ask for things that have
+
+successes.
+
+Uh, one of the ways that we'll realise that our
+
+model is too loose is when alloy starts to generate
+
+examples like this.
+
+So in this case, well, so this may or may
+
+not be what we want.
+
+Uh, usually, uh, if what we were trying to model
+
+here is a linked list.
+
+Uh, usually, we would consider, uh, non cyclic linked lists.
+
+Usually, that's what we're after.
+
+Um So our lawyer is showing us that, um given
+
+those constraints, it's perfectly permissible for nodes in a list
+
+to point to themselves.
+
+Uh, if we flicked through more examples from alloy, it
+
+would produce other examples Where, um uh we've got a
+
+a cycle of size two.
+
+Um, so we have to decide Is that something that
+
+our model should allow or not?
+
+Uh, and either, um, add facts to rule it out
+
+or leave it as it is and when we are
+
+converting our model into code.
+
+So let's say we want to, uh, implement this as
+
+java.
+
+Uh, then the things that were, um, facts, uh, we
+
+often start, we'll often include in our java code, uh,
+
+in the documentation, or even write checks for them.
+
+So we might say, uh, it's a so one thing
+
+you wanna do might want to do with, uh, lists
+
+is work out their size Um uh, in, uh, in
+
+a language that has lists you work out the size
+
+by starting at the beginning.
+
+Uh, and you keep following neighbours until you get to
+
+something that doesn't have any more successes or neighbours.
+
+So here you'd go, uh, 1st, 2nd 2nd, 2nd 2nd,
+
+and asking for the size of that list would never
+
+end.
+
+So when it comes time to turning this into a
+
+code, uh, alloy has told us that our model allows
+
+things like this to happen.
+
+Uh, so we have to decide how we want to
+
+handle that.
+
+Um, Are people allowed to construct lists like this or
+
+are they not?
+
+If they're not, uh, we might say, uh, it's a
+
+precondition of using size that you haven't created a cyclic
+
+list.
+
+Or, uh, maybe that's something we put in as a
+
+check.
+
+Uh, we say in our documentation, um, uh, the constructor
+
+for list will, uh, throw an exception if you ever
+
+try and point to something that's already in the list,
+
+uh, probably wouldn't because that would be kind of expensive
+
+to check.
+
+Uh, we probably just put that as a precondition and
+
+say, um, you must not do this or size will
+
+give you, um Well, it it will just never return.
+
+So maybe we constrain things.
+
+So here we've got, um, a constraint.
+
+We've said, um uh, we we've got the same sig
+
+as before.
+
+Uh, and we've said no self successor.
+
+So for any node.
+
+It can't be the case that the node points to
+
+itself.
+
+So we might try that and discover that that still
+
+allows loops.
+
+Uh, so we'd end up.
+
+So here's an example of a a a two, a
+
+two node loop.
+
+Uh, and so we'd, uh, probably eventually discover that, uh,
+
+we're gonna have to use that little, uh, that little
+
+circum flex.
+
+That closure symbol, uh, which I said would mean, um,
+
+a node successor and the successor of that and so
+
+on and so forth until we hit the end.
+
+Uh, and if we wanted to rule out, um, loops
+
+completely, uh, yeah, we'd write them using the little circum
+
+flex and say No, no, it appears, uh, in the
+
+closure of the list of its successes.
+
+Uh, so we can also, uh, we can use check,
+
+uh, to check what sorts of things come up.
+
+Uh, and we saw examples of that in the workshop.
+
+Uh, run gives us some views.
+
+Uh uh, a few for that run command, which lets
+
+us see things you can also add in exceptions.
+
+So, for instance, um, if you were modelling an address
+
+book, you might have something like, um, name and address
+
+being sigs, Uh, address book being a sig.
+
+Uh, so that uses something we haven't seen before.
+
+It's got a function in it.
+
+Uh, you can say Show me examples of, um, up
+
+to size three, but limit yourself to just one address
+
+book.
+
+I'm not interested in seeing models with multiple address books.
+
+Uh, so you can say, but one book, uh, we
+
+won't look at functions this year.
+
+Uh, one thing that you may occasionally want to do
+
+is talk about, um, operations on things.
+
+So, um, a typical way of writing those in alloy.
+
+Uh, because alloy doesn't have a sort of a built
+
+in notion of, um of time.
+
+Uh, if you're talking about, um uh, some operation on
+
+a book.
+
+Uh, what you normally end up doing is you say,
+
+uh, imagine that there are two books b and B
+
+prime.
+
+So I've mentioned the the prime symbol before, uh, in
+
+maths.
+
+Uh, prime often means, um uh, so B prime often
+
+means b, but at a later time or B but
+
+one step afterwards, or, uh, something that's in some way
+
+related to, uh to the original B So here, uh,
+
+B and B prime are, uh, a book and the
+
+same book after we've just done something to it.
+
+Uh, and we can write predicates that say the relation
+
+between them is, uh, that b prime, uh, is the
+
+original book, Uh, plus one new thing added.
+
+So that's how we typically model operations if we need
+
+to.
+
+Because everything we've seen so far just talks about, um,
+
+static properties of the model.
+
+Uh, so we've sort of looked at sigs, and we
+
+say you can have, um, uh, relations between sigs.
+
+But we haven't talked about, um, the equivalent of methods,
+
+Um, this sort of thing.
+
+So this sort of predicate, uh, is how you model,
+
+uh, methods that OK, so, uh, a a benefit of,
+
+uh, starting things using a, um a simple, uh, specification
+
+language like alloy is that we can start modelling what
+
+our system is gonna look like before we even decide
+
+on, uh, what language?
+
+We're gonna implement it in, uh, how we're gonna implement
+
+particular attributes.
+
+So, like, uh, if we're modelling some social media site,
+
+uh, we can start our model, uh, before we've decided
+
+that we want to implement it in, say, P h
+
+p or even what kind of data structure we're gonna
+
+use for friends.
+
+Uh, alloy will let us, uh, just say we're gonna
+
+model, uh, users.
+
+Users can have a set of friends.
+
+It doesn't matter for the moment, Uh, what data structure
+
+we use, Uh, just show us what the consequences are,
+
+uh, of creating a model in this way.
+
+Uh, and it's easier to see, uh, what our model
+
+is when we haven't, um, added in, uh, all the
+
+details that something like Java forces us to add, like,
+
+uh, constructors and, uh, extra types.
+
+Uh, so we start with a small model, we build
+
+it up, Uh, we we ask, is it too loose?
+
+Is it too tight?
+
+And eventually settle on, uh, something that matches what we
+
+want.
+
+Uh, and then we would, um, uh, start to implement
+
+that on code in code.
+
+So I will just mention that, um um, in the
+
+lab and in this lecture, we have talked about, um,
+
+checking our model.
+
+So making sure that our model matches up with idea
+
+our idea of what we want.
+
+Um, if you read about formal methods, there is something
+
+called model checking, which is a different thing.
+
+So if people say, um, uh, usually it's obvious from
+
+context.
+
+Uh, if people talk about building up a model and
+
+checking that model to see if particular things hold, uh,
+
+then they mean checking the kind of, uh, assertions that
+
+alloy has if they just use model checking on their
+
+own.
+
+Uh, typically, they're talking about, um, temporal logic.
+
+So, uh, I said there's another sort of modelling language
+
+T l a temporal logic of actions I think it
+
+stands for, um So, uh, you might see something like
+
+Microsoft uses model checking to, uh, validate.
+
+Um, device drivers, Uh, which is true, Uh, Microsoft has
+
+got, um, uh, a model checking system for doing that.
+
+Uh, I think Daphne came out of the same research.
+
+Um, but what they're talking about is not, uh, not
+
+this sort of thing.
+
+Sort of, um, prototyping a design and, uh, checking our
+
+assumptions.
+
+Uh, they mean, uh, running something.
+
+Us using a temporal logic language, uh, to predict things
+
+like, um, uh, deadlocks of processors, that kind of thing.
+
+Ok, so, um, comparing alloy with, uh, the other sort
+
+of formal method that we've looked at, which was, um,
+
+verification in, uh, in Daphne.
+
+So in Daphne, once we've, um once we've proved that
+
+something works that something meets its, um, post conditions.
+
+If the preconditions are true, uh, then we're guar.
+
+Then that's a We've effectively constructed a mathematical proof, so
+
+there's no way of it being false.
+
+Uh, unless something about our, um, our sort of basic
+
+assumptions were incorrect.
+
+So for verification, Uh, if we verify a bunch of
+
+methods, uh, we've proved that they meet their specification.
+
+Uh, alloy doesn't do that.
+
+It doesn't prove that a model is consistent.
+
+So we could be wrong about, uh, things.
+
+So if we say, uh, Alloy checked this assertion up
+
+to models of size five, if it turns out there
+
+were exceptions at size, uh, six.
+
+Um, alloy wasn't wasn't proving that a model was consistent.
+
+It was just saying I can't find any counter examples.
+
+Uh, you know, at all the at all the many,
+
+you know, thousands or millions of, uh uh, examples I
+
+generated.
+
+I can't find any counter examples.
+
+Uh, and for a lot of systems, that will be
+
+enough.
+
+So for a lot of cases.
+
+If there are bugs, we will find them in the
+
+small models.
+
+Alrighty.
+
+So that is the last we'll look at for alloy
+
+is almost, um uh, 3 50.
+
+So we will take a short break till four.
+
+So 12 minutes.
+
+Um, if you have got particular topics you wanna look
+
+at, then, um maybe think about those now, if you've
+
+got, um So I'm going to open up one of
+
+the, uh, previous exams and have a bit of a
+
+look at one of the questions there.
+
+If there are particular questions from previous exams that you
+
+want me to look at, then, um, yeah, maybe, uh,
+
+bring those up and tell me what you are, what
+
+they are.
+
+And, uh, i'll, uh, i'll go through them.
+
+OK, so yes, a question question with me.
+
+Individual test.
+
+This is described.
+
+OK, so the number of tests might be quite large.
+
+Have you started on that?
+
+What sort of numbers are you looking at?
+
+So if they're getting so the reason it says described
+
+rather than exhaustively list.
+
+And there's a word limit on it.
+
+Well, I don't know.
+
+Maybe in 1000 words, you can list them all but
+
+we very repetitive and dull.
+
+So, uh, because it says describe, you could actually just
+
+say, um, you know, I've got whatever it might be
+
+100 tests.
+
+They all look very similar, except that we vary blah,
+
+blah, blah.
+
+Does that make sense?
+
+Yeah.
+
+So you don't You don't have to list them exhaustively.
+
+Um, so one of one of one of the virtues
+
+of a software engineer is that that ideally, we should
+
+be lazy.
+
+We should try and minimise the amount of work we
+
+do once we see that something is extremely repetitive and
+
+we're generating, you know, 100 tests that all look the
+
+same.
+
+Uh, we try and reduce that repetition, and we just
+
+say, um, yeah, here's a basic test.
+
+All the others look just like it.
+
+Except we're varying, blah, blah, blah, blah.
+
+Yeah.
+
+So, um, so, in actuality, you probably need don't need
+
+terribly long at all.
+
+You could just say, um, yeah, I I need to,
+
+um here are several base tests.
+
+Um, here are the things I would vary.
+
+It gives us roughly like you don't have to give
+
+exact figures, but you might say, and this gives us
+
+roughly whatever it is, 100 or several 100 tests.
+
+And, um and we know that they have production coverage
+
+because you point to the grammar, and you say, why
+
+does that make sense?
+
+So related to question when we're supposed to apply, I
+
+forget.
+
+It says in the spec which ones it applies to.
+
+I think it does apply to that one.
+
+Yes.
+
+So, your test will there'll actually be a smaller number
+
+of?
+
+So if we, uh, if it is one of the
+
+ones that those restrictions apply to, um then we assume
+
+that, um, whatever it is, airport codes are always a
+
+to D or something.
+
+Um, so that is a lot less tests than if
+
+they were a to Z.
+
+But yeah, they're still going to be very repetitive, so
+
+we can summarise them.
+
+Yep, nothing to show you.
+
+But in theory, if we looked through the code base
+
+and we found that the job doesn't match the code,
+
+we mentioned it.
+
+You can, OK.
+
+I mean, but it obviously doesn't.
+
+I mean, like, nearly all the classes are empty.
+
+So, um, you know, uh, the reason is exactly if
+
+I give people an implementation, people start to write their
+
+tests.
+
+So they match the implementation, which is the exact wrong
+
+thing to do.
+
+So I got a whole bunch of people last year
+
+that got very got zero for all of their unit
+
+tests because they altered their unit tests to pass when
+
+the code was clearly wrong.
+
+So this year, you get no code at all.
+
+Therefore, it should be utterly obvious that, you know, I
+
+I downloaded the source code, like, three times to figure
+
+out like we do testing.
+
+Exactly.
+
+Exactly.
+
+So it's all good.
+
+Uh, so I was wondering if I could quickly advertise
+
+the C f C projects.
+
+Um, yes.
+
+I'll do it when we record.
+
+Thank you.
+
+I OK?
+
+Yes.
+
+What you talking to Wesley about before the production coverage?
+
+There are two definitions of coverage.
+
+The production coverage.
+
+Where did you get the other one?
+
+From the lecture you've written in the lecture.
+
+You wrote the book.
+
+It's like the number of rules.
+
+But then you kind of go on to basically say
+
+that production right?
+
+OK, the reason is because, um in B and so
+
+the more limited version, it doesn't have alternatives at all.
+
+Instead, what it has is if you want to show
+
+an alternative, you write the same rule multiple times, but
+
+with different stuff on the right hand side.
+
+So if you want to say and and F is
+
+fine so B and F is so incredibly awful that
+
+everyone normal uses e and F.
+
+But that introduces the problem that now we've got things
+
+that are rules that are kind of, um, yeah, just
+
+an alternative somewhere on the right hand side.
+
+So I've kind of used rule to mean everything that's
+
+written on a line and production to mean one of
+
+the alternatives.
+
+So to be so you should.
+
+I kind of did it well, if you mentioned both
+
+because my other thing was that, like in my you
+
+talked about, I saw somewhere at the I should clarify
+
+that in the notes.
+
+But the brackets are the alternatives as well.
+
+OK, so if you've got brackets, it means yes or
+
+no, it's two.
+
+No, no, no, no, no.
+
+Oh, wait for what?
+
+For the we're using.
+
+So the stuff from the B and playground does.
+
+It's using brackets.
+
+Just a group.
+
+It's not.
+
+It doesn't mean optional optional is question mark question.
+
+OK, and then how does so?
+
+That means that means zero or more.
+
+So it's not an alternative.
+
+It's an operator.
+
+It's a separate thing.
+
+So it doesn't mean you've made a new alternative.
+
+It's kind of a built into the language that it's
+
+just zero or more, Um, so that that's that's two
+
+different things.
+
+So because so on some of my lines, I have,
+
+um, grouping because it makes sense to use it.
+
+So now I understand that that's not an alternative, but
+
+it's the grouping.
+
+So But then my other question then is if I'm
+
+using the style like I have for the segments, does
+
+that mean then that theoretically production coverage is almost like
+
+no, right?
+
+Oh, because it's Yeah.
+
+Yeah, yeah, yeah, it doesn't.
+
+So it means that derivation, uh, derivation coverage is impossible
+
+because it's a lot more production coverages, as you wanted.
+
+Yeah, production coverage.
+
+So the operators, um mm.
+
+The operators don't change the number of productions, but, um,
+
+that's kind of just the way that context free grammar
+
+are defined.
+
+So, um, if we were writing it out in B
+
+N f, we would still have the, um we wouldn't
+
+have bars anymore and we wouldn't have parentheses.
+
+But we could still use, um, a star.
+
+So if I write, I was trying to avoid having
+
+to sort of discuss the discrete methods of context free
+
+grammar.
+
+But we don't have to No, no, no, no.
+
+I just mean, I think I made a mistake because
+
+because those are good questions.
+
+The answer is, the math just doesn't work that way.
+
+OK, so basically, I should just be paying attention to
+
+the Yes, exactly.
+
+Just the pipes and just the OK, great.
+
+I can do that.
+
+And then in the they're just grouping your bra group.
+
+OK, great.
+
+I can do that.
+
+Also, I would be careful that you don't do more
+
+than is asked for.
+
+So if the syntax is treat dates, as you know,
+
+all syntactically valid 0 to 9, don't try and be
+
+clever and do more than he's asked for Like like
+
+a month.
+
+A month in the grammar, Uh, 99 is a valid
+
+month.
+
+OK, just I know some people have tried to limit
+
+the dates to that.
+
+Ok, good.
+
+I just mentioned the common trap for but there are
+
+more tests, so I'm sure at this point is the
+
+end, OK?
+
+I think that's mostly it.
+
+We'll see what happens with the rest of it and
+
+put an effort anyway.
+
+I mean, usually, um, usually the tests that you've already
+
+seen count for most of the marks.
+
+So if there are, you know, nasty counter examples in
+
+the remaining tests, it's usually like only one mark out
+
+of four.
+
+Anyway.
+
+So, uh, if, um if you pass the existing ones
+
+and whatever you've written is in reasonably good style so
+
+you know, the the the usual variable names in English,
+
+Not ridiculously long lines.
+
+Then that's That's the majority of the marks, So should
+
+be fine.
+
+Yeah.
+
+Yeah, you and change.
+
+So too often, 400.
+
+Alrighty.
+
+So Oh, yeah.
+
+Uh, just to confirm, I think you did you say
+
+that the operators and the media?
+
+Yep.
+
+So, uh, for so in the in the lecture notes
+
+has sort of, um, tried to avoid an exhaustive discussion
+
+of the maths behind context free grammars.
+
+But, um, maybe I did need to put some of
+
+it in, cos uh, it's kind of it seems confusing
+
+otherwise, but yeah, um uh a, uh, production is just
+
+some alternative on the right hand side.
+
+Uh, the operators don't add to alternatives.
+
+Um, the the The reason is kind of, um, originally,
+
+when people just wrote b n f to write an
+
+alternative, you did, Um, OK, so original B n f
+
+has no parentheses, and, uh, no alternative symbols.
+
+Uh, all it has is, um, left hand side and
+
+right hand side.
+
+And on the right hand side, it's a It's a
+
+list, uh, of non terminals and terminals.
+
+And that's enough to describe a er a grammar, but
+
+is very, very, uh, and annoying And so in practise.
+
+Uh uh, But it still allows, uh, stars.
+
+And, well, it still allows stars.
+
+Um so the what The the star the it's called
+
+the cleaner star.
+
+Uh, after the mathematic mathematician who invented it, uh, is
+
+the only thing allowed in B n f.
+
+So that is a valid B N f grammar.
+
+And it's got, um, we'd say it has two rules
+
+or two productions, but it has, uh, infinite derivations because
+
+there's a star in there.
+
+So, uh, other things we can't do, so b n
+
+f on its own, it doesn't have um, the nice
+
+little range sort of symbols.
+
+So, uh, in extended B N f, there's nearly always
+
+a way of representing, uh, digits or ranges in, uh,
+
+original B N F.
+
+You have to spell that out as 26 different letters,
+
+which is very tedious.
+
+Uh, so in original B N F, it's kind of
+
+more obvious what a production is because there's only ever
+
+one per line because there's no pipes, no alternatives.
+
+Uh, no one likes to write that, so we nearly
+
+always write this.
+
+But now it's, uh, whoops.
+
+It's a little less clear what?
+
+Uh ah, that should have been in a now it's
+
+a little less clear what a production is.
+
+And the answer is it's a thing, uh, on either
+
+side of a pipe.
+
+Uh, and if we put things so our original B
+
+n f doesn't have brackets.
+
+Um, if we put things in brackets that all who
+
+can end up adding, um, adding to the number of
+
+alternatives.
+
+But, um, yeah, star plus and question Mark.
+
+Um, don't don't increment the number of productions.
+
+Uh, and if they did, then a method called Count
+
+Productions couldn't work because as soon as you put a
+
+star in, the answer would have to be infinite.
+
+So, um so if you've accounted for the common cases
+
+So if you've accounted for pipes and you've accounted for
+
+that so because the, um uh the the shorthand for
+
+a range of things, uh is just so h c
+
+is just syntactic trigger for A or B or C
+
+all in quotes.
+
+Uh, if if accounted for that, then you know your
+
+your number of productions should be right.
+
+Uh, I also had a query about, uh, one of
+
+the last questions.
+
+OK, so Question eight asks you to describe a set
+
+of test cases which have production coverage, you may discover
+
+that there are a very large number of them.
+
+The reason it says describe and not list is because
+
+it would be very boring for the marketers to read
+
+and for you to write.
+
+Uh, if it turns out that there's hundreds of them
+
+and there may well be then, um, I mean, there
+
+might be fewer, uh, but you'll have to You'll want
+
+to come up with some kind of, um, uh, idea
+
+of how many there are.
+
+Uh, so the reason it says describe is because you
+
+might come up with a a shorter way of describing
+
+them other than just listing them.
+
+So you might want to say, Here are some sort
+
+of base tests and I would have you know, 100
+
+more that do the same thing but are different in
+
+this manner or something like that.
+
+Um, so, uh, yeah, a virtue of software engineers is
+
+laziness.
+
+Uh, we try not to do more work than we
+
+have to.
+
+If something starts to look very repetitive, then, uh, if
+
+you plug away and do the same thing 100 times,
+
+then you're not a very good software engineer.
+
+Good software engineers find ways of, um, reducing repetitiveness.
+
+So, uh, describe does not mean the same as list
+
+here.
+
+Uh, were there any other project queries before we?
+
+Oh, really?
+
+You've done that?
+
+Yeah.
+
+Really?
+
+I didn't think anyone would.
+
+All right.
+
+What, did you write it?
+
+Oh, OK.
+
+Oh, OK, Fair enough.
+
+Yeah, I can see it probably wouldn't be that hard
+
+in python once you got the passing working anyway.
+
+Yes.
+
+Oh, yeah, yeah, yeah.
+
+Uh, yeah.
+
+So, um, what's the other one, uh, clip or something?
+
+There's a few good, um, python command line passing things,
+
+but, um, yeah, anyway, yes, just put it under assumptions.
+
+So, um, uh, I was, uh, expecting so few people
+
+to do an extension that I didn't put a question
+
+in for it.
+
+So just, um uh, add it to assumptions if you
+
+like and, uh, give me a link, but yeah.
+
+Any other queries about that?
+
+The only thing I was gonna ask was it It
+
+required a slightly different commands.
+
+That doctor run because you needed to run up in
+
+interactive move.
+
+Oh, that's fine.
+
+Yeah.
+
+Uh, but can't you just go to Docker?
+
+Run, Dash?
+
+Yeah, yeah, yeah, that's fine.
+
+Yeah.
+
+Uh, as But as long as I can start up
+
+using docker, then I'll be I'll probably be very impressed
+
+that anyone, uh, got it done at all.
+
+So, um, good work.
+
+Uh, any other project questions?
+
+Uh, let's have a quick quiz.
+
+Uh, so I said things traps to avoid a Ah
+
+ah.
+
+Don't.
+
+Oh, yes, yes.
+
+Yep.
+
+So it says we're using the syntax from the B
+
+N F playground.
+
+B N F Playground uses the the A to Z
+
+or, you know, the the rain shorthand.
+
+So that's included in productions.
+
+Um, what was the other thing?
+
+Oh, I was saying you should try and make sure
+
+you grammar is sticks to the specification and doesn't do
+
+doesn't do less than is asked for, but it also
+
+shouldn't do more.
+
+So don't try and validate, um, more things than you've
+
+been asked to validate if the If the question says
+
+syntactically correct date.
+
+Can I have months 99 then that's it.
+
+A syntactically correct date.
+
+You can have month 99.
+
+Don't.
+
+Um uh, because the tests, we check to make sure
+
+that you you accept things that are in the spec
+
+and reject things that are out of the spec.
+
+Uh, count terminal symbols is fairly straightforward.
+
+Exhaustive testing count productions.
+
+It should.
+
+I hope no one's found it.
+
+Except for the first question.
+
+I don't think there's anything in there that's like, stupendously
+
+difficult.
+
+So yeah, there's yes, there are 10 questions, but it
+
+should have been pretty easy to kind of squeeze in
+
+amongst, um uh, work for other units.
+
+Uh, ISP stuff is straightforward.
+
+Segment some command.
+
+Uh, and I think I mentioned last week if you're
+
+going to say something is, um, too hard.
+
+Ah, it's a good idea to put some kind of
+
+estimate on it.
+
+Like, Why are you saying it's too hard?
+
+Because you'll look kind of silly if you say it
+
+would be far too hard to test blah, blah, blah.
+
+Uh and it turns out that in fact, you know,
+
+it would only take three test cases or something.
+
+So part of good software engineering is, um, being able
+
+to estimate how much work is involved in particular sorts
+
+of things or how you know, many examples there are
+
+of particular sort of things.
+
+So that's a a good, uh, a good thing to
+
+put into, uh, into practise.
+
+OK, other project stuff?
+
+No.
+
+Alright, let us look at a previous exam.
+
+So, uh, this year's exam will be on computer, which
+
+is nice, because it will mean that I don't have
+
+to interpret people's handwriting.
+
+Uh, it will mean that you don't have to perform
+
+the slightly silly exercise of, you know, writing Java code
+
+on paper.
+
+So you'll, um, will be in computer labs in the
+
+engineering building.
+
+Uh, you'll have access to mood.
+
+You'll have access to all the lecture notes.
+
+Um, and, uh, the lab, uh, lab worksheets, uh, access
+
+to the alloy cheat sheet.
+
+So And you can also take in a page an
+
+a four page of handwritten notes.
+
+Um, really, though the purpose of the notes is, um,
+
+really just to get you to, uh, revise and summarise
+
+what's in the what's in the unit because it is
+
+just a two hour exam.
+
+And in two hours, um, you usually either know something
+
+or not.
+
+And so having a a page of notes, uh, isn't
+
+necessarily going to be, uh, of too much assistance.
+
+Um, however, we don't permit access to, um the Web
+
+or other things.
+
+So the exam will get will be invigilated We we
+
+don't expect to see really anything other than, uh, uh,
+
+mood or, uh uh, copies of the, uh, the lecture
+
+notes on people's screen.
+
+Um, so it will differ in that previous exams were
+
+all just hand handwritten and just had long answer questions.
+
+Uh, so this one will, because we can do it
+
+on a computer.
+
+Uh, we will have more coding based questions.
+
+Uh, but nevertheless, the previous the previous exams are still,
+
+um uh, a reasonable guide to the sort of things
+
+that you might see asked.
+
+Um, so, uh, the labs.
+
+So anything that we we've done in labs we might
+
+ask you to do in the exam, Uh, and less
+
+so lectures.
+
+Um, because we've looked at occasional things in lectures which,
+
+um, uh, some topics just don't make for particularly good,
+
+uh, exam questions, but, um, yeah, in general, the previous
+
+exams are still a an OK guide.
+
+So we've got this is from I think, the 2020
+
+exam, Uh, so often you'll get given some kind of
+
+scenario that, uh, several problems, uh, apply to, uh, So
+
+in this case, um, we've got a A navigation system,
+
+uh, describes a class.
+
+It says we've got, um, uh, a database connection, a
+
+start location, an end location and a plan plan route
+
+method, Uh, that tries to plan some way of going
+
+between, uh, two locations.
+
+Uh, it tells you that, uh, the database connection holds
+
+a, uh, a connection to, uh, a database server Where,
+
+uh, all the information needed to calculate routes is, uh,
+
+contained.
+
+Uh, it tells us what's in the location.
+
+So location is, uh, a longitude and latitude position.
+
+Uh, and when plan route is called, uh, it stores.
+
+So location A and location B will get stored into
+
+the, uh, the instance.
+
+Variables here, Uh, and the particular, um, you know, turnings
+
+and so on that we're gonna use get, um, added
+
+to the database.
+
+Uh, and it says during the course of a trip,
+
+we might amend the start and end locations.
+
+Uh, and it gives us as a requirement for correct
+
+operation of the navigation subsystem that start location and in
+
+location are not the same place.
+
+So, um, one of the things that we've spent some
+
+time on is looking at, um, preconditions and post conditions.
+
+Uh, and, uh, we've talked a little about class invariants
+
+so and something like this, uh, it's the first thing
+
+that you think of when you're, um, looking through any
+
+kind of a description like this is you should be
+
+thinking about, uh, you should be bearing in mind sort
+
+of key words that indicate that, uh, something is, uh,
+
+a precondition.
+
+Uh, any suggestions as to what sort of words you
+
+might be looking for for preconditions?
+
+No.
+
+Right.
+
+No guarantee, uh, is a big one.
+
+Uh, the definition of a precondition is that it's something
+
+which, um, uh, if it's not satisfied, uh, behaviour of
+
+whatever code you're looking at is undefined.
+
+So if we go to Wikipedia and we look at
+
+precondition, that's exactly what we'll see.
+
+So when you're reading through a description like this, then
+
+anything it won't always be in the words, this is
+
+a precondition.
+
+Sometimes it might say no guarantee is provided.
+
+Ah, but that means exactly the same thing.
+
+Um, so a precondition here is that, um, start location
+
+and end location cannot be the same place.
+
+Um, and there's a few others there like, um, is
+
+not mentioned.
+
+But, um, if we have a connection to a database,
+
+so it's not completely clear in the description Is this
+
+like a database that sits in the car?
+
+You know, is it part of the the car navigation
+
+system, or is this connecting a server?
+
+But, um uh, either way, we could make some assumptions
+
+and say, um uh, it looks like an implied navigation
+
+that you can actually reach the database if it's if
+
+it's remote.
+
+So we'd say, um uh, kind of as a as
+
+a matter of general knowledge.
+
+Uh, it would be very difficult to have something that
+
+operated correctly if it couldn't reach the database.
+
+So we might add in as a precondition that you're
+
+able to connect to that database.
+
+Um, you know, you might come up with other things.
+
+What else does it say?
+
+The following scenario are not yet supported.
+
+Is also, uh, a key phrase for things that might
+
+be preconditions.
+
+It says, um uh, navigation between two cities.
+
+So, uh, is not yet supported.
+
+Um, so apparently our locations have to be just in
+
+one city.
+
+So even though it doesn't say this is a precondition,
+
+uh, if it's if it's not supported, it just can't
+
+do it.
+
+Uh, so, uh, you could probably list that in your
+
+preconditions as well and say, um, start location and end
+
+location must be in the same city.
+
+Um, when you're asked for invariants.
+
+Oh, yeah, a precondition is a precondition.
+
+Well, yeah, It's certainly the case that if there is,
+
+uh, if there's something that you can reasonably infer.
+
+Uh, but that isn't stated in the specification then.
+
+Yet that might still be a a sensible precondition.
+
+Uh, I mean, Yeah, Yeah.
+
+So, I'll I'll leave it at that.
+
+Uh, when it comes to class invariants some of the
+
+things that you've identified as preconditions.
+
+So the difference between preconditions and class invariants um, preconditions
+
+are part of the API.
+
+So they're part of the public thing that the user
+
+sees.
+
+So if I'm writing a class, then, um, the preconditions
+
+are part of the public contract.
+
+That's kind of offered to you.
+
+And they say if you do this, if you satisfy
+
+these preconditions, I promise my class will do blah, blah,
+
+blah.
+
+Uh, invariants are something that, um, the implementer only is
+
+concerned with.
+
+They're not normally, um, made public because they can depend
+
+on the exact implementation.
+
+So, um, an example of that would be in Java,
+
+one of our, uh, Java tree map.
+
+Yeah.
+
+OK, uh, I mean, so let's say that we have
+
+some kind of class, some kind of general class map,
+
+Uh, and it lets you store things by key.
+
+So it has add, lets you store things, Uh, so
+
+you can store things under a key.
+
+You can look things up via a key.
+
+Um, what's in the public?
+
+API will just say, Uh, here's what There will be
+
+something saying, Look at her.
+
+Let me just make that a bit bigger.
+
+Uh, OK, so in the public API, it'll say things
+
+like, what happens?
+
+So for for maps in particular, uh, it actually probably
+
+will say something about Knowles.
+
+So normally, we've said it's a generally an implied precondition
+
+that you just shouldn't pass, Knowles.
+
+But you might actually want to store Knowles as a
+
+value or as a key.
+
+So the documentation here for a full A full map
+
+class, uh, probably would say something about what happens.
+
+Uh, when you try and store or retrieve knoles.
+
+Uh, the the Java approach to this is generally considered
+
+to be kind of bad.
+
+Um, so we'll have an ad and we'll have a
+
+retrieve, and all of the methods will have some kind
+
+of, um, preconditions and post conditions.
+
+If you do this, I promise to do blah, uh,
+
+in variants.
+
+On the other hand, something that only the implementer ever
+
+sees.
+
+So they're not written as part of the public API.
+
+They're something that the implementer has to care about.
+
+Uh, and I haven't no idea off hand how Java
+
+implements a tree map.
+
+I mean, it's a It's a red black map, I
+
+think.
+
+Um, but yeah, Who knows what?
+
+Um, it's probably Well, it'll have a node.
+
+Uh, so it'll have something like private, No route.
+
+So the invariants will be things Not that the user
+
+has to keep in mind, because all you care about
+
+is the, um, the public API and these preconditions and
+
+post conditions, the invariants.
+
+Will be things that I, as the implement have to
+
+keep in mind about, um, how the private variables relate.
+
+Uh, What?
+
+Yeah, What kind of things make for sensible combinations and
+
+what kind of things don't, uh, so in, um, a
+
+tree map?
+
+Um, how that actually is implemented is, uh is it
+
+uses what's called a balanced tree.
+
+And when you try and insert, I don't know, say
+
+you're storing things by letter and you insert, uh, too
+
+many things near the start of the alphabet.
+
+Uh, it tries to stop you from getting a a
+
+sort of a very left heavy tree and automatically Rebalances.
+
+And there's things that the employer has to worry about,
+
+uh, about how to do that rebalancing.
+
+They're sort of in variants.
+
+That sort of you kind of imagine that the tree
+
+is in layers of red and black and you can
+
+never have the same colour adjoining itself.
+
+But, um, the end user never has to worry about
+
+those invariants.
+
+Sometimes, uh, something that is a precondition will end up
+
+as an invariant as well.
+
+So or a closely related thing like, um if we
+
+require connectivity to a database, then, uh, it's probably a
+
+precondition that you're able to connect.
+
+Um, it's probably an invariant as well, because it's something
+
+that I, as an implementer have to worry about.
+
+I might have as an invariant uh uh like a
+
+a simple one.
+
+Might be if we lose connectivity to the database.
+
+Um, well, the INVARIANT is we always must have connectivity.
+
+Otherwise, everything just sort of goes to crap.
+
+So, uh, that might be an invariant as well, But,
+
+um, in general, the invariants are gonna be things that
+
+the implementer has to worry about.
+
+So class invariants would be, uh, so if something's if
+
+something just doesn't make sense and it's undefined, probably that
+
+will end up being an invariant, uh, an A class
+
+invariant as well um, so it's definitely true that, um,
+
+the start and end location being different.
+
+Yes, they are a precondition.
+
+But they're also something that I the implementer have to
+
+worry about.
+
+And if I ever muck up my code and make
+
+them the same, then something's gone terribly wrong.
+
+So that should be, uh, an invariant as well.
+
+Uh, connectivity is an invariant.
+
+In this case.
+
+I don't think there's any additional things in the class
+
+in variants that aren't also preconditions of some sort.
+
+But, um, it's not always the case.
+
+So, um, in general, the more kind of, um the
+
+more complicated the the private instance variables are.
+
+And, uh, the more of them there are and the
+
+more sort of ways they could relate.
+
+Then the more internal stuff a programmer will have to,
+
+um, keep track of.
+
+And, uh, the more invariants there are gonna be, I'll
+
+give you a simpler example of one.
+
+So I said, here's a map class, and it stores
+
+things by key.
+
+Uh, if we wanted to implement that, here is a
+
+very simple way we have in a constructor.
+
+Um, if we wanted to have kind of a map
+
+or a dictionary that lets you look up, Um, keys
+
+and values.
+
+One way to do it would just be to have,
+
+um, effectively two arrays, an array of keys and an
+
+array of values.
+
+Uh, whenever someone, if someone asks, um, what's the size
+
+of the map at the moment?
+
+You just look at one of those and you say
+
+I currently have, you know, zero things in there or
+
+one thing in there.
+
+Uh, whenever someone adds a can of value, you just
+
+add them to the end of the list.
+
+So, uh, add something to the dictionary would just be,
+
+uh, add the key to keys and add the value
+
+to values uh, an invariant here, uh, so something that
+
+I, as the implementer have to make sure I never
+
+violate, is that the keys and values must always have
+
+the same length.
+
+If they end up different, then I, as the implementer,
+
+have done something terribly, terribly wrong.
+
+Um, so it's a constraint on the shape of the
+
+data on what the the private the private implementation looks
+
+like.
+
+And it says what kind of things make sense and
+
+what kind of things indicate that we've got into some
+
+kind of corrupt, erroneous state.
+
+And nothing from now on is ever gonna you know,
+
+is ever going to be good.
+
+Um, it's a pretty quick one to check.
+
+So if we wanted to check an invariant like that,
+
+we could actually put it.
+
+It would be tedious, but we could sort of put
+
+it at the start and end of So we know
+
+that class invariants have to be true before a method
+
+starts, uh, executing and after it's finished.
+
+Um, so we could just put a check, you know,
+
+his size of keys the same as size of values
+
+before and after every method.
+
+Uh, the the user would never see that, uh, but
+
+as a as an implementer.
+
+Well, unless we made a mistake and the, uh uh,
+
+our ass session got broken.
+
+Ah, but as an implementer, it is something that we
+
+would have to worry about.
+
+So that's kind of the the simplest invariant that I
+
+can think of.
+
+Ah, and it's something that's not in the, um, not
+
+in the specification, because the specification is just sort of
+
+all about externally observable stuff.
+
+So that would So in this case, I don't think,
+
+um, for this question, there's any invariants that aren't already
+
+kind of public knowledge.
+
+In fact, those aren't even marked as private, which is
+
+pretty bad.
+
+But, um uh, but there could be, in some cases,
+
+uh, briefly state a failure.
+
+Uh, what's a possible failure?
+
+You can imagine, Uh, so remember that if something isn't
+
+guaranteed, then doing ridiculous things, um, you know, when the
+
+guarantees are broken doesn't count as a failure.
+
+So here, if someone manages to enter a start location,
+
+Uh, that's the same as, uh, the input start location.
+
+That's the same as the end location.
+
+And, um, you know, the navigator system blows up.
+
+That's not a failure because we said there is no
+
+guarantee the system is allowed to explode.
+
+Uh, if they're made the same.
+
+So, uh, one common error that I see have seen
+
+in previous years is, um, people give examples of things
+
+going wrong when a precondition is violated.
+
+But that's kind of exactly incorrect, because a precondition ah,
+
+lets you say anything is allowed.
+
+If the precondition is broken, something going wrong would be
+
+when we've satisfied all the preconditions.
+
+So, you know, the database system is connected, Uh, the
+
+location, start and end are different.
+
+Uh, everything looks fine, but we call plan route, and
+
+it doesn't do what it says it would do.
+
+It doesn't actually like.
+
+One thing it says is is it will, um, add
+
+our route to the database.
+
+So if it doesn't do that, then that would be
+
+an example of a failure.
+
+Uh, and, uh, yeah.
+
+So if you give reasonable answers for those three, then,
+
+um, that gives you most of the marks.
+
+Uh, in this year's exam, we probably will give you,
+
+um, more of the code.
+
+Uh, so there'll be actual code to look at, and,
+
+um, um I forget whether a V s code is
+
+installed by default on Web machines.
+
+But if it is, you can you can open it
+
+up.
+
+Otherwise, you can look at it in, uh uh, just
+
+notepad or something.
+
+So there will be, um, probably a slightly larger Yeah.
+
+So when it was, um, purely a paper based exam,
+
+we often had, um, very small code fragments.
+
+There probably will be a bit more for you to
+
+look at this year.
+
+Um, there will be some short answer or multichoice questions,
+
+but, um, they'll be pretty similar to the kind of
+
+things you've seen before.
+
+Um, if you've got, um, there won't be anything on
+
+state charts, so we haven't covered those in labs this
+
+year.
+
+So, um, uh, if in previous exams you see something
+
+that we so this year we only saw state charts
+
+in one slide of one of the lectures.
+
+Um, if we haven't worked through something in detail in
+
+a lab, then we probably won't use it as an,
+
+uh, and so it's unlikely we're gonna use it as
+
+an example in the exam.
+
+Uh, but things that we have done in the labs,
+
+uh, we have looked at, um, prime paths, for example.
+
+So that's something that, um, that could come up.
+
+Were there any previous exam questions that people or topics
+
+that people wanted me to look at specifically for?
+
+Uh, I'll mention, um, so most most of the exams
+
+have at least one question on formal methods.
+
+What's this got?
+
+So it's got one on alloy.
+
+It has nothing on Daphne.
+
+Uh, because we only spend, uh, roughly a week on
+
+each, Uh, the questions aren't going to ask for, uh,
+
+enormous detail in in a model.
+
+Um, so the 2020 exam in, uh, some of the
+
+previous years, we had more time to spend on on
+
+alloy.
+
+The questions were a bit more complex.
+
+Uh, this year, yeah, we've only had a week.
+
+So the questions in general aren't gonna go beyond what
+
+we've seen in the in the labs.
+
+So if you can handle what was in the labs,
+
+you should be right.
+
+Um, yeah, The the labs are a are a pretty
+
+good guide, so Yeah.
+
+Oh, sorry.
+
+So, yeah.
+
+Were there any particular topics that people wanted me to
+
+look at?
+
+Yes.
+
+Run.
+
+Uh uh, OK, it's basically show me examples.
+
+Um, the sort of quirk of it is, uh, it
+
+insists you write something called a predicate first.
+
+So sort of like a philtre For what exam?
+
+What sort of examples you want to see?
+
+But you can always make the the philtre kind of
+
+empty.
+
+Which means just show me anything.
+
+So the very, uh, there is, I believe I believe
+
+from recollection.
+
+There is an example in the lab.
+
+There must be, because otherwise we wouldn't have had, uh,
+
+anything to look at.
+
+So Let's just look at the lab.
+
+Uh, our right.
+
+Yeah.
+
+So, uh, like, if I were designing the language, I
+
+probably would have made this, um, predict kind of part
+
+of the run command and having it instead of having
+
+it a separate thing.
+
+But, um uh, so we have to write a predicate,
+
+but it can be empty, and we just say, Run.
+
+The simplest one is, uh, run a name of predicate.
+
+And then for a number, I think so Run.
+
+Example for three.
+
+Uh, and it means go and construct every single example
+
+of this possible universe up to a, uh, a maximum
+
+size of, um, three entities of any sort.
+
+So any set it it constructs will, um, have a
+
+maximum size of three.
+
+Um, we don't have to put, uh, anything else there
+
+so we could just leave it as a number.
+
+And to be honest, I'm not gonna quiz you on
+
+the exact details of the run command syntax.
+
+Um, as long as you um, know what run does.
+
+And, uh, if you're asked to put in, uh, a
+
+run command, you do.
+
+So, then, uh, that will be enough.
+
+So there is, uh, a lot of flexibility.
+
+Uh, like I said, it's a bit like querying a
+
+database.
+
+You're sort of saying show me results that have, uh,
+
+exactly here, two houses and two doors and all.
+
+All I will actually let you, um, sort of page
+
+through examples for however many there are, uh, two.
+
+Well, if there's only two of each, then, um yeah,
+
+there's going to be a limit to, uh, how many
+
+examples there can be.
+
+So you could have, uh, zero or one.
+
+Or the house could have zero or one or two
+
+doors if doors are are an entity.
+
+Uh, this particular example means that you can have random
+
+doors that exist outside of a house.
+
+So, you know, the intention is probably to say, uh,
+
+that, um, if this were a model, we probably need
+
+to tighten it up a bit and say no doors
+
+exist, except ones that are attached to, um, a house,
+
+but yeah, Runner, just show me examples.
+
+And, uh, assertions are I always have to remember what
+
+the command is is sort of search or check.
+
+Ah, it's a cert.
+
+Right.
+
+So and a cert is kind of the same thing.
+
+um, in Probably I would have made these just one
+
+command.
+
+Uh, but, uh, in alloy, you kind of, uh, specify
+
+an assertion, and then to check it.
+
+That's a separate command.
+
+Uh, check my assertion.
+
+Call the cyclic for all examples up to a maximum
+
+of five of, uh, uh, sets of maximum size five.
+
+So, yeah, those are Those are the only two commands
+
+it has.
+
+But, um, they're enough to, uh, see whether your model
+
+is doing what you think it should, uh, and to
+
+check whether particular things are true of it.
+
+What were our other topics?
+
+Uh, there is nothing on systems or standards or risk
+
+because we didn't have time to cover it this year.
+
+Um, but everything else is fair game, So, yeah, we've
+
+seen, um, examples of data driven testing graph based testing.
+
+Uh, after the project, we'll have seen, um, syntax based
+
+testing.
+
+Um, in the lab.
+
+Did we have a lab on mutation testing this year?
+
+Schedule sauces?
+
+Yeah, possibly not.
+
+If we, um yeah.
+
+If we didn't have a lab on mutation testing, then
+
+we probably won't have any exam questions on it either.
+
+Um, but if we did then we will.
+
+Uh, yeah.
+
+Any other topics?
+
+I'd say syntax testing is probably the trickiest of the
+
+topics we look at because, um, it's kind of discrete,
+
+math based.
+
+It's based on, um, um, sort of computation theory.
+
+So it's looking at, um, context free grammar, which are
+
+something which, um so neither the m i t nor
+
+the M SI think have to do, uh, theory of
+
+computation.
+
+So syntax based testing is kind of tricky to cover
+
+because it's, um because we don't have time for a
+
+whole discrete maths course.
+
+Um, so, yeah, if there's any one topic that you
+
+might wanna, uh, work through extra problems, uh, from the
+
+textbook on, then I'd say syntax testing is probably the
+
+one to go for.
+
+Um, I mean, you know, probably all of the topics
+
+it's worth trying to tackle at least one, uh, exam
+
+topic, exam question or textbook question on them.
+
+Um, if you look at the m n and offer
+
+textbook, though, um, some of the questions are, just have
+
+mistakes.
+
+There's, uh they've got mistakes in the code, and they're
+
+impossible to answer.
+
+If you do encounter one like that, um, feel free
+
+to email me and ask me about it, but, yeah,
+
+they may have, um They may have put up an
+
+a write a page for the textbook, but, um, there
+
+are occasional things in there that actually can't be answered,
+
+but, um, um, it's still worth having a look to
+
+see the kinds of questions they've come up with any.
+
+Oh, it is, uh, almost 10 2.
+
+So I'll probably have to finish there, But before I
+
+do any other pressing exam or project questions No.
+
+OK, in that case, uh, good luck finishing off the
+
+project.
+
+And, um, yes, I'll see you on the, uh whatever
+
+date.
+
+The exam is the ninth.
+
+I think so.
+
+Yeah.
+
+Ninth in, uh, engineering.
+
+Thank you.
+
+And yeah.
+
+Good luck for, uh, exam.
+
+Thank you.
+
+Makes our change.
+
+Hm.
+
+Yes, but probably not too many.
+
+The number of hours.
+
+The risk least straight forward.
+
+Frank said exactly.
+
+OK?
+
+No.
+
+How you I so ok
+

@@ -1,0 +1,3365 @@
+so No.
+
+Right.
+
+Yeah.
+
+OK, have a to happen.
+
+Yeah.
+
+So just Yeah, Yeah, go ahead.
+
+And to So we see the But then you have
+
+two mhm.
+
+Yeah.
+
+Yeah.
+
+Po this.
+
+Yeah.
+
+OK, so these are, um OK, but I don't know.
+
+Yeah, exactly.
+
+Much about good.
+
+I cool.
+
+Mhm.
+
+Yeah.
+
+You me tell you that?
+
+I think very well.
+
+You and to me.
+
+So let OK, OK.
+
+Uh yeah.
+
+What?
+
+It Right.
+
+10.
+
+Thank you.
+
+Let's see.
+
+Yes.
+
+Oh, I What?
+
+Ok, I share with people.
+
+Right, Ok, depend on OK, the Yeah, you see?
+
+And I'm sorry.
+
+What?
+
+No.
+
+So we correct.
+
+Um that Yeah.
+
+Today morning.
+
+I need to Right.
+
+OK.
+
+Good afternoon, everyone.
+
+I'm sorry for running a bit late today, and I
+
+hope, um, you've probably all recovered from your Project one
+
+and ready for Project two.
+
+Um, so project two is now available on the web.
+
+So if you have the curiosity and energy to take
+
+a look, so it's gonna be on the same data
+
+set, Um, in terms of data processing, um, it probably
+
+be a lot easier.
+
+Um, and then you can also work.
+
+Um, in pairs.
+
+Uh, which means you can work in a team of
+
+two.
+
+A maximum of two people.
+
+Um, but you can still work on your own if
+
+you choose to do so.
+
+Um, there's no, um marking, uh, discrimination or marking favour
+
+to those who work on your own.
+
+So, um, I think, uh, this one even though in
+
+terms of the difficulty and then, um, the amount of
+
+work you probably don't need two people, but working in
+
+a pair, uh, psychologically, I think is helpful.
+
+Um, so obviously, uh, the second project is a continuation
+
+of the first project.
+
+Um, but it will be on a graph database.
+
+So you transform your design from a relational database, um,
+
+into a, uh, graph database, and then we'll talk about,
+
+um, pretty much in the lecture.
+
+The focus is how you, um, transition, Uh, from, uh,
+
+re relational database design man mindset, um, into the, um
+
+graph, uh, database design or graph database modelling.
+
+Uh uh.
+
+Thinking process.
+
+OK, so it's graph database design, and then you need
+
+to talk about the e t.
+
+L and you, um also need to do a little
+
+bit of research.
+
+Uh, for example, um, write, Write a small section in
+
+your submitted documents.
+
+Um, with discussions on how graph data science, uh, can
+
+be applied, uh, in some useful scenarios, Uh, in this
+
+crime data set.
+
+OK, so keep an eye on those, um, and all
+
+these topics will be gradually covered, uh, in the rest
+
+of the semester.
+
+Um, so another housekeeping, uh, item is I will be
+
+attending the international conference, um, on European, uh, chapter of
+
+Association for Computational Linguistics.
+
+So it's to do with natural language processing to do
+
+with knowledge graph, uh, in Europe.
+
+So I will be attending that conference.
+
+Um, throughout next week, Um, and I won't be able
+
+to come here and do the lecture, but I do
+
+have, uh the wonderful, uh, doctor Michael Stewart, uh, to
+
+come here on Wednesday, um, to talk about, uh, the
+
+cipher, uh, query language.
+
+Uh, supported by Neil.
+
+OK, so make sure you give him, um, a welcome.
+
+Um, So he will be here, uh, next Wednesday in
+
+place of me.
+
+Right.
+
+Um, coming back to our lecture slides.
+
+So what we did was, um we had a quick
+
+intro, uh, to graph databases.
+
+Uh, last week.
+
+Um, but we didn't manage to finish all the slides.
+
+So let's take from what we have stopped or left
+
+last week.
+
+Um OK, so do that.
+
+OK, so with, um um a graph, um, representation.
+
+You can see that we no longer really focus on,
+
+um they joins, uh, all the the foreign keys and
+
+primary keys, um, between, um, entities.
+
+But you can still think of this, um, is a
+
+is a entity, uh, relation diagram.
+
+Um, you know, at a higher level.
+
+OK, so, um, but these are instantiated.
+
+These are things that have been, um, already populated with
+
+data.
+
+But if you abstract that out, what we have, um
+
+is a type of, um, entity, which is user.
+
+And then, um, their relation is follows.
+
+So if you think of, um, a ER diagram, then
+
+we have the US A table.
+
+Right?
+
+So the user table, we're trying to just write it
+
+at the schema level, and this user table has an
+
+attribute called name right.
+
+And that's the only, um, attribute we have.
+
+And then this user is connected with other users, not
+
+itself, not necessarily itself.
+
+It can be itself, uh, but connected with other users.
+
+Um, using uh, follow follows relation and in relational database,
+
+this is called, um you need to if if you
+
+want to figure out, you know, a pairwise following relation.
+
+Uh, user, one user two following each other to populate
+
+a table like this.
+
+Uh, when you need two columns to populate a table
+
+like this, you need something called Self drawing.
+
+So you join, um um, based off, um, the same,
+
+uh, table all you recall, Uh, you know, just keys
+
+in here.
+
+So the keys in here would be, um I have,
+
+um you know, not just name, but uniquely.
+
+You should have an ID as well.
+
+But if if you have, you know, name as unique,
+
+uh, reference to that person, you could have, um, the,
+
+um, name as a primary key.
+
+Um, So you we use the primary key, uh, here,
+
+um, as foreign keys.
+
+So we refer to, uh, different users.
+
+So, uh, maybe if we, you know, assume that our
+
+names are all unique, there's no other person also called
+
+Ruth or Billy or Harry, um, in our database.
+
+So if our names are unique, I will have to
+
+link create another table Where, um that you know, um,
+
+represent the relations, uh, between people.
+
+So this relations table will be follows table, and then
+
+I have User Ruth follow Harry.
+
+And then Harry also followed Ruth and, um, Harry follows
+
+Billy daily.
+
+Follow Ruth, and then Ruth follows Bill.
+
+OK, so as you can see, this is not very,
+
+um, intuitive.
+
+Once we turned this into, um um a tabler form,
+
+you actually lose the information that this rule is the
+
+same rule.
+
+OK, um, and then you have duplicates, and you don't
+
+really, um, document the relations in a concise, um uh,
+
+intuitive way.
+
+OK, and then this, um uh, extension becomes, uh, quite
+
+hard as well.
+
+So if we have a table of form, uh, we've
+
+already designed the schema.
+
+And then we decided we want to add, um, their
+
+address.
+
+OK, so I've got Ruth's address.
+
+I've got Billy's address, but I haven't got Harry's address.
+
+What do I do?
+
+So in the in the user's table now I have
+
+ID column.
+
+I have name column.
+
+I have the address column, Uh, oops.
+
+And then some of them will have address populated, and
+
+then some of them will just be empty.
+
+So that will need to be left as now and
+
+imagine that we are dealing with thousands.
+
+Um, or even billions of records.
+
+Um, then you have lots of slots, Uh, that, but
+
+still occupy space, Um, in a, uh, relational tabular representation.
+
+And then, on the other hand, there are things.
+
+Um, that cannot be, uh, represented, uh, purely using a
+
+table, uh, representation.
+
+So, um, it's not, uh here, but I'm just trying
+
+to give you an example, uh, to keep your brain,
+
+um, engaged.
+
+So let's see how so If I have a road,
+
+uh, segments, uh, which is marked by a road.
+
+And then I have a road segment, which is Sterling
+
+Road or Sterling highway, um, and then mounts Bay road
+
+turns into Sterling highway, and they connected.
+
+OK, but if I, um, build a traffic, uh, data
+
+set using relational database, what can I store I can
+
+store?
+
+Uh, maybe the speed, the volume, Um, maybe the the
+
+road, um, quality, um, or the road type.
+
+Um, So I have mounts Bay road here, Sterling highway
+
+there.
+
+But how do I represent the relation between Mount and
+
+Mounts Bay Road and Sterling Highway when they are actually
+
+connected.
+
+They reachable from one to another.
+
+How do we represent that in a relational database?
+
+A tablet for Is there a way that we can
+
+represent that information?
+
+OK, a key.
+
+A foreign key.
+
+OK, so we Then we then need a separate table,
+
+a bit like the friendship table, right?
+
+A separate table that, uh, recall the pairwise connection, Uh,
+
+between all the road segments.
+
+So I I imagine that I have, um 100 road
+
+segments, and then pairwise is 100 by 100.
+
+Um, and then I have this big table documenting the
+
+pairwise relation, Uh, between my roads.
+
+Obviously, it won't be exactly that because some of the
+
+roads are not connected.
+
+So I won't really need that.
+
+Um, but in terms of, uh um, a graph database,
+
+I basically could just say, you know, this road is
+
+connected with another road, and that just makes uh, storage,
+
+Uh, so much, uh, simpler and, um, much more intuitive
+
+as well.
+
+Um, another, um, benefit of this graph database is I
+
+can add attributes.
+
+Like I said before, I can add attributes, um, in
+
+the a g l manner, which means, um, as soon
+
+as I have new data modelling requirements when I need
+
+extra information.
+
+For example, um, my earlier um, graph database only has
+
+user and their relation, they're following each other's, uh, relationship.
+
+But then at the same time, I also wants to
+
+capture the tweet messages that they have posted.
+
+OK, so I can basically just add those, um, messages,
+
+Um, as notes, um, into or, um, you know, dynamically
+
+into my graph.
+
+And then the schema of my graph, uh, will be
+
+updated.
+
+Um, you can query the schema at the end, but
+
+you don't have to design, uh, with the schema in
+
+mind.
+
+OK, so you can start by just creating instances.
+
+And then, uh, eventually, uh, this, uh, New four J,
+
+um, database management system will be able to generate the,
+
+uh, schema for you or summarise the scheme up for
+
+you.
+
+So, um, the the graph model that we looked at,
+
+um, so far, we only have nodes and the label
+
+of the nodes.
+
+And then, um uh, relationships.
+
+Um, but we haven't really, um, you know, think about
+
+what, um attributes that each node or each relation, uh,
+
+could have so new four J is actually, uh, a
+
+property graph model.
+
+What does that mean?
+
+It means that we can, um, store key value pairs.
+
+Um, as attributes, uh, values for a node, Um, or
+
+for a, um, relationships.
+
+OK, so and this attribute value pairs do not have
+
+to be consistent across the same type of note.
+
+So, for example, for some users, I might keep address.
+
+And for some other users, I might keep date of
+
+birth.
+
+And for some other us, Um uh, another user.
+
+Um, I might keep, uh, the agenda.
+
+OK, so it just you know, that doesn't have to
+
+be, uh, predefined As soon as you get a piece
+
+of information you can insert into your graph database and
+
+you don't always need to, um, worry about now, OK,
+
+so for some users I stored information, um, about their
+
+date of birth.
+
+If I if my other user choose not not to
+
+review their date of birth or choose not to review
+
+their, um, address for privacy reasons.
+
+I'm totally fine with it, because I don't have to,
+
+um, go through all my records and then make sure
+
+that, um each of, uh, the, um values are stored
+
+as now.
+
+OK, so, um, a node, um, could have zero or
+
+more properties, so properties are stored as key value pairs.
+
+Uh, so obviously, you know, in terms of syntax, your
+
+key value pairs will be, you know, name column, uh,
+
+with, uh, the name Say Bob.
+
+OK, um, and you do a double cult around it.
+
+Um, so name is the key values, um, are, uh,
+
+literal.
+
+Uh, so it could be a strain.
+
+It could be a numerical value.
+
+Um, so nodes can be labelled with one or more
+
+labels, So the user, um, can be, um uh, so
+
+the the type of user could be, uh, uh, one
+
+label.
+
+And they could be, um, a, um admin.
+
+Um, And if you store information semantic information about the
+
+person, it could be their, uh, their their political roles.
+
+For example, if you have, uh, Barack Obama stored as
+
+a as a note, um, then he could be labelled
+
+as a father.
+
+Could be labelled as the 44th, uh, US president and
+
+could be labelled with a politician, for example, or, um
+
+a, um I think he's now labelled himself as a
+
+as a writer.
+
+Um, so, um or author?
+
+Uh, so relationships, um, they at the same time, similar
+
+to their notes, um, can be named and, um directed
+
+and also have properties.
+
+OK, so relationships Now, um, so imagine these relationships really
+
+is your, uh your key, Um, your primary key and
+
+foreign key relations, um, in the relational database.
+
+Um, so in relation to the database, when you document
+
+someone you know work, uh, for a department, um, then
+
+because there's many too many relationships, uh, we often have,
+
+you know, uh, the key for the employee.
+
+Um, so let me try to write a bit bigger.
+
+So the work flow relationship, Uh, which is many to
+
+many relationship When you design the when you design your
+
+database in your ER diagram, you often have, um, a
+
+third table captures the relation.
+
+OK, so this is the employee ID, and then this
+
+is the department ID.
+
+And then you can store properties.
+
+So they worked from two.
+
+OK, so they started the starting date and then the
+
+end date.
+
+So employee one work for department one, uh, from, um,
+
+you know, first of Jan.
+
+2022 finished first of Jan.
+
+2023 And then I could have employee one, um, worked
+
+for department two.
+
+Um, and then maybe the time could, uh uh, coincide.
+
+Um, an overlap.
+
+This employee could work for multiple departments, um, and etcetera.
+
+So?
+
+So this third table is capturing this many too many
+
+relationships in a separate table of form.
+
+Um, and this could be easily mapped to relationships.
+
+Uh, in our graph database and then the properties that
+
+you stored, you know, in in this, um, relation, um,
+
+shape tables, um, are the properties, um, of this relationship?
+
+So So, for example, if you have a note, this
+
+is the employee, uh, works for a department.
+
+And then, um, this works in works for relationship, and
+
+then you have you can have properties, you know, start,
+
+um, and end OK or from and two.
+
+So key value payers as, uh, properties.
+
+So, really, we have a very intuitive, um, representation that
+
+captures relationships.
+
+Uh, much more prominently.
+
+Um, as as, um, you know, first class citizen, Um,
+
+as compared to, uh, this, uh, relational database.
+
+So relation database the, um, the keys, the primary keys
+
+and foreign keys, um, are obtained, um, as a result
+
+of normalisation.
+
+Right.
+
+So So you want to normalise your database so that
+
+you don't really have Don't run into all these different,
+
+uh, insertion deletion kind of anomalies.
+
+You can keep the acid, uh, properties, uh, in relational
+
+database, but in graph databases, um, this becomes, you know,
+
+very natural.
+
+So you just, um, uh, start, uh, with relationships, uh,
+
+as a first class citizen in your mind.
+
+OK, so, uh, those are still important entities, Not are
+
+entities.
+
+Entities are still important.
+
+Um, but, uh, relationships, um, have been brought to the,
+
+um, front line, Um, and give some lime lines.
+
+Um, as compared to entities, um, in in this graph
+
+database.
+
+Um, OK, so that's basically, uh, what I just mentioned.
+
+Um, so labels can be, uh, multiple.
+
+So, um, as you know, when you, um, label a
+
+node, um, you can have multiple labels.
+
+So we often use, um labels, as you know, loosely,
+
+uh, in the same sense as object or anti language.
+
+Um, as classes.
+
+OK, so things are of the same type.
+
+Um, So, um, if you think, um, you know Bob
+
+and Alice and, um uh, John, these are all users.
+
+So users is a class user is a class, um,
+
+which is, um uh, entities, um, of the same type
+
+or instances of the same type.
+
+So just be aware of, um, this terminology usage.
+
+Um, there's, um a good, uh, mapping between object object
+
+orientation.
+
+Um, and, uh, uh, graph, uh, nodes, uh, and label
+
+relations.
+
+Right.
+
+So the nodes are instances, and the labels are their
+
+type or the classes that they belong to.
+
+Uh, OK, so because we have a relationship, uh, modelled
+
+as edges, um, so this relationship naturally connect one node
+
+with another.
+
+And then if you want to traverse your graph from
+
+one note to another, you naturally follow certain pathways.
+
+Um, so this path representation or these paths, um, algorithm
+
+that allows us to to carry out extremely, uh, efficient,
+
+uh, query.
+
+Um and, um, especially, you know, when your data is
+
+heavily connected, uh, like a traffic network, Your, um, game,
+
+um is really, uh, massive.
+
+Ok, so it's very suitable, uh, for modelling he heavily
+
+connected or densely connected.
+
+Uh, data set.
+
+So, um, we have a, uh, roughly the same scenario
+
+social network, where you have, uh, user, uh, friends of,
+
+um another user.
+
+Um, And then one person is a boss of another
+
+person, and, um, you know, um, they could also be
+
+colleagues.
+
+Um, And then they could also be in a, um
+
+uh, a loving relationship or or marriage.
+
+Um, so you could think of, you know, many different,
+
+uh, type of relationships, Um, between people.
+
+Ok, so that's where um, your, uh, so Social network,
+
+um, you know, such as Facebook, such as LinkedIn, um,
+
+all try to focus on they represent relations, uh, between,
+
+uh, between their users.
+
+Um, and we mentioned that, um, you know, these are
+
+not necessarily transitive.
+
+Um, A is B's friends.
+
+B.
+
+C's friend is not necessarily C's friend and definitely similar,
+
+uh, for the love, uh, relationship.
+
+Um, but, um, married to, um is mutual.
+
+So if someone A is married to B b is
+
+definitely married to to a So this, um um a
+
+kind of rule, uh, governing the, uh, reasoning pathway or
+
+the transitive, um or, uh, bidirectional relations.
+
+Um um, in your data set so that can be
+
+taken into account.
+
+Um, So if your relationship is transitive, um, if we
+
+have a ancestor relation, so if a is B's.
+
+Ancestor B is C's ancestor.
+
+Uh, then I don't need a connection from A to
+
+C, because it's transitive.
+
+Right?
+
+Um, and similarly, uh, this Mary two relation it it
+
+doesn't need a direction.
+
+So a is married to B.
+
+Um, B is definitely married to to a right.
+
+So there's no need to have this, uh, two.
+
+Uh uh, arrows?
+
+Um uh, that indicates, you know, two directions.
+
+Uh, it's really a a bidirectional.
+
+So I could just have a have a single line
+
+there without arrows.
+
+Um, so these are all things that you need to
+
+consider during your, uh, design, Uh, in terms of a
+
+tradeoff between expressiveness and, uh, simplicity.
+
+So expressiveness means that if I want to be, um,
+
+100% clear, right?
+
+So if I want everything to be directed graph, then
+
+I need both directions of this.
+
+Me, too.
+
+Um, basically, I just rule out the use of, um,
+
+a bidirectional link.
+
+Um, so that could be your design decision, but you
+
+need to make sure that you you're justifying them.
+
+Um, so you can add any new nodes.
+
+You don't really need to go through the entirety of
+
+your graph.
+
+Uh, before you add a new node.
+
+Um, So, um, your new nodes and relationships can be
+
+added, um uh, without compromising the existing network.
+
+So So that's, uh, why we are talking about, uh,
+
+the agility and flexibility of a graph database so you
+
+can see that we don't really start with any schema
+
+at all.
+
+Uh, so the performance, um, of graph database, You know,
+
+um, over highly connected data, Um, is much more impressive.
+
+Um, as compared to a relational database.
+
+Um, So, uh, when we talk about, uh, depth of
+
+five so when you have, you know, primary keys and
+
+foreign keys, primary keys and foreign keys five times, um,
+
+then relational database.
+
+Really, uh, cannot handle it.
+
+So, um, it's unfinished.
+
+Um, but then, um, the records, uh, for a graph
+
+database.
+
+Um, you know, the time taken for graphic database is
+
+almost almost negligible.
+
+So 2.132 seconds.
+
+So this is just on finding friend to friend, um,
+
+in a relational, uh, database, Uh, versus, uh, new four
+
+j.
+
+Ok, um, flexibility, Uh, we mentioned bef before.
+
+So, um, rough databases, um, are naturally, uh, additive.
+
+So you can add new things as as you go
+
+along.
+
+Um, And then, um So having said that, um, you
+
+can think of, uh, when you try to aggregate data
+
+from multiple domains and for, uh, from, you know, gen
+
+databases, um, you might have CS v files, you know,
+
+flat.
+
+Um, uh, text files.
+
+And then, uh, you might also have, uh, relational databases,
+
+Uh, in different, uh, isolated, uh, locations.
+
+Um, and they might not, um, have the same schema.
+
+Um, So putting them all together into a relational database,
+
+um, is quite, you know, a formidable a formidable task,
+
+because you have to I know all the inconsistencies and
+
+making sure that they follow the same schema.
+
+Maybe, um, you know, even, um, commit to the same
+
+ontology, uh, before you can merge them together.
+
+So you first need to do normalisation and standardisation before
+
+you can merge All these, uh, multiple data sets together.
+
+But if you just want to have a quick look
+
+and then iron out and figure out uh, what you
+
+can achieve, you can base basically, just loosely, uh, put
+
+a separate, attach a separate domain into your existing, uh,
+
+current graph database.
+
+Um, so again.
+
+Um, as I said, just now that this is, um
+
+not necessarily the final one.
+
+Uh, but it's good for, uh, the develop development stage.
+
+Um, you can try things out and see whether it
+
+matches with what you've already got.
+
+Um, graph databases are schema free.
+
+Um, and but then on the downside, even though you
+
+have, uh, all this nice agility, um, they do not
+
+adhere to, uh a So you lose, um, auto.
+
+Um, con is and durability, which just means that, um
+
+um you know, inconsistency can happen.
+
+Um, during your, um, graph, uh, database modelling process.
+
+So, for example, you could accidentally removed, um, all the
+
+units, even though, uh, people are still enrolled in it.
+
+OK, so, um, unlike relational database, um, their, um, strongest
+
+point is to maintain this, um, acid properties.
+
+Um, Relational.
+
+Um, sorry.
+
+Uh, graph databases.
+
+Uh, they don't really, um they sacrifice, uh, this acid,
+
+uh, properties for, uh, flexibility.
+
+And for, uh, its additive, uh, properties, Um, but as
+
+a programmer, you can, you know, enforce or or set
+
+up gateways, uh, to ensure this, um asset property programmable.
+
+Um, So you need to programme that into it if
+
+that's something that you really care about.
+
+All right.
+
+So, uh, that's the comparison between relational and, uh, graph
+
+databases.
+
+OK, so, um, before we start the, uh you know,
+
+the implementation or the real conversion of relational database to,
+
+uh, graph database, Um, let's take a look at a
+
+few tools available.
+
+So the arrows, uh, app is a really useful one
+
+where you can just create, um, nodes in a, uh,
+
+graphic format, and then you can add properties and you
+
+can add labels, um, and then generate, Um uh, the
+
+cipher codes, Um, so you can use it using the
+
+new four J um uh, database.
+
+OK, so let's see, if I let me delete this
+
+and start a fresh I can just add a note
+
+and say, OK, so the caption of the node, the
+
+caption is just something.
+
+Uh, that's, um, you know, nice display, uh, in terms
+
+of whether it's, uh, create this somewhere as a property
+
+or not, it doesn't really So I would just say,
+
+you know, I create a note called Alice.
+
+Um, and then I can drag this to link it
+
+to another node, which is Bob.
+
+Um and then double click on the edge.
+
+I can add the, um, information or the, um, type
+
+of links or type of relationships.
+
+OK, so Alice follows Bob, um, on Twitter.
+
+Oops.
+
+OK, so this could be, um you know, part of
+
+my, um, part of my, um graph database.
+
+So you create an instance, and then you create another
+
+instance, um, as nodes.
+
+And these two nodes, um, are connecting to each other.
+
+Um, so what can you do?
+
+Uh, in terms of, um, exporting.
+
+So you can export the, uh, graph into, um, a
+
+P N G or S V G format, uh, so
+
+that you can easily, uh, insert in your documents.
+
+Um, you know, whether it's your power point or what
+
+documents your PDF, you can insert that you insert those
+
+pictures as your design, um, ideas.
+
+And so very often you start with that to do
+
+your design, and then at the same time, it also
+
+creates, um, this, uh, cipher, uh, queries.
+
+Uh, sometimes, um, you know, this one is basically just
+
+created, uh, empty node and another empty node that has
+
+a relationship.
+
+Uh, that follows.
+
+Uh, so this is a query language similar to s
+
+l.
+
+Um, but it's, um, a query Language specific for new,
+
+uh, new four.
+
+G also supports.
+
+Uh, graph, Q l.
+
+Um, so, uh, but it requires a single label.
+
+It doesn't really generate the the cipher, uh, doesn't generate
+
+the graph.
+
+Que, uh, query, uh, for you yet.
+
+Um, but we can model it.
+
+Uh, we can modify the the node.
+
+So let's say if I want to add a label
+
+to node Alice, uh, which is a user.
+
+Ok, uh, or maybe we just let say, user, we
+
+add that label in and then, uh, for Bob.
+
+We also want to add a label.
+
+Um, as you can see, as soon as you added
+
+a label, um, to one of your instances, the same
+
+label also available for your other instances.
+
+So just in case, uh, that you have other nodes
+
+are of the same type.
+
+OK, so label user can be reused once you created
+
+one label.
+
+This label is stored somewhere, and it can be reused.
+
+Um, OK, so, uh, now, if we look at the
+
+if we look at the the cipher query now, it
+
+has, um, a label or a type user, uh, generated,
+
+uh, in my code.
+
+OK, so and then, uh, graph Q l still, uh,
+
+it requires properties.
+
+So go back and then you can go back and
+
+then change.
+
+Add properties.
+
+OK, so here we can add property and say the
+
+name, um of, uh, this one is, um, Bob Mhm.
+
+I just do, Bob.
+
+Um, so name is Bob and Alice.
+
+We add a property again.
+
+Name?
+
+Um, Helen.
+
+Ok, so now you can see the cipher query generated
+
+by this tool is much more complex.
+
+Um, as compared to the one that we have seen
+
+before.
+
+So it basically created a user, and but we can't
+
+really refer to that user.
+
+Um, as yet, because we haven't really given it, um,
+
+variable name.
+
+Ok, um, but it's just created, um, any, uh, arbitrary
+
+user.
+
+And then, um, and another arbitrary user that has a
+
+name, property, uh, one has a name, property, Alice.
+
+And the other one has a name.
+
+Property.
+
+Bob.
+
+Um, so you could say, you know, I've, um You're
+
+not here.
+
+You can't modify it here.
+
+But in the new four J, um, interface you can
+
+use, uh, you can modify it so that it actually
+
+creates variables for you.
+
+OK, so this is, uh, the graph, Q l, uh,
+
+which has the labels?
+
+Um, which is a type.
+
+Uh, so 22 instances, Um, a user with name.
+
+And, um And then they have a relationship.
+
+Uh, follows.
+
+Um, another user.
+
+Right.
+
+So this is, um uh, and then a user bulb
+
+has a relationship.
+
+Uh, that, uh, follows.
+
+Um, so it has a in and out direction because
+
+it's a directed graph.
+
+OK, so you can see that cipher and graph Q
+
+l They all seems to be quite intuitive.
+
+Cipher is even more intuitive because instead of in and
+
+out, it's basically just using a, um a a hyphen,
+
+followed by a greater than sign to indicate this is
+
+pointing to Bob.
+
+OK, so, um, it's an incoming link link to Bob,
+
+but ongoing link from Alice.
+
+Um, so you can certainly run it in new four
+
+j browser.
+
+But I've created a local instance on my machine.
+
+Uh, so let's look at the new four g desktop.
+
+OK, so in new four J, um, the the desktop
+
+I've shown you, um, is really you know, you can
+
+think of this, um, based of what you understand before
+
+you can think of this, Uh, this thing is the,
+
+um is the counterpart or the equivalent of the SQL,
+
+uh, database server.
+
+OK, so the cl database engine, uh, sitting somewhere, Um,
+
+and this SQL database engine is the is at the
+
+bottom layer, which is at the back end.
+
+OK, so the and this could be sitting on a,
+
+um, on a remote machine.
+
+Um, it could be on a cloud.
+
+Um, it could be on, uh, some of your, uh,
+
+compute uh, E C two instances on AWS.
+
+So this thing is a database sitting at the back
+
+end waiting for connection from a client.
+
+And then the client can be, um, many different types
+
+of clients.
+
+It can be a new browser which will be using
+
+in an so we'll be using this, uh, more often
+
+than, uh, the other tools.
+
+And then you have the new four J uh, Bloom,
+
+uh, which is a a better, more fancy, uh, graph,
+
+uh, visualisation tool.
+
+And then you have the, um, new four J e
+
+T l tool, which takes in, uh, uh, data from,
+
+uh existing database and then convert it into, uh, a
+
+graph database.
+
+So existing database means, um it's an existing relational database.
+
+So the e c l e t l two will
+
+take, um uh, Post grad.
+
+Uh um a SQL and then, um, or SQL light
+
+or, um, MySQL and, uh, obviously Microsoft SQL server so
+
+you could connect to using J.
+
+D BC connect to those relational databases and port the
+
+data or import data directly into, uh, a graph database.
+
+Um, so those are the clients.
+
+OK, so when you have, um, uh, all these different,
+
+uh, clients that could access this back end server.
+
+Uh, so that client is in the same way.
+
+Um, as your, uh, s s MS.
+
+So your SQL server management studio is a client.
+
+Your power B I is a client.
+
+Um, so similarly, new four J um, we have, uh,
+
+the new four j back end.
+
+And then we also have the new four g uh,
+
+front end.
+
+So we can open this in a, um, new four
+
+G browser.
+
+And so the browser allows us to interactively um, creating
+
+and query and insert, uh, information back to the, uh,
+
+database server OK, so, um, so here, if I copy
+
+do I have If I copy the one from my,
+
+um, arrow app where my arrow app can't lose it
+
+somewhere Here we go.
+
+So if I copy this and then, um, make use
+
+of the new four g browser.
+
+Uh, so, um, as you can see, if I want
+
+to refer to this Alice, I could say, you know,
+
+create, um, a variable a referring to this, um, entity
+
+or referring to this node, I could have a, um
+
+a entity B uh, referring to, uh, the user bob.
+
+And then I basically just run.
+
+This will create two labels and then, uh, created two
+
+nodes and set two properties and created one relationship.
+
+So I can, uh, take a look at that.
+
+I can say match, um, and maintain.
+
+And so this is basically all the nodes that I
+
+have in my graph, uh, match them and return them.
+
+So I have Alice follows Bob.
+
+OK, so this is something that you already created in
+
+your database, and then you can, uh, basically use the
+
+cipher query language to manipulate it and change its value.
+
+Um, and then add new links to it.
+
+Um, for example.
+
+Ok, so that's a very, um, sort of primitive, uh,
+
+starting point.
+
+Uh, when you do a graph database design So instead
+
+of thinking about high level schema So thinking about high-level
+
+schema allows you to, uh, determine the labels.
+
+Um, but it's not necessary.
+
+OK, so you can start, um, by just populating your
+
+graph database with lots of instances and then you you
+
+go back and modify, um, the labels as you go
+
+along.
+
+OK, so that could be, uh, one bottom up approach
+
+in creating a, uh, graph database.
+
+OK, so I'll stop here and let's take a 10
+
+minutes break.
+
+Um, And then we'll move on to a more general
+
+relational database to, uh, graph database mapping.
+
+Talking about it.
+
+It to me is easier.
+
+Yeah, that master sorry with that team win, Master.
+
+Uh, so you mean cross units.
+
+So working with the Masters student?
+
+Yeah, it's really hard to to manage because we have
+
+two different submission system.
+
+So or two submission points, right?
+
+So one is for undergraduate and the other one is
+
+for Post grad.
+
+And if you have this mixed up and I will
+
+have difficulty transferring marks from one another.
+
+And then some of the requirements are for Post grad
+
+students only.
+
+Um, like the first one that we, um, the first
+
+project we don't need, Uh, undergraduate students don't need to
+
+worry about zones.
+
+Um, postgraduate student too.
+
+And similarly in project two, they also need to worry
+
+about zoos.
+
+Yeah, not undergraduate students.
+
+Yeah, OK, yes.
+
+Mhm as well.
+
+So it look good.
+
+Yeah.
+
+Yeah, if you want to.
+
+Um, do you want to wait for everyone to come
+
+back or Yeah.
+
+Yeah, yeah, yeah.
+
+You?
+
+Yes.
+
+So yeah.
+
+Yes, I I guess so.
+
+I need to work hard.
+
+Great what you do.
+
+Yeah.
+
+And so did I.
+
+OK, no, like this.
+
+So this is in the high.
+
+How two men.
+
+Ok, ma Viet.
+
+Cool.
+
+Right?
+
+Right.
+
+I yeah.
+
+Yes.
+
+Yeah.
+
+Hello.
+
+Um, but that one, um, me too.
+
+It is Now know at the time here's the problem.
+
+OK, so that's it?
+
+No.
+
+Yeah.
+
+Less like their child.
+
+Um I think and then I'm going to her home,
+
+not living, so let's see.
+
+Ok, I hear so much, but I Oh, my God.
+
+Bye.
+
+Just I change that.
+
+Yeah, right.
+
+I Let me get started.
+
+Hi, everyone.
+
+If I can have your attention just for two minutes.
+
+Just wanted to make a quick announcement.
+
+Uh, I'm Lani.
+
+I'm the ordinary committee member from the Data Science Club.
+
+We have our biggest event of the year.
+
+Coming up tomorrow.
+
+It's from 5 to 8 PM at EZ one Oh,
+
+five and one.
+
+Oh, six.
+
+It's called the data science industry Science event.
+
+So what happens in the event is it's primarily a
+
+networking event.
+
+So it starts off with presentations from companies or sponsors
+
+that we've invited.
+
+The main sponsor for this year's event is Quantum Black.
+
+So Quantum Black is the data science arm of, uh,
+
+Mackenzie.
+
+McKenzie is a big consulting company.
+
+Um, followed by a few more presentations by Rio with
+
+a O and W a data science innovation hub.
+
+Uh, after these talks, you have a small, uh, question
+
+answer session and followed by a networking session towards the
+
+end with the refreshments.
+
+So food and drinks included.
+
+There's the QR code on the top.
+
+Right.
+
+Um, you can find more details there.
+
+Um um, along with the pricing, So $10 for members
+
+and 15 for non-members um, hope to see some of
+
+you or most of you there tomorrow.
+
+Um, that's all from my side.
+
+Thanks for listening.
+
+Thanks.
+
+Yeah.
+
+Attended, uh, multiple of these sessions in the past.
+
+You will not regret that.
+
+Um, the talks are great, and you will learn a
+
+lot from the industry practitioners, and they are very friendly.
+
+Um, answering all kinds of questions, uh, even, you know,
+
+job interviews and how you stand out, Um, from all
+
+the potential, um, applicants.
+
+So So so do come along if you can.
+
+Um, it's a very good, uh, opportunity to mix and
+
+mingle with industry people.
+
+Right.
+
+OK, coming back to our, um, lecture slides.
+
+OK, so, um, uh, as you can see that we
+
+we are going, uh, um, much slower as compared to
+
+the, uh, relational database.
+
+Because relational database, we expect you to already have, um,
+
+lots of backgrounds.
+
+Um, from, uh, seats 14 or two.
+
+Um, now we move on to, uh, graph databases.
+
+Um, and it it may, even though it's quite an
+
+intuitive, simple, uh, technology.
+
+But, um, it's just, uh, you know, getting, um, the
+
+mapping in your mind, Um, of you know, what constitute
+
+a node And what constitutes, um, an edge How things
+
+are related.
+
+Um, can be a little bit challenging, uh, from the
+
+very beginning.
+
+OK, so what, um, we will try to do is
+
+we want to show you how you can build a
+
+graph database, uh, from scratch, which what?
+
+I just did, uh, very briefly.
+
+Um, And then we'll look at you know how you,
+
+uh, can map an existing relational database into a graph
+
+database.
+
+Um, let's start this light show.
+
+So let's take a look at, uh, this relational database
+
+where, um, users, um um, buy things, buy products, um,
+
+they purchase, um, products.
+
+And then, um, the, uh, products are stored, uh, in
+
+orders.
+
+So that has been, uh, a very popular kind of
+
+scenario that we used, um, even in the data warehousing
+
+sense where we have, uh, this transaction, uh, recorded or
+
+transaction.
+
+Table recorded, Um, in this order table.
+
+Right.
+
+So the order table basically, uh, could be think of,
+
+uh, could be thought of as the fact table.
+
+Um, that, um it links to, uh, each order, um,
+
+links to a user.
+
+Right.
+
+So the all the links to a user.
+
+And then, uh, user table keeps all the specific information
+
+about the user, Their email address, their, uh, physical home
+
+address.
+
+Um, and then, um, they, um other information is, uh,
+
+in this line item, uh, table, uh, where you have,
+
+um, the product, um ID associated with the order ID.
+
+So each order will have multiple products.
+
+Um, And then the product gets stored in a separate
+
+table, which is, um, storing the description of the product
+
+and, um, the, um, handling requirement of certain product.
+
+OK, so strawberry ice cream needs, um, freezer, um, to,
+
+uh, to keep it, you know, not melt.
+
+Um, So all this information is stored in this relational
+
+database.
+
+Um, And when we try to ask questions such as
+
+you know which items the customer buy And, uh, what
+
+customer which customers bought, um, a certain product.
+
+Um, And which customers?
+
+Um, buying this product also bought another product.
+
+Um, so all these queries, if you think, um, you
+
+know, um, with a bit of time, then you perhaps
+
+can, uh, uh, do it in, uh, relational, uh, queries
+
+by joining multiple tables.
+
+So which item did a customer buy?
+
+Um, so we need, um, at least the customer table.
+
+Um, and then the, uh, product table.
+
+Um, and, you know, um, because the, uh, the product
+
+table is linked to the user table through this, um,
+
+line item table and through the other table.
+
+Just answering a single question like that, you will have
+
+to do, um, a four way join, um, of four
+
+tables.
+
+OK, so, um, sorry.
+
+Or or maybe it's three joints.
+
+So this joint and that joint and that joint, so
+
+three joints, um, across four tables.
+
+Um, and then, uh, similarly, which customer bought this product
+
+again?
+
+It's a you know, an entire, uh, four table.
+
+Uh, all four tables need to be involved in this
+
+joint, uh, to answer that query.
+
+Um, so and again, this, which customer bought this product
+
+also bought that product.
+
+Kind of recommend the system.
+
+Um, questions also, um, is quite complex to answer using
+
+this relational database.
+
+Um, so, um, it's doable, but it's very inefficient.
+
+Um, and when you have really large data set, it's
+
+very slow.
+
+Um, so relational database management system.
+
+Um, in this sense, when you need to answer a
+
+query across multiple tables, um requiring multiple table joints.
+
+Um, they can be very inflexible.
+
+Um, so they are not very good at handling relationships.
+
+Um, and then the other thing is nonexisting value entries,
+
+uh, in relational database.
+
+Needs to be, you know, slotted in with a now
+
+value.
+
+Uh, so, for example, if, um an an employee, uh,
+
+sold an order rather than having a foreign key relationship
+
+between the orders and then, uh uh, So let's see
+
+what?
+
+Um, the relationship.
+
+So what am I writing here?
+
+Um, OK, so in graph database, um, we describe the
+
+relationships in more detail.
+
+Um, so if we know that the employee, uh, sold
+
+an order, um, we actually need to, um we can
+
+create, um, more information about this, uh, selling, uh, event,
+
+you know, at what time.
+
+And and then, um you know, at what counter and
+
+etcetera.
+
+So we can actually add more information rather than just
+
+having a a foreign key relationship between the the orders
+
+and the employee table.
+
+So, in graph database storing relationship is a lot more,
+
+uh, easier.
+
+Um, and storing or giving properties to the relationship is
+
+a lot easier as compared to, um, a, uh relational
+
+database.
+
+So even though the relationship database is called relational, they're
+
+not very good at creating, uh, relations.
+
+So if you want to store a property, um, of
+
+certain, uh, relationship, you need to fact out a separate
+
+table, uh, to keep the relations, um, or keep information,
+
+um, or properties, Um, about this relation.
+
+Right.
+
+So So this is the, uh, employee, uh, sold product.
+
+And then any extra information that you want to store,
+
+you actually need to create, um um a separate, uh,
+
+column.
+
+And then this separate column, Um, a lot of time
+
+could be empty.
+
+So we do have, you know, uh, employee a, uh,
+
+sold, uh, employee.
+
+So employee, A sold product.
+
+Um B and employee.
+
+A sold product C um, a sold product.
+
+Uh, d So this employee sold many different products, but
+
+some products might have, uh, you know, um uh, a
+
+starting, uh, Or maybe let's say the duration.
+
+OK, so you might capture the duration, um, of the
+
+selling event.
+
+So you might need to talk to the customer, uh,
+
+for a long time before you can convince the customer
+
+to buy it.
+
+Um, but then sometimes this duration are not captured.
+
+OK, so if I capture the duration for A and
+
+B Um, a selling B, uh, let's say, took about
+
+10 minutes to convince the customer or, uh, consult, uh,
+
+the customer.
+
+And, you know, um, leading him from here to there.
+
+Um, and then you don't have the information for, um,
+
+other, uh, selling events.
+
+So a n c and a N d.
+
+Nothing got stored there.
+
+So you probably have to do now, OK?
+
+Or maybe this new attribute, um of duration is a
+
+new idea.
+
+Um, that the the, uh, company wants to do more
+
+data mining, Um, on the or more machine learning, Um,
+
+on how effective each cell event is.
+
+So this could be, um, some extra information column required,
+
+um, And then then the new information is stored in
+
+there recording there all the past ones where duration hasn't
+
+been recorded, will be, um, will need a value to
+
+populate the data, uh, to to populate the relational database.
+
+Um, so the benefit of a graph, uh, model is
+
+we do not have to worry about anymore, and we
+
+do not have to worry about missing data.
+
+And one of, um my PhD students, um, won the
+
+best paper award, Uh, last year in O d m.
+
+Um, uh, in in, um, purely by showing that this
+
+graph database, um, or graph modelling technique, uh, could handle
+
+not only, uh, you know, representing the relations between entities.
+
+Um, because his domain is a traffic network.
+
+He can easily model the fact that sterling highway is
+
+connected with Bons Bay Road.
+
+At the same time.
+
+There are lots of missing data in, um, the database
+
+where, um they don't really have, uh, the volume of
+
+a particular road.
+
+And they don't have the, uh, speed average speed for
+
+a particular road.
+
+There are lots of missing data in there.
+
+In tabular representation, you will have to impute the missing
+
+data.
+
+Uh, that's part of the, uh, the data profiling or
+
+the data normalisation process with graph database techniques or graph
+
+based, uh, embedding or vector representation techniques.
+
+You don't need those, uh, because that's learned automatically through
+
+the the interconnection of the structure and the relations between
+
+the properties.
+
+OK, so graph representation is a very powerful, uh, technique.
+
+Um, recursive queries.
+
+Um is really difficult to write, uh, in relation to
+
+database.
+
+So if you have the time you can think of,
+
+um, you know, you need sub, um, tables.
+
+So you need to use the select multiple times to
+
+create sub tables, and then you need to create a
+
+union.
+
+Um, before, uh, you can, uh, find out, uh, the
+
+hierarchical relationship between, um um a, um, between employees.
+
+So, um, if you want to, you know, determine a
+
+person's reporting hierarchy in a relational database, it's it's doable.
+
+But this is how long that you, um, need to
+
+write your your SQL procedure.
+
+Um, for, um, but with a graph database, I think
+
+this is, um uh using graph Q l not cipher.
+
+Um, you can just basically do a path, uh, keep
+
+finding the, um, the next node, um, along the path.
+
+Um, and then you repeat the process you'll be able
+
+to always return.
+
+Um, this, um, line of management um uh, in in
+
+the employee, uh, database.
+
+OK, so for recursive queries, uh, graph database is really
+
+good at it.
+
+Um, and then we have, uh, some other, uh, no
+
+SQL databases that people might be familiar with.
+
+So, for example, uh, the um, document stores uh, mango
+
+D v.
+
+Um, And then, uh, you also have, uh, other key
+
+value stores.
+
+Uh, where, um, it's really good at, um, capturing nested
+
+information.
+
+So, for example, here I have the user Alice I
+
+store the information about, um, uh, Alice address and phone
+
+number and the email address.
+
+So these are the things pertaining to user Alice.
+
+So it's, um, specific to her.
+
+And then I can basically just add, um, all this
+
+to this, uh, uh, particular user.
+
+So it it's very useful for, um uh, for example,
+
+forum storing, uh, forum post.
+
+So a user make a lot of postings, right?
+
+So post one and post two and or maybe, uh,
+
+in a reviewing platform, a user reviewed at reviewed item
+
+one and not reviewed item two.
+
+So, um, so in forum and, um, review platforms, uh,
+
+this no SQL database is is really, really, uh, useful.
+
+Um, So, um, but they, um uh, so it's It's
+
+basically, you know, the strategy is to embed an objects
+
+identifier.
+
+Uh, inside, um, another, um uh, object.
+
+Ok, uh, so it's it's kind of mimicking, uh, foreign
+
+keys to a certain extent.
+
+Um, so this, however, this structure.
+
+Um, it's it's not really, uh, focusing on, uh, the
+
+the product.
+
+It's focusing on the users.
+
+As you can see, user is the main entity here.
+
+User made this order and made that order.
+
+Um, but it's really hard to answer questions that related
+
+to, uh, for example, uh, who bought a particular product.
+
+You have to go through all these different orders and
+
+search the items because these items are actually, uh, stored,
+
+uh, redundantly, um or and repetitively if, uh, multiple orders
+
+contain the same item.
+
+So items are not modelled as a single entity.
+
+OK, um, they're basically, you know, key value pairs, uh,
+
+inside this, uh, document store.
+
+Um, so there's no such relation, as, you know, this
+
+order contain, uh, so order one, contain product one, uh,
+
+contain product two.
+
+And this product one also belongs to all two.
+
+OK, so, um, just imagine a graph, uh, database structure,
+
+where your entities, uh, representing products are also explicitly represented.
+
+And then your search, um, could be a lot more
+
+efficient rather than, you know, going through and do a
+
+keyword.
+
+Uh, matching.
+
+OK, um, because your your properties are are are explicitly
+
+stored.
+
+Um, sorry.
+
+Your products are explicitly stored with other properties.
+
+So imagine that I have information about this particular item,
+
+which is a product.
+
+And then, um, this will be another nested, um, another
+
+nested document where you store all the properties of of
+
+the item ABC d, right.
+
+Um, and then it will probably have a description, and
+
+then I'll probably have a a unit cost.
+
+Oops.
+
+So I'm just saying that this could be linking to
+
+another nasty table.
+
+Uh, where it just talk about the item.
+
+ABC D um, with description, with unit cost and et
+
+cetera.
+
+Ok, um, but there's no linking.
+
+Uh, if all the 575678 also contain this, um, ABC
+
+d um, you will need to, um, embed that twice,
+
+um, into these two different orders.
+
+OK, so there's no common reference to a product.
+
+Um ABC d Instead, with graph database.
+
+This will be a separate entity.
+
+Separate node.
+
+Where your order.
+
+Uh, 5678.
+
+And your order 1234 Could all be referring to the
+
+same.
+
+Um, same item or same product.
+
+Ok, um, so so, um, this certain?
+
+Um no SQL or document based, um uh, Or document
+
+stores.
+
+Uh, like mango DB.
+
+Um, is not very, uh, suitable, Uh, in terms of
+
+maintaining these relationships and, uh, answering, uh, questions about other
+
+entities rather as compared to the main entities.
+
+You can ask questions about the user fairly easily, but
+
+it's not very easy to, um, answer questions.
+
+Um, uh, about products, answer questions about, uh, different orders.
+
+Um, so and then this, uh, document stores They do
+
+not maintain, uh, consistency of the connected data.
+
+Uh, because, you know, once you have, uh, multiple, um,
+
+you know, replicates of the same information.
+
+Um, that again, uh, would, uh, introduce insertion, anomaly, deletion,
+
+anomaly.
+
+Um, and all sorts of inconsistencies between the same.
+
+There's no guarantee.
+
+Once you update one, um, item description, you will update
+
+all the rest of the description for the same item.
+
+Ok, so that's, uh, where the consistency, um, is lost.
+
+And they don't Certainly, uh, they don't, uh, support, uh,
+
+index free.
+
+Uh, adjacency.
+
+So you have to build your own index in order
+
+to say, uh, you know, this ABC D is the
+
+same as another a ABC D.
+
+OK, so in in uh, graph database.
+
+You enjoy this index free ad agency where this entity
+
+is represented as a single entity.
+
+And then how they relate to each other is just
+
+going through the relation, uh, relationships between entities.
+
+So, um, in summary, relational databases, um, are basically designed
+
+to, uh, represent tabular forms.
+
+And, um, they cannot represent relations.
+
+Uh, very intuitively.
+
+Um, and then they certainly, you know, can't, uh, store,
+
+uh or efficiently store, uh, heavily connected data.
+
+Um, and instead, they have to, you know, create a
+
+separate, uh, table to represent the relationships.
+
+And they have to make use of now, um, as
+
+they go along, um, any sort of updates or changes.
+
+Right?
+
+Um, so graph databases are designed for highly highly connected,
+
+uh, data.
+
+You you will see the benefit of graph databases when
+
+your data set is highly connected.
+
+Um, where, you know, highly connected means that you have
+
+lots of, uh, foreign key primary key relationships.
+
+Uh, when you do a query, you have to do
+
+multiple joints, um, in order to, uh, find, um, an
+
+answer.
+
+Uh, so that's when you should think of, uh, graph
+
+databases.
+
+Um, so, um, and graph databases do not need to
+
+store our values.
+
+Um, and they're much better at handling recursive queries.
+
+Um, so recursive queries.
+
+Um, uh, basically, uh, the same in, uh, or or
+
+things that require self joints.
+
+That's a recursive query.
+
+So, employee, um, is a manager of another employee, Um
+
+or, uh, user, uh, is, uh, related to another user,
+
+Um, through perhaps transitive relationships.
+
+Um, So, like the ancestor, uh, relation that I mentioned
+
+before?
+
+Um, and, um, they are also much better, Uh, when
+
+you have queries across multiple entities, right.
+
+So when you do, uh, data modelling, um, as I
+
+showed you before, you can start by, uh, doing it
+
+on a whiteboard or on a piece of paper.
+
+Like what we did, uh, using the arrows tool.
+
+Right.
+
+So you can start by, um, you know, write on
+
+your whiteboard.
+
+Uh, that this actor, um, And that, um, is also,
+
+um, actor.
+
+They acted in certain movie, and then this movie received
+
+reviews from ABC D.
+
+Right.
+
+So, um, you plan your notes, you start with the
+
+notes and then add relationships.
+
+And then next step is add your note labels.
+
+So whether this is a person or or just, uh,
+
+I mean, uh, person, Uh, Or it could be, um
+
+uh, more specific.
+
+So rather than, say, person, you could say this is
+
+an actor.
+
+So you design your no labels, and then you also
+
+start adding the relationship labels, and then finally, you add
+
+the properties.
+
+And, um so, really, your design is driven by the
+
+types of queries uh, that you are interested in.
+
+Uh, so, for example, here I have, uh, user emails.
+
+And then, um and then this is, uh so this
+
+user name Bob, um, has emailed another user, uh, copied
+
+another user and then BC c another user.
+
+Um, and, uh, um, Bob is an alias, um, of,
+
+uh, the user name, Uh, Alice.
+
+So, um, on the right hand side, I have another,
+
+uh, slightly, uh, different design where the email is in
+
+the centre.
+
+Right.
+
+So the email has this content, and then this email,
+
+um is, um, uh, sent by Bob.
+
+And then the email was, um, uh, sent to, uh,
+
+Charlie and then C c.
+
+Alice, um, and then, uh, c c uh, Davina as
+
+well.
+
+And then it also BC cd another user.
+
+So why the right hand side is a better one.
+
+Uh, because the left hand side, you don't really have
+
+a central, uh, entity that's connecting all this, uh, different
+
+piece of information.
+
+OK, so if I want to say, you know, this
+
+is related to all this relationship, is that actually just
+
+related to a single email?
+
+So I I'd better have the email represented in there.
+
+So this is very much like your star schema, right?
+
+So if you remember your star schema, this is the,
+
+uh, the finest grain that you can capture in your
+
+fact table.
+
+Um, so this role.
+
+So if you imagine that this is, uh, a table
+
+this each role is capturing a email relation.
+
+Right.
+
+So you have the email content you have the from
+
+you have the tool, and you have the C C
+
+and BC C.
+
+OK, so you need to have some sort of things
+
+that connect in this relation.
+
+Um, rather than just having you know this from two.
+
+Because this could be from any emails.
+
+I I we can aggregate once we have all the
+
+emails um, captured in our graph database.
+
+Uh, but needing, um, when you need to, you know,
+
+attribute this back to an individual email.
+
+Um, Then you will have to, uh, model it, uh,
+
+properly.
+
+Right.
+
+So same goals.
+
+Um, for this, uh, crime database.
+
+Uh, so rather than say, you know, crime type a
+
+happened in neighbourhood B.
+
+Um, at time.
+
+Uh um uh um, at times, uh, you know, first
+
+of January 2010.
+
+And then, um um, and then, uh, in a certain
+
+beat, um, you cannot go with out the middle point
+
+where you have a crime ID or crime record ID
+
+as the as the central point.
+
+Ok, so so this is really if you think of
+
+at the, uh, schema level, this is your fact table.
+
+And these are your dimension tables.
+
+So dimension one dimension two and et cetera.
+
+OK, so the centre paths, uh, needs to, you know,
+
+grew all the dimensions together, and, um, it's also important
+
+to think ahead and make sure that your graph, uh,
+
+can evolve.
+
+Uh, when new types of relations, um, can be added
+
+in.
+
+Uh, So here I again have the, uh, email, um,
+
+and then reply to you and then, uh, and then,
+
+uh uh, and this email sent to, um, some other
+
+one.
+
+And then this email gets forwarded.
+
+Um, so So these are the different users, uh, that
+
+are getting involved with this email.
+
+Right?
+
+Um, but if I have, uh, the same email, uh,
+
+let me see.
+
+So this, uh, email has a ID and then, um,
+
+it also captures, you know, the the the person who
+
+sent it, uh, the person that it sent to, um
+
+And then, um, it was, uh, related to another, uh,
+
+email.
+
+It's a forward of another email and with a bit
+
+of modification.
+
+And then, um, this email gets forwarded by, um, another
+
+person, um, into yet again a different email.
+
+So you need to sort of think of, you know,
+
+in in future, um, how this email chain or email
+
+analysis, Um, is useful, uh, for OK, So if I
+
+want to capture the, um, the life, um, or the
+
+conversation thread, um, over over email, Um, I need to
+
+really think of other, uh, types of, uh, information that
+
+I need to capture.
+
+So rather than just having a single email, um, this
+
+email actually gets forwarded into, um, other emails.
+
+So then there's a relation, Uh, between emails rather than,
+
+uh, just a single email alone with all this.
+
+Um, uh, you know, uh, information or the dimension information
+
+about the email?
+
+Um, is you also need to capture information.
+
+Um, between emails.
+
+OK, so, um, the modelling if we summarise the data
+
+modelling process, um, you start with some business queries, Like
+
+what you did with data warehousing.
+
+Um, and then you could think of, um uh, um
+
+a model like a a star schema kind of model
+
+where you have a centrepiece.
+
+Um, that indicates the, um, finest grain information that you
+
+want to capture.
+
+Uh, which could be, um, a a transaction could be
+
+a crime.
+
+It could be an email.
+
+Um, and then, um, you factor out, um, or span
+
+out, uh, with the multiple nodes that this centre node
+
+is connecting to.
+
+OK, um, and then you get the data from either
+
+a CS v file or a bunch of CS v
+
+file, uh, or from a relational database loaded into your
+
+design.
+
+And then, um, you, uh you modify it if you
+
+see, um, if you see there's any, uh, problem when
+
+you, uh, submit the, uh, query to it.
+
+And if you certain query cannot be answered, you need
+
+to adjust and go back.
+
+Uh, go back to your, uh, database, uh, graph database.
+
+And then, um, either add new nodes or add new
+
+relationships.
+
+Um, and then populate that with data again.
+
+Ok, um, so once you've done that, um, you can,
+
+uh, store it in a relational database.
+
+And you can, uh, you know, import data, uh, from,
+
+uh, other sources or, um, some other, um, data repository.
+
+OK, so, um, on the right hand side, it is
+
+just an illustration, uh, of, uh, a movie database.
+
+You start with the whiteboard, and then you, um, use
+
+tools such as the, uh, arrows dot app.
+
+So the arrows two, um, and then you add properties.
+
+Um, you add, uh, properties to the nodes, and you
+
+add properties to the relations.
+
+Um, OK, so there's some examples, um, in neo already,
+
+Um, but the basic principle is, um, you when you
+
+have a relation database, um, a role in a table
+
+is a node, and then a table name is a
+
+label name.
+
+Um, and then, um, a joint, um um or foreign
+
+key.
+
+Um, is a relationship.
+
+OK, um, so that's fairly, uh, straightforward in the north
+
+wind.
+
+Uh, data sets.
+
+You have customers, uh, products, customers buying products, um, and
+
+recorded in orders.
+
+And the products are, um, stored in warehouse.
+
+Um, and then they also keep shipping information.
+
+Sorry.
+
+Supplier information.
+
+And then, um, the employees handling this, uh, uh, ordering
+
+process, um, and then the sales territories.
+
+Um uh, information.
+
+So?
+
+So the things gets greyed out.
+
+Um uh, information that we don't really care about.
+
+Um, but what we care about, uh uh, this, uh,
+
+uh, suppliers, uh, products, employees you can see employees has
+
+a hierarchical relation, which is transitive.
+
+Um, that's, you know, um, an employee is a manager
+
+of another employee.
+
+Um, and then all the, um, all the details have
+
+orders, and then, uh, products belongs to certain categories.
+
+So once you have that ER diagram, um or, um,
+
+primary key, foreign key relationship, Uh, in, um, a relational
+
+database.
+
+It's quite naturally maps to a, uh, graph database.
+
+So you can see employee reports to another employee.
+
+Uh, which is that circular kind of relation, um, or
+
+hierarchical relation and employee sold certain order and order contains
+
+products, products is part of the category and suppliers supply,
+
+uh, products, OK, and each role, um, in the orders
+
+table become a node with order as a label, each
+
+role in the product table becomes a note.
+
+Um, with product as the label and then the rest
+
+of the information, um, are considered as properties, so they
+
+attribute value pairs.
+
+Um, so basically, uh, roads, uh, rows to notes and
+
+table names to labels.
+
+That's, um, a quick, uh, dirty summary of that.
+
+Um, and I I won't really go into the detail.
+
+I'm just trying to use this, um, to show you,
+
+um that you can load CS v files in C
+
+a, uh, from local files.
+
+OK, so, um, imagine the CS v files from your,
+
+uh, data data warehouse design.
+
+You have fact table dot CS v You have diva
+
+table dot CS V.
+
+So all of these can be directly loaded row by
+
+row as nodes of certain type.
+
+So the type is the, um, the label, which is
+
+the table name.
+
+Uh, so if you have a order table, then the
+
+label is, um, order, um and then if you have
+
+a product table.
+
+The label is product.
+
+Um, and then each row it has its own, uh,
+
+note.
+
+OK, and then the rest are are properties.
+
+So you create, um uh, a set of, um, for
+
+example, this one, uh, the products.
+
+So you have the product name and product unit price.
+
+Um, all are stored as attributes, right.
+
+So and then, um, the type, uh, so is product.
+
+OK, so here and then we store, uh, you know,
+
+a reference to the product, ID as as, um, a
+
+property as well.
+
+Ok, so, um, this will become much, uh, easier to
+
+read once Michaels, uh, introduced the, uh, context, um, and
+
+syntax of cipher uh, next week.
+
+Ok, so this is just giving you a first glimpse.
+
+Um, and then there's the e t l tool from
+
+neo, which is fairly new.
+
+Uh, it wasn't there last year.
+
+Uh, this year, um, they've introduced, uh, e t l
+
+two and their e t l tool follows, uh, roughly
+
+the same idea as I, um, mentioned before.
+
+So where roles to nodes and table names to labels.
+
+Uh, the only thing that they put a bit more
+
+effort in is this relationship um, creation.
+
+So a table with a foreign key is treated, um,
+
+as, um a join, um, and then imported as a
+
+node.
+
+So, um, person leaves at certain address.
+
+OK, so the address is a foreign key.
+
+Uh, so now, once we see this foreign key, we
+
+created two nodes, and then the foreign key, uh, becomes
+
+a relationship.
+
+And then, similarly, if I have a table with two
+
+foreign keys, uh, where this table is, just, uh, uh
+
+m to m, uh, many to many relations Where a
+
+student, um could, uh, enrol in multiple courses and multi.
+
+Uh, a single course will contain multiple students.
+
+Um, so that's a typical M to M relation.
+
+Um, between two entities.
+
+Again, this will be turned into, um, uh, imported as,
+
+uh, enrolled in relationship between two types of notes between
+
+student calls.
+
+Uh, the third one is when you have again a
+
+table with more than two, uh, foreign keys.
+
+So this table, the sole purpose of this table is
+
+to, uh, connect, uh, multi.
+
+Uh, connect multiple tables.
+
+Think about your fact table.
+
+Right.
+
+So your fact table has a reference to dimensions.
+
+So if you have a four dimensional, uh uh, data
+
+warehouse.
+
+Then, uh, your fact table will contain four foreign keys
+
+to four, uh, dimension tables.
+
+Right.
+
+So So this is, um, a example where I have,
+
+um where I have the oldest table.
+
+You see, the oldest table have, um, order ID.
+
+And then, um so if you look at the the
+
+old table, it actually has, um, find out with, uh,
+
+four connections, right?
+
+So it connects with the com customers and connects with
+
+the employees, uh, who serve the customer and also the,
+
+um, shippers, which are the, uh, shipping, uh, company.
+
+OK, and then so the order also have information about
+
+the products, so each order will contain multiple products.
+
+So once you turn this into, um, a graph database
+
+where the, uh, where the fact table becomes a node
+
+on its own sitting, um, in the middle, which is
+
+like the email that we talked about, right?
+
+So the email is the finest grain, um, entity, uh,
+
+for each row of your fact table.
+
+Um, And here each order is the finest grain, um,
+
+entity of, uh, your fact table.
+
+So the order belongs to a customer, and it's shipped
+
+by a particular, uh, shipping company.
+
+And this order contains more products, and it's handled by
+
+certain employees.
+
+OK, so it's, um all fairly straightforward if you think
+
+this at the, um ER diagram or the, um, star
+
+schema, uh, level.
+
+OK, so once you, uh, this e t l tool,
+
+um, also allows you to adjust things.
+
+So once you, um, load the data and did the
+
+mapping from relational database.
+
+So if your things are in your local um SQL
+
+uh, Microsoft SQL Data Warehouse, um, you can load them
+
+directly, uh, into a relational.
+
+Uh, so sorry.
+
+Load it into, uh, directly into a graph database.
+
+Um, and then you can go into this interface and
+
+then adjust.
+
+Um, the design.
+
+Uh So, for example, if if some of the things
+
+are not correct, you can modify them, and you can
+
+add new things to it.
+
+So if I go into here so you can see
+
+that the order is connected with four, um, type of
+
+entities, so order is connected with customer, and order is
+
+connected with, uh, product order is served by certain employees,
+
+and employee um is managed by another employee, and older
+
+has um uh, making use of certain, uh, shipping company.
+
+And?
+
+And you can add things, for example.
+
+Uh, so the employee serves, uh, for a particular sales
+
+territory and then the territory sales territory is part of
+
+a region.
+
+Um, product is good by categories.
+
+Product is supplied by suppliers.
+
+So you can add to your design and, uh, fun
+
+tune your design.
+
+Uh, using this, uh, e t l tool.
+
+Ok.
+
+And this exercise will be inside your, uh, lab sheets.
+
+Um, so, uh, we'll basically introduced all the fundamental ideas
+
+of how you could build a graph database from scratch,
+
+or you can load a graph database from an existing
+
+relational database.
+
+OK, so all the final query details will be introduced
+
+next week.
+
+OK, thank you.
+
+Thank you so much for your attention.
+
+And I'll see you the week after.
+
+Yeah, your right.
+
+So so Ok, um, the last thing is, I will
+
+put the past exam papers, um, on.
+
+I MS so if people are interested in having a
+
+look at what, uh, the ex exam question Looks like
+
+you can start.
+
+Look at now.
+
+Yeah, I Excuse me.
+
+I just have a question about project two.
+
+Um, so for my project one, I'm not too confident
+
+if I did go, um, as this Project two, it
+
+is based on Project One.
+
+If I have the same er in Project one in
+
+my project two.
+
+Will I still be losing all one?
+
+Because I'm not too sure if I did my project
+
+one correctly.
+
+OK, so you're not sure whether you did your staff?
+
+Well, I say I like repeated mistakes because the mark
+
+haven't come out.
+
+I'm not sure it will also be losing like and
+
+Yeah, yeah, yeah, yeah, yeah, yeah.
+
+We'll try to, um, get the marking down in no
+
+more than 15 days or 15 working days, which is
+
+we try to get it done in 2.5 weeks.
+
+There will be a sample project one as an option
+
+to work for.
+
+This is your own design idea.
+
+Yeah.
+
+So, um, uh, I think the best thing you could
+
+you could do is probably, uh, talk to some of
+
+your colleagues, um, or schools and see whether you can
+
+team up with them.
+
+Yeah, Yeah, but I I don't really think that you
+
+you'll be penalised.
+
+Why?
+
+What could be um So what?
+
+What makes you think that you didn't do a good
+
+job in it?
+
+Like I didn't see or you said this was, like,
+
+a lot of er I bet I could only get
+
+my p p.
+
+I working on the last day.
+
+Right?
+
+Right.
+
+OK, um, pretty rush a lot of trouble.
+
+OK?
+
+Ok.
+
+So, um, did you talk to the lab facilitator?
+
+Um, yeah, a few different points.
+
+I mean, I did check in, and then he just
+
+said, Like to email him if I couldn't get him
+
+working, But I get it work rather than how well
+
+it is, right?
+
+Yeah.
+
+So, yeah, it did work, but whether it worked well
+
+or if I did it correctly, I'm not too sure
+
+on the right.
+
+Uh, trouble is, I won't be around next week, but,
+
+um What, you can do it.
+
+Show me what you have got in Project one.
+
+Show me your, uh, design diagram your ER dia.
+
+One of your project one, And then I can give
+
+you some.
+
+See that?
+
+Yeah.
+
+Um, just so that you can start with a better
+
+idea of of project to that's That's the bad thing.
+
+Yeah.
+
+Um or you can make an appointment to see me
+
+before, uh, Friday this week, and then we can You
+
+can go through it.
+
+Yeah.
+
+Um, otherwise you'll wait for me to come on the
+
+way that starts on the eighth.
+
+Yeah, I probably have to wait.
+
+Yeah, yeah, yeah.
+
+You I mean, it doesn't stops you from starting with,
+
+uh, with what you've got.

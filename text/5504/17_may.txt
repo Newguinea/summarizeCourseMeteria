@@ -1,0 +1,3742 @@
+OK.
+
+Country.
+
+Right.
+
+And, uh, yeah, yeah.
+
+Neighbour Excel file.
+
+We do this time.
+
+You want to go next one That number?
+
+Yeah.
+
+So?
+
+So.
+
+Absolutely.
+
+I mean, like, No, Let see.
+
+Thank you.
+
+Yes, OK, it is Yes.
+
+Um, no.
+
+Yeah, yeah.
+
+Make Oh, God.
+
+Correct.
+
+Hi.
+
+Um, this is where you're calling from the general.
+
+General, Um, the one of the screens, uh, somehow doesn't
+
+really come down, even if they try the, you know,
+
+the the controls.
+
+I can.
+
+Yeah.
+
+And is that, um, fixable or not?
+
+Ah, yeah, yeah, yeah.
+
+Oh, OK.
+
+All right.
+
+OK, OK.
+
+That what?
+
+Human.
+
+Great.
+
+All right.
+
+Uh, good afternoon, guys.
+
+Um, so we still have to suffer with the same
+
+problem.
+
+Um, the screen would have come down, and it has
+
+been reported.
+
+And, um, they said it's gonna take quite a while
+
+to fix because it's a network issue.
+
+It's not just simply the mechanical or anything, uh, that
+
+we can fix.
+
+So So let's just, um, stick to this, you know,
+
+not so perfect view of the lecture slides, and then
+
+I'll do the same thing.
+
+Um, trying to do you, uh, do a demo while
+
+we're going through the slides while we're going through the
+
+content.
+
+OK, so, um, everyone has, uh, got my email about
+
+the project one.
+
+Yeah.
+
+OK, so if you do have a problem, uh, make
+
+sure you either see, uh or see, um, Pascal during
+
+the lab times And also, uh, Friday, there's a one
+
+hour session between 2 to 3.
+
+Uh, book specifically for reviewing your, um, assignment, Project one.
+
+All right.
+
+So, um, I'll get this one projected on the top.
+
+Thanks.
+
+I'm trying to make the font a bit bigger, but
+
+it doesn't seem to work.
+
+OK, so, um, what i'll be doing today?
+
+Uh, sorry.
+
+Wrong slides.
+
+Did I give you the wrong slides?
+
+OK, so the front page is slightly an issue, but
+
+I think the rest should be fine.
+
+Yep.
+
+OK, so what i'll be doing today?
+
+Well, this is not lecture, not lecture 10.
+
+It's lecture 11.
+
+Um, and I've modified this.
+
+So, uh, if you download that from the website, the
+
+learning management system, hopefully you will see a up to
+
+date version.
+
+Or maybe I just forgot to Yeah, I forgot to
+
+update the front page.
+
+Anyway.
+
+So this is lecture 11.
+
+Uh, what we're gonna focus on today, um is on,
+
+uh, graph data science.
+
+Um, this used to be a package called, um graph
+
+algorithm.
+
+Um, and then later on, uh, they changed it to,
+
+uh, graph data signs to reflect.
+
+Uh, the, uh, fact that they are working on, um,
+
+graph algorithms for data science purposes.
+
+Um, so if you go to the website, um, Neo
+
+J uh, graph data science, you'll be able to find,
+
+um, a large collection of algorithm that they have implemented.
+
+Um, so if we look at the, um, the documentation,
+
+uh, sorry, not this one.
+
+Just give me a second.
+
+So maybe g BS, um, shortest path.
+
+Oops.
+
+So if you go into the, uh, documentation page and
+
+you will see, um, the graph algorithm and the graph
+
+algorithm, there's a quite a few, uh, different types of,
+
+um, algorithms that have been implemented in the graph data
+
+science.
+
+Um, package.
+
+So the G DS package is similar to the A.
+
+O.
+
+C.
+
+Package.
+
+Uh, where it has a collection of a words that
+
+is prebuilt and implemented for you, uh, to straight away
+
+make use of, um, so here we can see that
+
+it has centrality.
+
+Um, calculation of a graph.
+
+So the number of incoming nodes, outgoing nodes and then,
+
+um, calculating the between the centrality How important the node
+
+in terms of communicating, uh, between one community to another
+
+community.
+
+So that's more or less in the, uh, social network,
+
+um, scenario, uh, so detection centrality, uh, calculation.
+
+They are fundamental to any recommended system.
+
+Fundamental to, uh, pretty much, um, all these, uh, social
+
+network platforms, for example, LinkedIn, uh, when they find a
+
+group of people, they will be able to recommend who
+
+to, uh, connect to.
+
+So all these, um, thanks to the graph algorithm, and
+
+then certainly you can calculate the similarities between one item
+
+with another item or one entity with another entity.
+
+And then there's the deep learning side of things.
+
+Uh, where Pascal is working on.
+
+So his, uh, last paper, uh, was on, uh, embedding,
+
+uh, the road network.
+
+Um, so, uh, that we can calculate, uh, the features
+
+or embed the features of note, Um, you know, representing
+
+a road segment using vectors.
+
+And then we can, um you know pretty much calculate
+
+the similarity between nodes or similarity between roads.
+
+Um, And then once we calculate the similarity, we are
+
+able to, uh, make, uh, predict predictive.
+
+Um uh, analytics.
+
+So make predictions to say you know how risky this
+
+road is.
+
+Um, So, um, that's, uh, touch on the, um, node
+
+embedding or vector representation of nodes, vector representation of edges
+
+and vector representation of sub graphs.
+
+Uh, so there are a few, uh, things, uh, you
+
+know, available in nej.
+
+Uh, for example, not to back is exactly what?
+
+Um uh, pasca has used as one of the, um,
+
+the baseline.
+
+Um, and then that gets, you know, compared with, uh,
+
+something like called, which is a knowledge graph embedding technique.
+
+So there are These are basic implementations of no embedding.
+
+So the reason why that I want to, uh, allude
+
+you to this is today is our, uh, last lecture
+
+on exam content.
+
+Um, so I won't be able to finish all this
+
+graph algorithm.
+
+There are heaps of them out there.
+
+Uh, but having um, taught you the basics, you've learned
+
+all the basics about neo about graph representation of data
+
+or graph modelling of data.
+
+You should be able to, uh, pretty much follow the
+
+documentation and then do a bit of exploration and then
+
+see, uh, whether certain algorithm can be applied.
+
+Uh, in your scenario, because I think after this unit,
+
+most of you will go into, um, the undergraduate will
+
+be, uh, professional computing.
+
+And then the Post grad will be capstone units.
+
+So that's when you actually make use of all the
+
+knowledge that you learned in the past two or three
+
+years.
+
+Um, of your degree.
+
+Um, so I think keep an eye out on, uh,
+
+what's out there is very useful.
+
+So, as I said before, um, if you have a
+
+hammer, um, you look for a nail.
+
+Um, but now what we're trying to do is to
+
+build lots of tools, uh, and awareness of tools.
+
+Um, so so that you don't just have a hammer.
+
+You have a tool set that you can find the
+
+right scenario to apply.
+
+OK, so what we're gonna focus on is, uh, this
+
+particular sub problem, which is called path finding.
+
+Um, And then, uh, today we're gonna look at the
+
+de Castro, uh, source.
+
+Target sort, uh, shots target sort path.
+
+Uh, so for shots, they just shortest path hours and
+
+then, um, a star.
+
+Uh um And then we start with the simplest, which
+
+is, uh, breakfast, uh, breakfast depth.
+
+First search.
+
+And we also gonna talk a little bit about, uh,
+
+random walk.
+
+Um, so these are all set into, um, a scenario
+
+or, um, a, um, example.
+
+Uh, that is, uh, modelling the road network.
+
+So, uh, or city relations, it's really not really, uh,
+
+exactly road Network.
+
+But you know how far one city is, uh, from
+
+another city, whether they reachable or not.
+
+OK, so the, um, database that we're gonna look at,
+
+um Is this city connectivity?
+
+Um, And before you do anything, when?
+
+Before I start the road network.
+
+Um, database.
+
+What you need to do is that you need to
+
+click on this open button.
+
+Um, check on the plugins and see whether your A,
+
+um, is installed.
+
+Um, whether your graph, uh, database library is installed.
+
+So even if you install before when you do it,
+
+I think when you reopen it, um, most likely it's
+
+not there, um, anymore.
+
+So you probably just have to Before you start the
+
+database, make sure that you install the graph data science
+
+library, make sure that you install the apo Apo, uh,
+
+library as well.
+
+So once we install them, we can, um, have a
+
+start.
+
+Ok, um so, as I said before this, um, graph
+
+data science, um, allows us to answer, uh, business critical
+
+queries and make predictions using, um, a graph database.
+
+Um, so this graph data science, coupled with, uh, graph,
+
+um, machine learning, um provides another set of powerful tools
+
+to give you a a complete different viewpoint of how
+
+your data should be, um, analysed.
+
+Ah, let's fail to start.
+
+That's interesting.
+
+I've never had this problem before.
+
+Hm.
+
+OK, mhm.
+
+Maybe I'm running out of space.
+
+That's weird.
+
+Is closing all the windows and see whether there's any
+
+fakes.
+
+Um, OK, so, um, so this graph data science library
+
+is an ongoing effort from neo four J to, um,
+
+allow new algorithms to be developed and incorporated into the
+
+new four J uh uh, packages.
+
+Um, so, as you probably will see, um, this is
+
+what we're using is not G DS two point oh
+
+anymore.
+
+That's last year, and this year has already moved up
+
+to 2.3 point six.
+
+Um, and a has been upgraded as well.
+
+And our new four J is 5.3.
+
+So the code here, um, is not gonna be permanently,
+
+uh, working because they are not.
+
+Some of them are beta.
+
+Um, some of them are alpha versions.
+
+So which means that they are subject to change.
+
+Uh, last year's code is no longer working, and that's
+
+why I've I should have updated this because the code
+
+is all reflecting.
+
+Uh, the new four, G 5.3, and, uh, graph data
+
+science library 2.3.
+
+All right, but the fundamentals stays the same when you
+
+have your graph database, set it up loaded into neo
+
+J.
+
+Um, in order to make use of the graph data
+
+science library, what we first do is that we load
+
+the graph into, um, this new, um, memory.
+
+Um, and then we do a projection.
+
+So we do a e memory projection to get, um,
+
+a more projected graph.
+
+It can be, um, a subset of it.
+
+Um, it can be, uh, a particular aspect of it.
+
+Um, And then once you have the projected graph, our
+
+data science algorithms are executed.
+
+Um, on top of or on this projected graph rather
+
+than, um, the original new four graph.
+
+So So basically, you grab a copy of your original
+
+data and then do a projected graph capital in memory,
+
+and then the procedure will be applied, which could be
+
+the search breadth first search or depth.
+
+First search, or it could be the shortest path algorithm.
+
+And once you've done that, you can either stream it,
+
+uh, which means that you are just accessing it in
+
+memory.
+
+Or you can permanently write back, um, as a new
+
+record, um, or new property, uh, into your new four
+
+g.
+
+So depends on what you want to do.
+
+Um, you you have multiple choices.
+
+Um, of how you want the data to be, Um,
+
+uh, accessible, uh, to your end user.
+
+It could be in memory.
+
+Could be returned permanently into your, uh, new four g
+
+graph database.
+
+So why do we have to do graph projection?
+
+So here I have something called a bipartite graph, which
+
+means I have two types of notes, right.
+
+So not more than two.
+
+Just two types of notes.
+
+That's what the B I stands for.
+
+The bipartite graph where it records, um, people watching, uh,
+
+TV shows.
+
+So the lighter blue colour are TV shows.
+
+Um, and then the darker one are representing, uh, the
+
+viewers or people who are making, uh, who are viewing,
+
+uh, those TV shows.
+
+Um, let's see whether I can create one.
+
+I said, I'll just call it.
+
+See these?
+
+Yeah, OK, but now, um, I might just want to,
+
+um, look at the relationship, uh, between, uh, people, these
+
+viewers.
+
+Right.
+
+So I can, um, connect the viewers based on, uh,
+
+the number of shows that they watch in common.
+
+OK, so Don is here, and Evan is here.
+
+So they both watch this battle star, uh, Gala galatia
+
+Galactica, um, and then Firefly.
+
+So they share two common shows together.
+
+That's why Don and Evan, um, are connected with the
+
+weight.
+
+Uh, weighted edge two.
+
+Um, and then similarly, I do the rest of the
+
+connection.
+
+So this is called a projected graph.
+
+Um um, mono partite graph, Which means, um, a single
+
+type so single type graph, um, connected us weighted edges.
+
+Um, so if you think of, uh, network connectivity or
+
+social network people following each other, these are all mono
+
+graph, which means that they are of simple single type.
+
+Um, and similarly, this, uh, bipartite graph can be projected,
+
+um, to another type of mono partite graph, Uh, where
+
+I have, um, TV shows connected to each other.
+
+So basically, the the number of active viewers, uh, common,
+
+um, combined episodes watched by viewers in common.
+
+So common viewers, um, watched these two shows?
+
+Um uh, with with a with a number of episodes,
+
+um, totaled up.
+
+So basically.
+
+So, um, if I have, um, fast, uh, escape got,
+
+um, connected with, uh, battle star because, um, Evan is
+
+the bridge is the connection between the two.
+
+Um, so these two have, um 27.
+
+Uh, let me see so fast scape and at all.
+
+So they're not connected.
+
+Mhm escape and, uh, fire fly.
+
+Um, so they are connected by common viewers.
+
+Beth got two.
+
+And then, uh, I haven't got 14.
+
+27.
+
+29.
+
+Uh, yeah.
+
+I don't know how these numbers are calculated.
+
+So 29 39 plus two.
+
+Yeah.
+
+So it's basically, you know, traversing.
+
+Uh, this edges.
+
+So you have 15.
+
+Um, and then you have 14.
+
+Um, you have 10 and two.
+
+So that's 29.
+
+39 plus two.
+
+That's 41.
+
+So that's how fast gate and far fly, um, are
+
+connected.
+
+OK, so, um, that's a projection of this bipartite graph,
+
+uh, into a projection of, um, a mono partite graph,
+
+Uh, a single type graph.
+
+So, um, that's why we need to do graph projection.
+
+Because we might just want to work on this, um,
+
+projection of viewers or we just want to work on
+
+the projection of TV shows.
+
+Um, and then there are, uh, other terminologies that you
+
+might come across as well.
+
+So when you read the documentation you see at the
+
+top of the website, um, it will say, you know,
+
+whether this, um, algorithm is applicable to direct it graph
+
+or undirected graph, uh, homogeneous graph or heterogeneous graph or
+
+weighted graph?
+
+Um, it's all quite self explanatory.
+
+Directed graph means that your edges have directions.
+
+Um, um, for example, you might have, you know, people
+
+following another people.
+
+Um, it's not bidirectional.
+
+So So a is a follows B doesn't mean B
+
+also follows a and then you have undirected graphs.
+
+So normally, when you connect two cities, there should be
+
+multiple roads that, um connects, Uh, you know, from CD
+
+A to C DB.
+
+And also multiple roads connect C DB to CD a.
+
+So, typically, if we want to simplify the connection between
+
+two cities, what we'll do is we just have an
+
+undirected graph, um, and then homogeneous, uh, graph means, uh,
+
+they treat all nodes having the same type, which is,
+
+uh, um, another way, Uh, of, uh, referring to this
+
+mono partite graph.
+
+So you only have one type of notes.
+
+Um, And when you have multiple type of notes, then
+
+you have a hero Heterogeneous, uh, graph.
+
+Uh, so, for example, social network is between people and
+
+people.
+
+Uh, but so far we've looked at, um, uh, people
+
+working on projects.
+
+Um, uh, and then, uh uh, there's distinction between supervisors
+
+and, um, uh, students and, uh, in the movie graph.
+
+There's distinction, um, between, uh, actors and directors.
+
+So even though it's all about people, but then people,
+
+uh, play different roles in the graph.
+
+Um, and then similarly, in your, uh, assignment, we are
+
+dealing with, uh, heterogeneous graphs because we have multiple types.
+
+Right?
+
+So we have, um, crime.
+
+And then crime is connected to time and con crime
+
+is connected to, um, location, uh, or suburbs and neighbourhoods
+
+and et cetera.
+
+And then potentially, if you, um, project your, um, your
+
+graph, uh, to say, you know, the crime type is
+
+not an attribute, but inside the crime type is a
+
+is a node.
+
+Then that could be another type of node.
+
+So that's a true genius graph that we are looking
+
+at and weighted graph.
+
+Um, typically are very useful.
+
+So, for example, between cities, we could have the distance
+
+between the two cities, Um, as a weight, um, so
+
+that becomes a weighted graph.
+
+And then, um, when you have, uh, you know, uh,
+
+connections between people.
+
+Uh, we can use, uh, for example, the number of
+
+email exchange between the two people.
+
+Um, or even when you connect roads.
+
+So rather than just recording the the roads, it could
+
+be, uh, for example, um, in terms of, you know,
+
+laying out cables that connect in one, uh, household with
+
+another, uh, we could put the dollar in there.
+
+So how difficult it is is this household, you know,
+
+sitting on a hill that I have really, you know,
+
+um, uh, built things uh, to follow the the the,
+
+um, landscape, Um or do I have to dig much
+
+deeper?
+
+Uh, in order to bury, uh, bury the the tables
+
+so you could you could even put a dollar sign.
+
+Uh, between the the the edges.
+
+Uh, sorry, um, on the edges, as a property of
+
+the edges between the notes.
+
+OK, so weighted graph, um, nodes could also have weights
+
+as well.
+
+So, um, because certain nodes might be more important carry
+
+a heavier, uh uh, responsibility in the network.
+
+So you probably want to, um, give the node a
+
+weight as well.
+
+So when you look at algorithms, uh, take a look
+
+at how, um or what kind of, um, features of
+
+the graph?
+
+Um, they can be applicable.
+
+Um, so let me see for OK, so these are
+
+the features.
+
+Um, I mentioned So, um, it's this particular Ditra source
+
+Target shortest path.
+
+Argo is, um, applicable for directed and undirected graph.
+
+And, um, the nodes have to be homogenous.
+
+And then, um, it needs to be weighted.
+
+OK, so, um, this, uh, these, uh, different traits, um,
+
+that each algo is, uh, capable of dealing with, So
+
+I have this, uh, demograph Where?
+
+Um this is the, uh, CS v file.
+
+Um, I have this transport nodes, uh, which, uh, city
+
+names, Um, and they also have longitude latitude.
+
+We want be using it straight away, but we will
+
+be using it later on when we look at the
+
+A star shortest path, Um, and then we also record
+
+a population.
+
+So, as you can see, the population, uh, could be
+
+used as a node weight.
+
+Um, if you want to, uh, specify weights on nodes,
+
+um, and then we have the relationship between the cities
+
+source and destination city.
+
+Um, and then the relationship is basically whether, um, uh,
+
+it's not an actual road.
+
+That's why it's a e road.
+
+So it could be electronic road or whatever.
+
+That you you are.
+
+You are trying to, uh, interpret the e with, um,
+
+so it's basically we're using a simplistic, um, representation to
+
+say, you know, these two cities are reachable, uh, with
+
+a cost of 46 so the 46 could be miles.
+
+Could be, um, k MS.
+
+Um, um, it doesn't really matter, but we just using
+
+this number to represent, uh, how far away they are
+
+or the the cost associated from travelling from the source
+
+city to the destination city.
+
+Um, if we're going back to this, uh, new four
+
+j browser.
+
+So I managed to start up, um, a new, um,
+
+database.
+
+Um, let's see that.
+
+I have, uh, g DS folder.
+
+So?
+
+So I have this code, um, already, uh, written, as
+
+you can see, um, this is taking the data.
+
+The CS v file, uh, from a github record.
+
+Um, and I, uh, I think this is, uh, a
+
+duplicate.
+
+I don't really need both lines, so I can just
+
+remove this line.
+
+So I specify using the cloud the Wiz clause.
+
+Uh, specify.
+
+Uh, a base, uh, representing the github, uh, base repository,
+
+uh, for the data.
+
+And then with the base can coordinate with the actual
+
+name, um, of the CS.
+
+V file.
+
+Uh, which is what's on your, uh, table for two.
+
+Um, and then I keep it as a, uh u
+
+r i, um, And then we load CS v from
+
+U R I, um, so it's basically the cipher loads
+
+CS v um, And then we merge the, um, the
+
+place.
+
+Uh, so the row ID which is the name of
+
+the city, Um, is, um, created as note, uh, with
+
+a type, uh, or with a label place.
+
+And then we set the longitude and latitude, um, and
+
+also read in the population, Um, as well.
+
+So they are properties of, um of the notes so
+
+I can run this.
+
+OK, so 12 labels has been added and then created
+
+12 nodes.
+
+Um, and then, uh, we have set, uh, 48 properties.
+
+So if I do, uh, uh, show.
+
+Um so match in return N I'll be able to
+
+see, uh, this, um notes, um, on their own.
+
+OK, so with latitude, longitude, name and population So it's
+
+all just, uh, load CS v uh, but now it's
+
+from a, uh a u RIA github repository.
+
+And then I can do the second one.
+
+Where is, um, um is the relationship between the cities
+
+So this is a relationship that says, you know, the
+
+source node is reachable, um, to the destination node with
+
+a certain cost.
+
+OK, so we load this c we same as before.
+
+Uh, but, uh, now we have to match the origin,
+
+uh, match the destination, which are both uh, places that
+
+we have already loaded in.
+
+Um, and then we, uh, connect, uh, them with, um,
+
+a, uh, relationship called relation type called er road.
+
+Um and then recall a property, uh, cost as the
+
+distance.
+
+Ok, um, so, um OK, so this one, uh, merge
+
+this and then we have another one.
+
+Um, so that's now load the, uh, low the latitude
+
+longitude.
+
+Uh, so this is a repeat, so we don't really
+
+need that.
+
+OK, so let me try to remove.
+
+I just remove this and so that we don't have
+
+to repeat the same process of creating all the cities.
+
+Um, so simply click on one and then we'll be
+
+able to, um, get all the relationships in there.
+
+Uh, so there's a little thing that you probably haven't
+
+noticed.
+
+There's a setting, um, button on the left of new
+
+four j browser.
+
+And, uh, you can scroll down and then say, whether
+
+you want to connect the results nodes or not.
+
+So men return and only return me the notes.
+
+It doesn't necessarily, uh, connect them.
+
+Um, So if I, uh, select this, I click on
+
+connect result nodes.
+
+I can see I rerun this.
+
+I can see how they connect it.
+
+OK, so they connect it now with, um, a, uh,
+
+value indicating the distance.
+
+Uh, between them.
+
+OK, so doncaster is connected to London.
+
+Um, by 2077 as the distance.
+
+OK, so how you interpret these values, um, is less
+
+of an issue for this particular, uh, lecture.
+
+OK, so but, um, sometimes you want to just display
+
+the edges when it's created.
+
+So rather than have all the edges between the nodes,
+
+Um, so sometimes you need to tick this off.
+
+Uh, so let's, uh, keep it, keep it on first,
+
+and then I'll show you, uh, what I mean?
+
+All right, so data is loaded in there.
+
+Um, and now, uh, we have, And that's basically what
+
+you have seen.
+
+Um, and this is the graph created, um, So now
+
+we can start.
+
+Remember that in order to make use of G DS
+
+or graph data science, uh, library.
+
+We have to first project our graph and store it
+
+in the memory.
+
+Ok, um, so here is the syntax for called projection,
+
+So I basically create a e Memm graph called transport.
+
+Um, and then I'm interested in, uh, the nodes, Uh,
+
+with police, uh, place, place as a label.
+
+And I'm interested in the, uh, e road.
+
+Uh, relationship.
+
+OK, um, and obviously you could put, uh, curly braces,
+
+uh, to indicate, uh, futures or things that you want
+
+to project.
+
+I'll show you a bit later.
+
+Um, so we have, um as you can see in
+
+the graph, we do have directions.
+
+Um, and that's basically an artefact in new for J.
+
+So whenever you create, uh, a relationship, it gives you
+
+a direction.
+
+Um, that's how you start.
+
+Um, and and that's a good artefacts.
+
+It's not a bad thing.
+
+Because when you say two nodes are, uh, unite, directional
+
+or they are, um, bidirectional, um, it's actually in implying
+
+that you have two links or two directions.
+
+All right.
+
+Two relationships back and forth.
+
+Ok, um, so neo have this, um, you know, uh,
+
+stricter requirement of the direction is quite a good thing.
+
+Um, so here, But what we want is a sort
+
+of, um, a e memory graph that doesn't really need
+
+the direction.
+
+So we want to say, you know, uh, if switch
+
+is reachable, uh, to directly to, um Felix Stone, I
+
+think maybe, um Stow.
+
+Yeah.
+
+Felix, Stow.
+
+Um so these two are connected?
+
+Um, you know, not necessarily.
+
+Um, only from Ipswich.
+
+You can go to, uh, Felix Stow.
+
+Um, you could also go backwards from Flix do to
+
+Ipswich.
+
+So technically, it's two relationships.
+
+Uh, but in the projection of graph for data science
+
+purposes, we could say this is undirected.
+
+Uh, so when we do the projection, we could specify
+
+the orientation.
+
+Um, to say this is undirected.
+
+So instead of just using the very simple one line
+
+of, um, projection we can do, uh, this is still
+
+one line.
+
+This is still just calling the graph, uh, project.
+
+But we split it up so you can see, uh,
+
+clearly that we are, uh, projecting, um, a directed graph
+
+into a undirected graph.
+
+OK, so that projection is happening, So let's go back
+
+to my code.
+
+Um, and then I do the projection.
+
+Um, so this is literally, you know, just the same
+
+as what you see on on the lecture notes.
+
+Oh, big.
+
+I can't make it bigger.
+
+Unfortunately, um, sorry, but I I I I I can't
+
+do this.
+
+I mean, but I'm not sure whether this is of
+
+any help.
+
+Zoom in.
+
+OK, so So this is basically the code, um, that
+
+we want to run.
+
+Um, I can zip, um, put it back into the
+
+the browser and then run it so you can see
+
+nothing.
+
+Uh, there won't be much of a result, but it
+
+takes a little bit of time because it needs to
+
+go through all nodes, go through all relations and then
+
+calculate the projection.
+
+And then it returns.
+
+Uh, the projected node, the relationship projected.
+
+And the name of the graph and the total count
+
+of the the notes and et cetera.
+
+OK, so projection is, uh, successful.
+
+So we have a copy of the graph inside the
+
+memory.
+
+So that's why you know, neo is quite memory hungry.
+
+Um, So if you have too many things running, um,
+
+it does chew up your memory quite quickly.
+
+Um, so in the memory keeps this little, uh, small
+
+graph.
+
+And now we can look into how we can make
+
+use of this, uh, data to, uh, do the search.
+
+So the two basic search, um, is called breath first
+
+and depth.
+
+First search.
+
+Um, has anyone done data structures.
+
+Yeah.
+
+Heard of that?
+
+Yeah.
+
+That's the most fundamental search that you could ever have.
+
+Um, so it's basically, um, trying to find a, um
+
+starting from a node and trying to find, um So,
+
+starting from a source node, trying to find a destination
+
+node by traversing a tree or traversing a graph.
+
+Um, and you have two strategies.
+
+One is breast, first search, and the other one is
+
+depth.
+
+First search.
+
+So if for people who have never heard of this,
+
+um, just imagine that you open up um a, um,
+
+a book that has a table content, um, electronic book,
+
+or maybe a file system on your computer.
+
+Right.
+
+So, um, what would you do?
+
+So you look at you open up a folder and
+
+then do you go straight down and find the sub
+
+folders and keep going until you find the leaf node
+
+until you find the actual file that you're looking for,
+
+or you, um, go through all the folders at the
+
+same level and then give a guess of see, you
+
+know, maybe this will be under this folder.
+
+Um um and then I go into the the, uh,
+
+sub folder of this folder, um, which might contain even
+
+more folders.
+
+And then I look at the name of the folders
+
+and then and give another guess.
+
+So the breast first search is when you, um, go
+
+into a table of content or go into a a
+
+file structure, a file system.
+
+Uh, you look at all the Children.
+
+You treat every Children at the same level.
+
+Um, the same.
+
+Right.
+
+So you you basically browse through all of them.
+
+Um, before you go any further various steps for a
+
+search, you start with one folder, and then you keep
+
+going into its sub folders.
+
+Um, until you reach, um, a leaf node and then
+
+you're going back again to the next branch.
+
+OK, so, um, the the breast first search is more,
+
+more or less horizontal.
+
+Um, so you look at the Children's at the same
+
+level.
+
+Uh, the depth first search is that you go to
+
+one branch all the way down, um, until the end
+
+and then going back.
+
+Uh, so I have this little animation that I copied
+
+from this website.
+
+Um, as you can see, we start with a and
+
+then because it sees B and C and, um A
+
+in Q this b n c.
+
+In there, uh, into a Q, so Q is a
+
+a first in first out, um uh, data structure.
+
+Uh, so it's basically, you know, very, um, much like
+
+when you're queuing for coffee.
+
+Um, if you're the first one, you get served first.
+
+Um, so we have this frontier queue structure, as you
+
+can see, um, that when you let's wait to to
+
+start again, start with a It has two Children, so,
+
+um b and C gets pushed in.
+
+Um, and then it looked at, uh, b um, and,
+
+uh, pushed in d N e.
+
+But D N E will be after c so you
+
+you you You are exploring this first level first.
+
+So you do.
+
+Oh, sorry.
+
+So you do, um b and C first, um, before
+
+you go to, uh, b and then look at its
+
+Children D E and F G is gonna be after
+
+d e.
+
+So once you see c and you put, um uh,
+
+uh D um, after c and then, uh because d
+
+E doesn't have any Children anymore, we have f g
+
+uh, pushed in.
+
+So here, um, if I give, um, a slightly more
+
+complicated trait.
+
+Um, I have this.
+
+12345678.
+
+Representing the ordering, um, of this breast first search.
+
+So the numbers here is basically, uh, the order of
+
+the the visit.
+
+Sorry.
+
+Should not.
+
+Should have this on.
+
+Do not disturb.
+
+Um, so breast search?
+
+Um, this is a very, uh, you know, sketchy, kind
+
+of, uh, introduction.
+
+I think in data structures, you probably spend at least
+
+half a lecture going through it.
+
+Uh, but what we are doing here is just give
+
+you an intuition.
+
+Uh, because what we are doing is not We're not
+
+gonna implement this breast first search.
+
+We're not gonna use Java or Python to implement the
+
+breast.
+
+First search.
+
+It's already done for you.
+
+Um, and same as Neil.
+
+Four has done that for you.
+
+Um, and that's the different roles between, you know, uh,
+
+different, uh, part of the computer science.
+
+Um uh, discipline.
+
+So if you're a computer scientist, you're responsible for implementing
+
+this breast search to ensure that the search is fast
+
+and efficient and optimal.
+
+Um, if you want to look for something, you're guaranteed
+
+to find it So that's the learning of computer science.
+
+And then you have, uh what we are doing in
+
+this unit is more or less data engineering, not even
+
+data science.
+
+So data engineering is that we put the data into
+
+the right format.
+
+Whether it's relational database or graph database, we enable this
+
+to happen.
+
+OK?
+
+So because our data is stored in, um, a graph
+
+database, it's easy to make use of this breast.
+
+First search.
+
+Imagine if the data is in relational database.
+
+It's not so easy.
+
+Right?
+
+Um, so data engineering is the focus of this unit.
+
+Um, and then you have the data scientist, um, who
+
+comes in and and say, OK, I have this, uh,
+
+problem.
+
+Um, I want to search, uh, for, um a, uh
+
+let's say, um, starting from a city, I want to,
+
+uh, find, uh, another city that is reachable.
+
+Tell me the quickest pathway to it.
+
+Um, and then the the data scientist will transfer or
+
+translate this into a breast First search or depth, first
+
+search or shortage path problem, um, and then implement that.
+
+So that's that's what the data scientist job.
+
+Um, and somehow, you know, maybe in a small firm.
+
+All of these roles needs to be together.
+
+Um, but in terms of, uh, implementing this search algorithm,
+
+um, most of the time, because it's so foundational.
+
+Um, it's already implemented in your software packages.
+
+OK, so here I have the implementation of how to
+
+use, uh, breath first search on this transport graph.
+
+As you can see, we match to find, um, a
+
+source city.
+
+Um, and then we just basically want to stream it.
+
+So this is one of the, uh, the modes, the
+
+running mode.
+
+So when I'm not, I'm not writing it.
+
+Um, back to the graph database.
+
+I'm basically running it.
+
+Um um, as a, um me in memory, um, structure.
+
+Um, So I use the breast search, and I specify
+
+the mode and specify the, uh, the the projected graph.
+
+So recall that we we have projected the graph, um,
+
+and call it transport, and all I need to do
+
+is specify source node.
+
+OK, and then it gives me the path.
+
+Um, So basically, um, this is traversing the graph to,
+
+um, reach every single node exactly once.
+
+Um, so if I run it, um, in here as
+
+you can see, the code is, um, identical to what
+
+you see in the lecture notes.
+
+Um, and then I can have, uh, this I can
+
+have this graph, uh, displayed, uh, in here.
+
+I mean, it's not as nice as, um, what you
+
+have seen here because the reason why I've done that
+
+is I want to show you that this is almost,
+
+um, at the same sibling level and same sibling level.
+
+And then you just keep going and always, um, at
+
+the same sib sibling level to, uh, in order to
+
+traverse and, um, find every note.
+
+Um, in here is not very straightforward, but because I
+
+have done my hard work of stretching it to make
+
+it, uh, look, uh, a bit more organised.
+
+Um, So as as you know, that this is a
+
+graph, not strictly a tree.
+
+Um, so the ordering is not necessarily as you would
+
+have predicted.
+
+It's very much to do with how these nodes are
+
+stored inside your graph database.
+
+Um, as well.
+
+Ok, um, so depths first search only one letter difference.
+
+Um, so now, um, the reason why the it it
+
+is, uh, depths first, um, is, um, that you traverse
+
+and finish one branch.
+
+Um, before you go into another branch.
+
+OK, so I start with a and then I find
+
+B and C and push it into a stack.
+
+So a stack is like a stack of book.
+
+Um, it's a last in first out, uh, data structure.
+
+So, um, if you put your book in here and
+
+then you stack another book and start another book, the
+
+last one in is gonna be the first one out.
+
+Ok, um, so here, when I have a, um, I
+
+put, uh, its Children, uh, b and C in, um,
+
+and then I take out B because B is at
+
+the front of the stack.
+
+Um, and because B, um has two Children and then
+
+I push uh, d n e in as well.
+
+So that's why it doesn't really visit C first.
+
+Because D.
+
+N.
+
+E already stacked up, um, on to c so And
+
+then I had to finish DNA, Um, because they are
+
+at the lymph node and then backtrack to B.
+
+Um, B has no Children that are unvisited.
+
+Backtrack to a A does have a child that hasn't
+
+been visited.
+
+So then I have, uh push c Look at C
+
+and then push, um, f and G in as well.
+
+So that's what a, um depth first search and, um,
+
+a slightly more complicated tree.
+
+Um, And I, as we can see, the numbering here,
+
+is going 12341, branch.
+
+And then, um so once you finish four, you backtrack
+
+to three, and then three has a unvisited note.
+
+55 is finished.
+
+Backtrack to 33 has no unvisited note, and then backtrack
+
+to 22 has one unvisited note.
+
+Um, so you visit six and then, uh, backtrack to
+
+22 now has all Children visited and then back to
+
+one.
+
+Um, and one has, uh, seven hasn't been visited, but
+
+it's, um it's already a leaf node.
+
+So you just keep going.
+
+Um, and that's what steps for search.
+
+The idea is, both of them have the same outcome.
+
+They all have, uh, uh, a way of traversing the
+
+tray and visit every single note only once.
+
+Um, but it has a guaranteed, um uh, guaranteed, uh,
+
+completeness.
+
+So every single note gets visited.
+
+Um, I think they also have guaranteed, um, optimal solution.
+
+So if you want to find, um, a small a
+
+single node, Uh, from the starting node.
+
+Um, you're guaranteed to find it.
+
+OK, um but whether it's optimal or not, Um, it's,
+
+um um I don't think, um, I can't say much
+
+because I I can't remember what?
+
+Which one is, um, optimal?
+
+Um, yeah, but you also look at the complexity, the
+
+memory complexity and then the, uh the storage, uh, the
+
+time complexity and, uh, the storage capacity.
+
+So that's that's a, um, a topic of data structures
+
+and also seats 3001 the algorithm and a I unit.
+
+Um uh, so if you're doing computer science, you'll be
+
+worrying about those, uh, here.
+
+We just look at the, um, how it's implemented.
+
+Um, so, uh, in G DS, it's very simple.
+
+So the only difference is, rather than using B f
+
+s, Now we use d.
+
+F s.
+
+OK, so, um, the results are the same, but just
+
+the ordering is different.
+
+The as you can see this is more or less,
+
+um, a large branch, um, ignore the order.
+
+Um, I ignore the direction of the don't ignore the
+
+all.
+
+I ignore the direction of the the edges because, um,
+
+this supposed to be unreal.
+
+So this is where I say, um, maybe I don't
+
+really want I only want this, um, generated edges.
+
+I don't really want this, uh, original link between the
+
+cities, and that's when you can just turn off this
+
+and rerun it, and you will see it.
+
+It's much cleaner.
+
+Um, in terms of what you get from, uh, Ipswich,
+
+um, and then visit every single note.
+
+Um, and that gives you an order of the visiting.
+
+OK, and this is not connected.
+
+I'm just turning it into, like, a circle.
+
+OK, um all right, so that's this one is, um,
+
+almost like a a summary using a very small, uh,
+
+network.
+
+Where using breast.
+
+First search Your A, uh, is the first to visit,
+
+and B and C will be the next one.
+
+Um, and then, uh, after c you will visit e
+
+n d.
+
+Um, and this is all due to this, uh, first
+
+in first out Q structure.
+
+Uh, when you have depths first search, um, you will
+
+visit C and then exhaust that branch before you go
+
+back to B, and then finish that, um, and this
+
+is because of this, uh, last in first out, uh,
+
+stack, uh, data structure.
+
+So, um, there are other type of paths that are
+
+interesting.
+
+Um, so in terms of data science, um, there's, uh,
+
+the cycle.
+
+Um, that's when you're so with des.
+
+First search and, um, breast search.
+
+We want to visit the node.
+
+Exactly.
+
+Once, um, it's not Has nothing to do with is
+
+the edges.
+
+Um, but when you have, um, the task of discovering
+
+a cycle, then, um, you want to make sure every
+
+relationship is visited in exactly once.
+
+OK, so this one is a, uh, Ureli psycho.
+
+Because I could just go from here to there to
+
+there, to there, there and there.
+
+Uh, so I can visit, um, the address.
+
+Um, exactly.
+
+Once it's not, um, Hamiltonian.
+
+Hamiltonian is a path when every single node is visited.
+
+Exactly once.
+
+Um, because I do have to visit, um nos multiple
+
+times in this.
+
+You, um you read, uh, you urine?
+
+Um uh, cycle.
+
+Um, it's not Homo.
+
+Uh, but with the her cycle, Um, I don't necessarily
+
+visit these edges.
+
+Exactly once, um, I might visit them multiple times.
+
+So that's why it's Hamiltonian, but not um uh uh,
+
+you uranian or I think there's a title here.
+
+Um, so with the, um, this one is both Elaine
+
+and, uh, Hamiltonian, Um So, uh, where you could visit
+
+each node exactly once.
+
+And you also visit each address exactly.
+
+Once.
+
+These are extremely challenging, uh, graph, Uh uh, algorithm.
+
+And, uh, a lot of time.
+
+It's n p hard.
+
+So, um, neo doesn't have a implementation of this.
+
+So, um, but just keep in mind sometimes this might
+
+be useful as a real word use case.
+
+So what we did, um, just very quickly a summary.
+
+So, um, we are doing, uh, General Discovery, Um, and
+
+explicit search.
+
+Um, and then this, uh, new four g library allows
+
+us to do, uh, breast first search and depth.
+
+First search fairly easily, basically, You know, starting from a
+
+node, visit every single node in my graph.
+
+Um, I can make use of either breast first search
+
+or depth.
+
+First search.
+
+Um, let's have a quick five minutes break, and then
+
+I will move on to talk about, uh, shortest path
+
+hours and then followed by, uh, minimum spanning tree and
+
+random walk That that Yeah.
+
+Hand yeah.
+
+Yes.
+
+Uh, the scripts are not The data is I can
+
+make.
+
+I can make the scripts available.
+
+Yeah, yeah, yeah, yeah, I'll I'll I'll upload it.
+
+Does it matter if so?
+
+Because it starts with, um, which.
+
+So if we went to Felix Stone first, it doesn't
+
+matter.
+
+It doesn't matter.
+
+It doesn't matter.
+
+This is just just an example.
+
+Like it could go either way.
+
+Uh, because, um, when you have to, when you have
+
+a tree, right, So if you go back to the
+
+simple example when you have a tree, you start with
+
+a It doesn't matter.
+
+Um, so when you have a tree that has a
+
+branching out to the left, which is B and the
+
+right is C uh, typically, you will visit B first
+
+and then see, that's how you arrange the left node
+
+and the right node.
+
+Um, so when you have Ipswich connecting to two different
+
+cities, um, it could be either way.
+
+So depending on whether you put one, C is the
+
+left node and then another C is the right note.
+
+Whatever.
+
+That's right.
+
+Yeah.
+
+Yeah.
+
+So So, um, a convention is you go to the
+
+left note first.
+
+So for any binary tree, you always go to the
+
+left first.
+
+But the waiting doesn't matter.
+
+No, it's not.
+
+Not to do with the waiting yet when we just
+
+shot it pass the waiting.
+
+Does matter.
+
+Yeah, Yeah, the project.
+
+Because I actually can't do all the by just using
+
+one method, like mapping the database and that Why that
+
+database from Project one.
+
+But I feel I didn't use much.
+
+Uh, we just learned the c CV and app.
+
+Yeah.
+
+Yeah.
+
+So, uh, I feel mm.
+
+Feel like, Oh, I didn't.
+
+I feel like, uh, you know, proposal for the project.
+
+I didn't get on point, so?
+
+So I don't think in the requirement, we explicitly said
+
+that you have to use a but as an exercise
+
+as a learning.
+
+Um, I think it's better to have multiple solutions, because
+
+this one, this project is not as time consuming as
+
+the first one.
+
+Um, you could, you know, have one solution purely using
+
+the e t l tool and then have another solution.
+
+Um, that has a bit of a PC.
+
+Usage demonstrated, right, You see, So So, for example, you
+
+could, um, use the apo uh, dynamic, uh, labels to
+
+make the type, um, as a label rather than rather
+
+than an attribute.
+
+Yeah, yeah, yeah, yeah.
+
+So you could do that.
+
+And similarly, you can process the date.
+
+Um, you can store the data as attributes and then
+
+process the date into nodes if you want to.
+
+Because I because I'm wondering, maybe I need to do
+
+another one, like CV or Apple.
+
+Way to do that over again.
+
+Then compare with the whole mapping with S M we
+
+So after mapping directly everything inside Yeah, the the the
+
+I already show.
+
+You can sound like felt like, uh, actually didn't design.
+
+Yeah, I feel like I do not really relate to
+
+We're using error to to design because you cause I
+
+felt we should use error to To design the schema,
+
+then design our thing that way to load it to
+
+have a look.
+
+What's the difference between what we design?
+
+And but now, if I have everything Yeah, I think
+
+at least try some A Yeah, I I only use
+
+the airport.
+
+OK?
+
+Yeah.
+
+Only one, right.
+
+Right.
+
+Ok, If you have time, make sure that you do
+
+it.
+
+Yeah, and then compare the speed and, um, also how
+
+easy your is.
+
+So Because if with the direct loading, maybe your query
+
+could be quite slow.
+
+Um, just, for example, like this type with no neighbourhood,
+
+they actually doesn't have direct relationship.
+
+So I So what?
+
+My solution is I I create a new solution by
+
+to create a new relation between crime type and neighbourhood.
+
+Is that OK?
+
+That's OK if you set it.
+
+If that's sort of permanent in store.
+
+I thought it not, um, have a, like a similar
+
+proper property or something we cannot directly relation in sharp,
+
+because they I thought maybe they have to use the
+
+crime number to link each other because they are two
+
+different now.
+
+The first thing, Yeah.
+
+Only the common ones should be a single node.
+
+What do you mean by because, uh uh I mean,
+
+because, uh, I I was When I just look at
+
+the data, I thought maybe every two not kind of
+
+have a relationship with each other.
+
+They don't need to think about the crime.
+
+ID.
+
+Mm mm mm.
+
+Mm mm.
+
+Yeah.
+
+It can be possible like that.
+
+Yeah.
+
+So, um um, uh, some property some location type is
+
+always connected with some crime type.
+
+Um, but that that could be your your either your
+
+projection or your, um, virtual graph.
+
+Yeah.
+
+So it's not physically connected, but yeah, OK, yeah, but
+
+it's It's the way.
+
+Change a word.
+
+You gonna ask this?
+
+All right, let's, uh, restart.
+
+I will resume.
+
+Um, So the next topic we're gonna look at is,
+
+um, the shortest path.
+
+Our growth.
+
+So far, we haven't really make use of the, um,
+
+the edges or the distance.
+
+Uh, between two cities.
+
+I think one of you has asked, you know, with
+
+the first search and depth depth first search.
+
+Um, should we order it?
+
+According to, uh, the distance between the cities.
+
+Um, breast first, search depth first search is basically just
+
+searching for existence.
+
+Searching, searching for whether that node, um, is reachable from
+
+your source node or not.
+
+Um, it doesn't really care about how far they are.
+
+Um, but, you know, in terms of analysing the efficiency
+
+of, uh, breast first search or depth first search, uh,
+
+you could give a destination node and and say, you
+
+know, um, did you manage to search for the optimal
+
+nodes.
+
+Um, uh, in a shortest, uh, number of hops.
+
+Um, so that could be AAA, Uh, a question, but
+
+really, most of the cases you want to calculate the
+
+shortest path?
+
+Uh, for example, when you make use of Google map,
+
+um, Google map will try to find, for example, from,
+
+uh, your source your current location to the destination.
+
+They're trying to find the shortest path for you.
+
+So certainly it's taking into account the weights or the
+
+distance between two nodes.
+
+Ok, uh, between any pair of nodes.
+
+So, um, there's a there's, uh, several flavour of, uh,
+
+this shortest path algorithms.
+
+So we have the Ditra, uh, source target short, uh,
+
+shortest path.
+
+And then we have, um, another dias single source shortage
+
+path.
+
+So this the single source.
+
+So this path, um, is basically, um, based on the
+
+source target shortest path, as you can imagine.
+
+Um, with the first source target shortest path, you specify
+
+the origin, and you specify the destination.
+
+You're trying to find the shortest path between these two
+
+nodes when you have single source.
+
+Um, shortest path.
+
+You basically said I only know the, um, origin.
+
+Um and then, um I will try to find all
+
+the possible destinations.
+
+Um, so, uh, that's, um, an expansion of this source
+
+target where the target, um, can be, uh, many.
+
+Ok, so, um, that's that one.
+
+And then a star show.
+
+This pass is a, um, enhancement on that customer by
+
+incorporating a he, um so the heuristic needs to meet
+
+certain criteria.
+
+For example, uh, the heuristic distance has to be always
+
+guaranteed to be smaller than the actual distance.
+
+Um, So, for example, if you have, if I have
+
+two cities, right, so the no, the road are connecting
+
+the two cities are not necessarily direct, um, link between
+
+the two points.
+
+So if you imagine that you're putting the cities, um,
+
+on a two dimensional map, um, then you have the
+
+longitude latitude.
+
+If I calculate the direct distance between the two cities,
+
+it's guaranteed guaranteed to be shorter than the actual distance.
+
+Right.
+
+So So, with a star shortest path, you have to
+
+have that kind of heuristic, uh, to guarantee that you
+
+have a, uh, quicker solution.
+
+And then I have, uh, Yan's shortest pass, and then
+
+all pairs shortest pass.
+
+So instead of, um, just finding the shortest path.
+
+Yan's shortest pass, uh, gives you k shortest pass, which
+
+means the second shortest, the third shortest and the fourth
+
+shortest.
+
+So rather than just give you, uh, a single shortest
+
+path, it gives you multiple alternatives.
+
+So it's a bit also like Google, uh, Google map.
+
+Uh, when you have the shortest path, you also have
+
+alternatives that says, Oh, this is five minutes, uh, slower.
+
+And this is, um, 10 minutes slower.
+
+So you do have this.
+
+That's basically, you know, Yan shortest path, and then you
+
+have all pairs shortest path.
+
+So you basically want to have some sort of, uh,
+
+data profiling and and then see, you know, when I
+
+have all these, uh, uh, different cities, um, you know,
+
+um, from A to B from A to C from
+
+A to d.
+
+Um, and you know how many, um, pairs of short,
+
+shortest parts I can compute.
+
+And which one is the shortest?
+
+Um, so coming back to, uh uh, Castro, uh, source.
+
+Target.
+
+Shortest paths.
+
+Um, it's basically, uh, try to, uh, find, um, the
+
+shortest connection between a pair of nodes.
+
+Um, So what we do is we start with the,
+
+um, the source node and then basically find out to
+
+find out the, um, the lowest weight, uh, neighbourhood, um,
+
+and then move on to the, uh, closest one.
+
+And then, um well, keep you keep track of the
+
+weights.
+
+Um, and then we do the same calculation again.
+
+Find go to the closest node.
+
+Find out, uh, to all its one half neighbour.
+
+Um, so instead of just, uh, doing just, uh, uh,
+
+a one hop calculation.
+
+Now, we are calculating a cumulative total from the source
+
+node from the start node.
+
+And then we keep repeating until we, uh, find the
+
+destination node.
+
+Um, but we do keep track of the weights and
+
+keep track of the path.
+
+So here we have this smaller one.
+
+Uh, unfortunately, I don't have, uh I can't really do
+
+a pen.
+
+Let me see whether I can, Right.
+
+I can draw somewhere just to show you.
+
+Wow.
+
+OK, so this has to be connected.
+
+OK, so we're trying to, uh let's say the start
+
+is a and then we want to find, um, a
+
+shortest path to the destination.
+
+Node e.
+
+Um, so we start, um, by looking at the neighbourhood
+
+of a.
+
+So find the shortest, which is C.
+
+Right.
+
+Um, so then we say, you know a, um so
+
+ABC d e we keep track of the the shortest
+
+distance, so a to, uh, B is five.
+
+Um, A to C is four a to itself is
+
+zero.
+
+So, um, we get to, um, select, you know which
+
+one is the shortest?
+
+So C is the shortest, and we go back to
+
+this, um, step So C is the shortest.
+
+Um, And then now we make C as the next,
+
+uh, node to look at because A has been visited.
+
+So let's let's keep a out of the question.
+
+So C has been, uh, C is now my current,
+
+uh, focus node.
+
+And then she has two Children, um, or found out
+
+with two neighbours.
+
+Uh, one is six to D, and the other one
+
+is, um, eight to e.
+
+So instead of just saying recording six and eight now,
+
+I have a cumulative total where it's actually a to
+
+d.
+
+OK, so a to d.
+
+Um, there's one pass going through c A to D.
+
+That could be 10.
+
+But I also have another pass today, which is a
+
+through B to D, which is eight.
+
+OK, so now, um a to D via, uh, B
+
+is shorter now.
+
+I keep the shortest path.
+
+Um, a B D which is, you know, eight, um,
+
+as the shortest path.
+
+Um, and then the other neighbour that I visit I,
+
+um of C is, um e right.
+
+So, um, but again, now a to e.
+
+I want a cumulative, uh, cumulative, uh, paths or cumulative
+
+cumulative distance, which is a to e.
+
+Um, I have a 12.
+
+OK, so the shortest pass get me to d with,
+
+um uh eight.
+
+Ok, so now I move on to so c has
+
+been finished, So C is visited or finished.
+
+Um, so I did have my destination e uh, reached
+
+from a CE.
+
+But I also have my d has a, um, and
+
+visited neighbour, which is which is e so based off
+
+what I currently have, uh, the shortest pass A to
+
+D is eight plus one.
+
+I actually can get to e um by 11.
+
+Uh, a cost of 11.
+
+So this is a B d e.
+
+Ok, so, through a b d, I could have the
+
+smallest, uh, cost um, or the, uh, the shortest path,
+
+Uh, which gives me a B D, even though it's
+
+more hops.
+
+But in terms of the total cost, it's much smaller.
+
+OK, so that's basically, uh, de Castro, uh, works.
+
+So you always keep track of, um, which one is,
+
+um, I visited the shortest one.
+
+And then, um, you keep going until you find your
+
+destination.
+
+OK, so this is a fundamental algorithm that gets used,
+
+uh, for all the rest of the shortest parts, pretty
+
+much.
+
+And, uh, we can go back to the to new
+
+for J and then show how this, uh, works in
+
+using the G DS.
+
+OK, so, um, before we before we do anything, we
+
+need to drop the previous, um, projection.
+
+Because in this projection, we need to take take into
+
+account the actual distance.
+
+OK, so with this projection now, we also call it
+
+transport.
+
+I mean, obviously, you can keep, um, uh, you know,
+
+changing to a different name instead of dropping the previous,
+
+uh, projection.
+
+But I don't want to keep multiple copies of, um
+
+of the same graph in my, uh, graph database, and
+
+that will really show up my memory.
+
+So that's what we can do is we can drop,
+
+um, the previous projection and then create a new projection.
+
+So, um g DS dot graph project, uh, call it
+
+the same name.
+
+Interested in the same type of nodes or the nodes
+
+with the same label place.
+
+And then we make sure the relationship is, um, undirected.
+
+Um, and then the properties that we want to map
+
+in, um is distance.
+
+So we do have other properties.
+
+We have longitude and latitude.
+
+In this projection, we don't really care about the longitude
+
+latitude.
+
+So what we're getting is just the distance.
+
+So we map that in, we run this, um, and
+
+you can see that, um, both, uh, clauses or both
+
+statement has been executed successfully.
+
+Um, and once we done that, we could do the
+
+castro sauce targets.
+
+Um, why is it not showing everything?
+
+Or maybe here so start by defining or match to
+
+find the source node and then the target node.
+
+And then we call this G DS.
+
+Um, shortest path, uh, and dot dias, um, and again,
+
+we just stream it, not writing it to anywhere.
+
+Um, and then the, uh, projected graph name specified.
+
+The source node specified the target node and specified that
+
+the cost, um is the distance that we recorded, um,
+
+as the relationship property.
+
+And then we yield, uh, the index and the source
+
+node target node.
+
+Uh, the total cost.
+
+And, um, recall the node.
+
+I DS and so forth.
+
+So, um, and then when we return it, we can
+
+make the node name slightly more friendly.
+
+Um, so the source node is, uh, returned as a
+
+node.
+
+Um, and, uh, give it a name.
+
+The source node name, um, and then target node Similar.
+
+Um, and then for all the node, I DS, uh
+
+we specify them as the node names, so it's quite
+
+long winded, but I think it's just, you know, these
+
+are codes, uh, modified from the the documentation.
+
+So, um, it's, you know, this is just defining what
+
+you actually retaining.
+
+All right, So we returned, um, the nodes here, But
+
+we haven't really, uh, got any relations.
+
+So again, um, can we turn down the relations?
+
+We can connect them.
+
+All right.
+
+So this is basically, uh, going from, uh I switch
+
+to, um so this allows us starting from that's the
+
+shortest path.
+
+OK, so short path is if switch go to, uh
+
+uh, Felix.
+
+And then, um uh, Holland.
+
+Um, so this European names, uh, city names.
+
+It's a little bit hard to pronounce.
+
+Um, I've visited a couple, but not of them.
+
+Um, and then this, um, summary table also gives you,
+
+uh, the total, uh, cost or the total distance, Um,
+
+of this shortest path.
+
+OK, and then they also collect a list of, uh,
+
+cost along the way.
+
+OK, so that's, uh, the the Castro, um source.
+
+Target.
+
+Shortest path.
+
+Um, and then with this, um, we could, uh yeah,
+
+that's the code.
+
+Um, so with this, uh, we could have single source,
+
+uh, shortest path, so we only need a source node.
+
+Um, and basically, it's the source node to all other
+
+nodes in the graph.
+
+Uh, so all other nodes that's reachable by the source
+
+node will be discovered with, um, the shortest part calculated.
+
+I won't go.
+
+I won't be going through this.
+
+Um, it's basically, you know, calculating the shortest parts from
+
+A to B shortest parts from A to D.
+
+Shortest parts from A to C and shortest parts from,
+
+um a to e.
+
+So that's fairly straightforward.
+
+Um, and then the a star shortest part, as I
+
+mentioned before, Um, it adds in this instead of just
+
+picking out the, uh, shortest one, Um uh, from, uh,
+
+your source node and then going into the neighbourhood nodes
+
+and add the neighbourhood node, you repeat the same process,
+
+but instead you calculating the, um the cumulative, uh, total
+
+distance here instead of just having the extra distance, you
+
+also have a heuristic distance.
+
+So the heuristic distance is some, um, estimation of, uh,
+
+how far these two nodes, or how far these two
+
+nodes are.
+
+And this heuristic difference needs to be guaranteed to be
+
+smaller than the actual distance.
+
+OK, so H n needs to be, um, if for
+
+any gain.
+
+So it needs to be, uh, smaller And, um uh
+
+or equal to G n.
+
+So H n needs to be smaller or equal to
+
+g N.
+
+Um, otherwise, you won't really gain anything by using a
+
+star.
+
+OK, so now we need to do another projection.
+
+So in this projection, we actually need the, uh, longitude
+
+and latitude.
+
+So imagine the longitude and latitude are, uh, points in
+
+a two dimensional space.
+
+Um, so one location have, um, x Ys.
+
+And another location has x Ys and the then the
+
+shortest shortest distance is is the direct Euclidean distance.
+
+Um, so this is the longitude and latitude is to
+
+calculate the Euclidean distance.
+
+So any roads in between these two nodes is guaranteed
+
+to be longer than the direct, uh, Euclidean or straight
+
+line distance between the two points.
+
+OK, so we do this g DS.
+
+Um, and we drop this transport, um, projection again.
+
+And now, uh, the projection takes into account, uh, the
+
+properties of longitude and latitude for the nodes.
+
+OK, so we did the preparation.
+
+And now we can, uh, use similar, uh, syntax.
+
+So match the source node and the target nodes.
+
+Um, here we have shortest path, but now it's a
+
+star.
+
+So instead of the cas, uh, we have a star
+
+here.
+
+And then, uh, we have the longitude property.
+
+Uh, sorry.
+
+The latitude property and the longitude property, um, projected, uh,
+
+into, uh, your, uh your your projected graph or projected
+
+in memory graph, and we still make use of the
+
+distance.
+
+So this is something required by a star So you
+
+always have to provide an X Y coordinates.
+
+Uh, basically, if you want to make use of, uh,
+
+the A star, uh, hours and then we do the
+
+same, you know, yield and return.
+
+Um, and then this gives us I didn't compare it,
+
+but let's see the total.
+
+Yeah, the total cost is the same.
+
+So it in this case, um, a star and, uh,
+
+both find the same shortage path.
+
+Um, but a star is supposed to run faster than,
+
+uh uh, because it's guided by the heuristic slightly faster
+
+than that.
+
+OK, so, um, and Yan's case of this path, um,
+
+is basically similar to, um, But it gives you alternative
+
+paths.
+
+So I won't really run that, um, in the lecture.
+
+But feel free to, you know, look at the documentation
+
+and then modify the code.
+
+Uh, I use it on our city, uh, reach ability
+
+or shortest path, uh, graph, um, and then all pair
+
+shortest path.
+
+Um, basically calculate the shortest path between all pairs of
+
+nodes.
+
+As you can see, if I have ABC d e
+
+like what we've seen before, Um, then I have, um
+
+A to a and then uh, a to, uh so
+
+initially that you initialise them all to, um, infinity, which
+
+is the largest number that you can have.
+
+And then as soon as you find, uh, something smaller,
+
+you keep track of the smaller one.
+
+Um, so basically, each step keeps or updates the lowest
+
+value calculated so far, Uh, for every pair of notes,
+
+um, so a to B and A to C and
+
+A to e and so forth.
+
+So this is, uh what what we have here is
+
+only the the single, uh, short is past the de
+
+Castro single shortest path or single source shortage path.
+
+Um, but really, you also need, you know, B to
+
+C uh, starting from B B to C B to
+
+D and B to e and so forth.
+
+So that's that's what our pair, uh, shortest pa is,
+
+um OK, so we've basically had a quick glance through,
+
+um of all these different, uh, mainly it's Castro and
+
+a star.
+
+Um, so and then some variations, or repeating the use
+
+of it for multiple ta multiple targets, um, or rank
+
+them, um, to obtain the second shortest.
+
+And then, uh, the third shortest and et cetera.
+
+So, uh, the basic algorithm is very similar.
+
+Um, And then the next one, um, is on minimum
+
+spanning tree.
+
+So, um, and random work, so minimum spanning tray, uh,
+
+basically, uh, starts from a given node and find all
+
+its reachable nodes.
+
+Um, and the set of relationships, uh, that connects the
+
+node together with minimal possible weights.
+
+Uh, so it's a you know, it's, um, making use
+
+of a very old algorithm called prim algorithm, and it's
+
+invented in 1957.
+
+I think that is probably in 1956.
+
+So these are all quite foundational hours, um, out there.
+
+And it's very similar to the caster single source show
+
+this path.
+
+Um, but rather than minimising the cumulative length, uh, we
+
+actually only search one top away.
+
+So it's even simpler than, um than the So, for
+
+example, if we start with this node, um and we
+
+know that it has three, uh, connections, right?
+
+And then one is six and the other one is
+
+three.
+
+And maybe I'll do this from here.
+
+OK, so if we start from this node, um, these
+
+little nodes got three pathways to connect to the rest
+
+of the network.
+
+Um, And then, uh, we can look at the weights,
+
+you know, 369.
+
+So we find the minimum one, And now we have
+
+the next node, um, to expand.
+
+So the next node is connecting with four, uh, outgoing
+
+edges.
+
+And so we choose the smallest one.
+
+Um, And then now we reach to the next note,
+
+uh, to expand.
+
+So, um, the next node have, you know, three, um,
+
+unvisited node.
+
+And then the shortest one is chosen, um, for further
+
+expansion.
+
+Um, and then we don't have anything, uh, to, um
+
+So that has already been we connected to that.
+
+And that has a has, uh, you know, connected to
+
+nine only.
+
+Uh, but this one is connecting to eight.
+
+So eight is smaller than nine.
+
+So I expect to find this one and then just
+
+keep going, uh, to make sure every single node in
+
+the network is covered, uh, with a total, uh, with
+
+the smallest, uh, total weight.
+
+Ok, so, um, that's that one.
+
+And then the prim algorithm is fairly simple to start
+
+with a chosen node A And then, um, the relationship
+
+with the smallest weights, um uh, connected to that node
+
+is added to the tree, Um, along with its connected
+
+node.
+
+So, um, the smallest one is, uh, d and the
+
+relationship and, um, d the node.
+
+Both the relationship and the node are added to the
+
+tray.
+
+So we have Now, the tree looks like this A
+
+is connecting with D, and then we expand, find the
+
+connection of D.
+
+Um, and we don't go back to a because we
+
+A has already been visited.
+
+Um, and then so we find three is the smallest,
+
+so we add the edge three and then the, uh,
+
+connected node into it and then expand C um, again,
+
+you know, find the next one.
+
+Um, going back to D is not an option, because
+
+D has already been visited.
+
+So, as you can see, in order to implement a
+
+minimum spending tree, you have to keep track of, uh,
+
+what has already been visited.
+
+And you also have to keep, um, uh, finding the
+
+connected nodes.
+
+Um, so, in terms of the pseudo codes, um, it
+
+can be quite, uh, involved.
+
+Maybe it's a bit difficult to look at, but, um,
+
+the idea is fairly straightforward.
+
+It is fairly simple.
+
+OK, so minimum spanning tree.
+
+Here we go.
+
+Uh, OK, so here, when you look at the code,
+
+um, this code is actually at the beta version.
+
+Um, So what we have had last year, um I
+
+think last year was a Now it is, uh, upgraded
+
+to beta and the mode I'm no longer using stream
+
+I'm using.
+
+Right.
+
+Which means I want to write permanently, uh, to my
+
+graph database.
+
+Oh, OK.
+
+Sorry.
+
+Um, OK, so the keyword right is is a is
+
+a mode similar to stream, uh, stream.
+
+You basically keep it, uh, in memory.
+
+You don't really necessarily write it back to your graph
+
+database, but in terms of here Oh, did I change
+
+it?
+
+Yeah.
+
+In terms of here, I have.
+
+Um uh I have to write it back to the
+
+graph database.
+
+Um, and I'm using the spanning tree.
+
+I was, but it's under the beta, um, release.
+
+So it's not finalised yet, So the and then they
+
+have, um they have changed syntax quite a fair bit
+
+so last last year.
+
+Uh, when you have, uh, g DS two point Oh,
+
+or 2.2.
+
+You have source node ID instead.
+
+of just source node.
+
+And then this right property and right relationship type is
+
+all different, Uh, from last year.
+
+So, um, but now you can see that it's probably
+
+making a little bit more sense comparing to what we
+
+have before.
+
+So you specify the source node, Um, where you start
+
+your minimum spend spanning tree search.
+
+Um, and then the weight is the distance.
+
+Um, and I want to write, uh, the property of
+
+cost, um, into the graph database.
+
+And I name it, um, as right cost.
+
+Uh, and then I create a new relationship, which is,
+
+um, called, uh, mean uh, spanning tree.
+
+Ok, so MST stands for mean spanning tree.
+
+Um, and then it yells this, uh, preprocessing mili uh,
+
+milliseconds compute millisecond, right milliseconds.
+
+So these these are things that are doing um uh,
+
+performance, uh, re recording.
+
+OK, so that's that's basically what it is.
+
+So as you can see, it's not yielding a graph
+
+for us.
+
+Um, but it's creating the, uh, adding a property and
+
+also adding, uh, a relationship between nodes.
+
+OK, so it gives me all this, um, performance record,
+
+Um, and then in order to look at that uh,
+
+I think do I have, um I can basically just
+
+show 50 and make sure that I pull the results
+
+are connected.
+
+OK, so I I have, as you can see, this,
+
+um uh, MST, uh, relationship has been created.
+
+And if I just want to do, uh, I could
+
+say, you know, match.
+
+Uh, n I don't even need n match, um, relationship.
+
+Oops, that is tea.
+
+And then and I say turn now, uh, it's better
+
+if I do.
+
+Sorry if I do.
+
+And one and two.
+
+Now, I get a graph.
+
+OK, so you can see that this, uh, minimum spanning
+
+tree, uh, connected all notes and then, um uh, gave
+
+us a, uh basically, you know, starting from a source
+
+note and visited every single note.
+
+Um, give me the minimum cost of visiting every single
+
+note.
+
+So, um, as you can see, um, this is somehow
+
+pretty much related to, uh, travelling salesman problem.
+
+Uh, have you heard of that?
+
+So if I have a, uh, a sales person that
+
+wants to visit every single city, uh, without having to,
+
+um, you know, go back to the same city again.
+
+So, um, that's a minimum spanning tree or a travelling
+
+salesman problem.
+
+Um, uh, there's also, if you could think of, um,
+
+that, um a duer problem is visiting every single edges.
+
+Um, which could be, uh, a delivery man, Uh, that
+
+just want to be on the same street.
+
+Or maybe, um uh, a rubbish truck collecting rubbish.
+
+Uh, they just want to visit only the straight one
+
+rather than multiple times.
+
+Um, so you could you could turn this into, um,
+
+AAA different minimum spending trade problem.
+
+So instead of recording the c DS node, you could
+
+recall the straight as node and the the, uh, different,
+
+uh, straight are connected through a link so that, you
+
+know, this is your, uh, data science task of turning
+
+a real world problem into a problem that you can
+
+solve.
+
+Uh, computationally.
+
+Um OK, so, uh, let's see.
+
+So that's the next, uh, the next one is really,
+
+uh, straightforward as well.
+
+Um, so this is the minimum spanning trade.
+
+Uh, the next one is random walk algorithm, and somehow,
+
+you know, it's very useful.
+
+Despite that.
+
+How absurd it sounds.
+
+It's very random.
+
+It's trying to sort of simulate almost mimicking a drunk
+
+person traverse the city.
+
+It doesn't really know where to go.
+
+So it basically just, you know, go any direction.
+
+And then, um uh, they have no strategy.
+
+Um, and they have no, uh, destination pretty much, Basically,
+
+just trying to, uh, traverse.
+
+And it turns out to be very useful because all
+
+these, uh, deep learning algorithm, uh, note to back.
+
+So basically, uh, representing or learning a representation, a vector
+
+representation of a node, Um, or learning a representation of,
+
+uh, the entire graph or learning, uh, a vector representation
+
+of, um, the sub graph or even edges.
+
+Um, pretty much they all start with this random walk.
+
+Um, so random walk gives you, uh, a very good,
+
+uh, prob estimation of what node is connected to what,
+
+Um And then, um, putting it into the natural language
+
+context.
+
+It's, uh you can think of, um, you know, a
+
+sentence, um, are words connected with words.
+
+And if you have common, uh, words that lead to,
+
+uh, another common words, these two words maybe have some
+
+relations.
+
+Um, So if your random word keeps getting you to
+
+that path, uh, then these two words, uh, tend to
+
+occur in the same context.
+
+So, uh, random work is quite useful.
+
+Um, in the sense that we have, um we can,
+
+uh, have a good estimate.
+
+Of what?
+
+Your nose.
+
+How how your nodes are connected with each other.
+
+So syntax wise is very similar.
+
+Um, and then the algorithm is basically just random walk,
+
+and then you take the same, uh, same projected graph,
+
+and then you specify the source.
+
+You don't need a destination.
+
+We don't know the destination, but you can specify the
+
+work length, Um, and then the works per node.
+
+And then you, uh, return the paths, return the node
+
+names.
+
+OK, so this is like a random walk from London,
+
+um, to somewhere, OK, and every time, because it's random.
+
+Every time that you run it, it's gonna be, uh,
+
+different outcomes.
+
+OK, so, um, keep running.
+
+Um, it gives you different random walks before we stop
+
+and conclude, um, I think I still have.
+
+I might just use the ex, extend this by another
+
+five minutes, um, and see whether we can do some
+
+cool things and OK, so I'll just start this.
+
+Has anyone heard of, uh, something called word letter?
+
+Um So let's do a do a Google search of
+
+what letter?
+
+So the word letter game.
+
+Um, As you can see, it's basically every time you
+
+you have a source, you have a destination.
+
+So from the word head, um, how many words do
+
+we need in order to change it into tail every
+
+time you can only modify a single character.
+
+It sounds all very complicated.
+
+Right.
+
+But we can do it.
+
+Um, really?
+
+You know, initially, uh, very cheekily using, um, raft Database.
+
+Ok, so I have, um uh, a set of a
+
+list of words.
+
+I won't be running this, Uh, I've already created this,
+
+um, but then I can, uh, use, um this words.
+
+Um, I can say, you know, uh, create, um, words
+
+according to, um, whether they are of the same length
+
+or not.
+
+Um, so this is I've I've sampled matched any words,
+
+uh, in my list of words.
+
+Right.
+
+So I have a list of 5000 words in my
+
+database.
+
+Um, I have, um, given n one node one a
+
+word and note Two is also a word, and I
+
+make sure I mean, this probably doesn't really make much
+
+sense um, because I've if I do n one dot
+
+word, uh, which is the token, uh, of node one.
+
+The token of node two.
+
+Then then that means it's alphabetically ordered.
+
+Um, and then I have the size of word, uh,
+
+node one that needs to be the same as note
+
+two.
+
+OK, and then there's, uh, a park.
+
+So this is something that I haven't really talked about
+
+last week.
+
+I said, there's a text, um, procedures or text functions
+
+available in a PC, which is quite cool.
+
+Um, so a text has, um, 11 stand distance.
+
+The the 11 stand distance is really the edit distance
+
+saying, you know, from this word to another word, how
+
+many edits do I need in order to change from
+
+one word to another?
+
+So I restrict to say that in order to change
+
+words and one to word and two, I only have
+
+one character difference.
+
+So this is matching those two words.
+
+And then once I've created, once I have done this,
+
+I create, um, a relation between n one and two
+
+and two.
+
+So for n one to N two related through this
+
+sublations, um, they are only one character away from each
+
+other.
+
+OK, so if I look at, uh, the, uh, network
+
+of this no network, I just want to make sure
+
+that, um I don't really, uh, display any other relations.
+
+So this has been already, uh, created so that I
+
+could do a match.
+
+Um, and one.
+
+Oh, sorry.
+
+And then I only want the sub relation.
+
+You should store this as well.
+
+So And two.
+
+OK, so that's basically, um certainly you can use this
+
+to find clusters.
+
+Um, if you have the, uh, community detection hours, um,
+
+but then we can use this.
+
+What?
+
+Uh, that Castro's source target shot his path to see.
+
+You know how knee could be turned into news.
+
+Uh, what's the pathway of turning what knee into news
+
+does not exist.
+
+Oh, OK, so maybe I need to I need to
+
+do the I need to set the distance.
+
+But I do.
+
+You have, um I have a projection.
+
+I don't have projection.
+
+OK, Sorry.
+
+Uh, yeah.
+
+So rather than doing this, um, I could do a
+
+projection.
+
+Um, call it word, letter, and then basically
+

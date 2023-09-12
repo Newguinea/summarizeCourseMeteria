@@ -1,0 +1,2403 @@
+So to start with beekeeping, I mean, it seems a
+
+bit odd that we are talking about beekeeping in a
+
+unit which is Internet of things.
+
+But I'll try and make a connection between the two.
+
+So we start with the fundamental question of why whatever
+
+we want to do, we want to know, Why are
+
+we doing it so beekeeping?
+
+It's nothing new.
+
+At the time, Egyptians were building pyramids.
+
+They had these domestic bees.
+
+So domestic bees have survived for thousands of years.
+
+They are not new, But why should we worried about
+
+them?
+
+Now there's a lot of people talking about bees.
+
+The reason is because bees are very important in pollination.
+
+Almost one third of whatever we eat depends upon honey
+
+bee pollination.
+
+If we take honeybees out of the equation.
+
+One third of our food is gone.
+
+And because of the climate change, forest fires other diseases.
+
+Bees are not doing very well.
+
+And if bees go extinct, we will be in a
+
+lot of trouble.
+
+So that's why we have to take care of our
+
+bees.
+
+Traditionally, how it is done.
+
+It is very, very manual and back bending work.
+
+A beekeeper will go to the beehive.
+
+Beehives have multiple supers or boxes.
+
+As you call them.
+
+You open the lid, you have access to the frames.
+
+You take out one frame, scan through it, see how
+
+bees are doing.
+
+Is there enough food and nectar in there?
+
+Do we have young bees and eggs or not?
+
+And they go through this each and every frame.
+
+These hives can be heavy, so it's difficult work and
+
+it takes a lot of time.
+
+They also have to search for the queen whether it
+
+is laying eggs or not.
+
+So it takes a lot of time and manual hard
+
+work to inspect a beehive.
+
+Uh, secondly, whenever you open a beehive for inspection, bees
+
+actually have to repair the hive from inside because they
+
+will wax every little opening with the bee glue so
+
+that they have their own environment.
+
+And if I am opening a hive every day for
+
+an inspection, let's say I have this much time.
+
+I'm actually forcing the bees to repair their house each
+
+and every day, and they cannot get back to their
+
+usual work.
+
+So it is not possible to have these inspections every
+
+day.
+
+Usually they are done fortnight every two weeks or so
+
+also beehives.
+
+If you and I were a hobby beekeeper, it's OK.
+
+We can have a couple of hives at the back
+
+of our house.
+
+We can manage that.
+
+But if you're a commercial beekeeper, you are doing one
+
+of the two number one you are collecting, honey, which
+
+you are selling Number two.
+
+You are providing pollination services to the farmers, and that
+
+is actually a much bigger industry.
+
+Honey is just a byproduct, and for these, what you
+
+have to do is you have to move your hives
+
+to the places.
+
+For example, if you are after Jara honey, you have
+
+to move your hives to Jarrah Forest.
+
+If you're providing pollination services to a canola farmer who
+
+is 300 kilometres away.
+
+You have to move your hives there.
+
+And if you are based in Perth and you want
+
+to inspect your hives, you have to travel long distances.
+
+Go there regularly check up on your hives.
+
+That means manual inspection requires a lot of, uh, travelling
+
+as well.
+
+And as a beekeeper, when you're inspecting the hive, you
+
+have to go through 100 hives each day after a
+
+few hives.
+
+If you're tired, there is a good chance that you
+
+may miss upon what is happening inside the hive.
+
+There may be an obvious sign that this hive is
+
+sick.
+
+You may have a look, but you may not notice
+
+it and put it down.
+
+So there are certain limitations with traditional methods of beekeeping
+
+as well.
+
+Before we go further into what beekeeping is, we have
+
+to how these beehive monitoring work.
+
+We have to understand the bees and how their life
+
+cycle works and everything starts with a queen.
+
+Every hive has one queen, the single most important bee
+
+inside the hive.
+
+And the only job of the queen is to lay
+
+eggs these eggs, lava and pupa.
+
+They are collectively called the brood.
+
+This takes about three weeks of time before they hatch
+
+as hive bees.
+
+These hive bees stay inside the hive and do hive
+
+chores, such as cleaning the hive, regulating the temperature.
+
+They do it about four weeks, and all of these
+
+numbers of hive bees impact how the hive is doing
+
+how the brood is doing.
+
+After four weeks, these bees convert into foragers.
+
+What is the job of foragers?
+
+Go out, find food, which is pollen and nectar.
+
+The food they bring back is used by the hive,
+
+the lava, the pupa.
+
+This food is used inside, and after about two weeks
+
+of foraging activity, the bee dies.
+
+So it's a very short life span of around nine
+
+weeks.
+
+But environment plays a crucial role.
+
+For example, if temperatures are too high or too low,
+
+the bees inside the hive, the little ones, they will
+
+die.
+
+The environment is also responsible of providing food.
+
+If there's not enough food, bees will die.
+
+Or if a farmer is using pesticides, which are not
+
+suitable for bees, bees will get sick and they will
+
+die.
+
+So environment impacts a lot.
+
+So if we take a quick look inside the hive,
+
+these are pictures from a few frames here on the
+
+top part, Uh, the, uh, small part.
+
+You can see some pollen.
+
+Uh, the cap nectar is the white part, and the
+
+brown part bottom is the brood that is inside their
+
+lava, and they are ready to hatch here.
+
+There are some, uh, bees which are hatching, and here
+
+we have a frame which is full of honey.
+
+So let's come to the electronic monitoring of beehives.
+
+So every electronic monitoring system has four fundamental components electronic
+
+sensors which we place inside or around the hive, a
+
+communication mechanism which carries the data to a user, uh,
+
+to a data storage.
+
+Then we have some sort of processing to extract information
+
+from this data.
+
+And then there's a user interface where beekeeper can access
+
+this information and see what is going on.
+
+Then we have advanced components such as wireless sensor networks
+
+between different hives.
+
+We want to have long distance monitoring capability in that
+
+these systems are connected with Internet and beekeeper can access
+
+the hive data using a Web interface from anywhere in
+
+the world.
+
+And last is the health status prediction, which, uh is
+
+a new and hot topic where we try to use
+
+machine learning to predict what's going to happen in the
+
+future so that we can anticipate and beekeeper can take
+
+appropriate actions.
+
+What are the four major aims of electronic monitoring of
+
+beehives?
+
+Number one, Since we are putting sensors inside the hive
+
+now we do not have to open the hive to
+
+see what is going on.
+
+C sensors are inside and they will continuously monitor the
+
+hives.
+
+So around the clock monitoring and because of this continuous
+
+monitoring, we are able to detect diseases as they come.
+
+If I was a beekeeper and I were to inspect
+
+hives and every two weeks if something happens in between,
+
+I will not know.
+
+But sensors, they can pick that up.
+
+Then again, we can use this electronic sensor data for
+
+health status prediction.
+
+And the most important bit of all the aim of
+
+these monitoring systems is to minimise the time and cost
+
+of your operation.
+
+Because if I come up with a system which is
+
+very expensive, beekeepers will not buy it, it goes to
+
+waste.
+
+So we want the system to be cost effective.
+
+Now, this is a question that whenever you are about
+
+to design a monitoring system, it doesn't matter.
+
+It's a beehive monitoring system or a house monitoring system.
+
+You have to answer this question.
+
+Which sensor should I use?
+
+And for this you have to do some background study
+
+for me.
+
+I had to study bees.
+
+You may have to study something else and then find
+
+out which sensors will be the most effective set of
+
+solutions to monitor this thing for bees.
+
+If we categorise these sensors into three categories very high
+
+relevance, which is temperature weight of high internal imaging, then
+
+there are some sensors with high relevance, and then some
+
+are there with medium relevance.
+
+These are a lot of sensors.
+
+I do not have time to go through all of
+
+them, but I will try and go through a few
+
+of them as we go through this, uh, lecture number
+
+one temperature temperature is one of the most important parameters
+
+inside the beehive because the brood the young one to
+
+hatch properly, they need a temperature of around 35 degrees,
+
+and bees work very hard to regulate this temperature.
+
+I'll try and explain this using an example.
+
+Let's say this lecture theatre Let's say it has no
+
+air conditioning at all, and we have to maintain a
+
+temperature of around 35 degrees.
+
+There are some kids here who need that temperature, and
+
+if it gets too cold, what we do is we
+
+all come together.
+
+Put the Children in the middle, make a big circle
+
+around them and use our body heat to keep them
+
+warm.
+
+That is what bees do.
+
+They actually use their body heat and metabolism and movement
+
+to keep the high warm when it is too cold.
+
+If it gets too hot, some of the bees go
+
+at the hive entrance and use their wings to cause
+
+a fresh flow of air into the hive.
+
+They ventilate the air inside the hive to bring the
+
+temperature down, and it is very hard work.
+
+Only a healthy colony is able to regulate its temperature
+
+better, so if you monitor the temperature and it is
+
+steady at 35 °C, that means it is a healthy
+
+colony.
+
+That's why it is able to regulate the temperature.
+
+But if we are monitoring the temperature and we see
+
+huge fluctuations in that, that means it is a weak
+
+colony and unable to regulate the temperature.
+
+And what happens if the temperature is not regulated properly?
+
+If the variation is too high, the brood will die.
+
+But if the variation is within a few degrees centigrade,
+
+the brood which hatches it is not very healthy.
+
+When it goes out, it will spend a lot of
+
+time roaming around.
+
+It will not bring back enough food and nectar back
+
+to the hive, so weak colony starts when the temperature
+
+is not regulated properly.
+
+No, we can study and find out.
+
+OK, these are the, uh, sensors that are very, very
+
+relevant.
+
+But in a practical word, relevance is not enough.
+
+You have to find sensors which are also practical, that
+
+can be deployed.
+
+Let's take the case of internal imaging on paper.
+
+If I say OK, let's put a camera inside the
+
+hive and live stream whatever bees are doing and the
+
+beekeeper can see what is going on.
+
+The problem is solved, right?
+
+Beekeeper can constantly see what is happening inside the hive,
+
+and our problem is solved.
+
+But there are problems with internal imaging.
+
+First of all, these cameras, internal cameras, they are not
+
+cheap.
+
+If you put them in it will cost you a
+
+lot.
+
+The amount of electricity they use that is quite high.
+
+So if you have a remote deployment, you have a
+
+limited supply of energy.
+
+A small battery.
+
+How will you operate these cameras?
+
+These cameras generate images or videos that you have to
+
+transmit them to the beekeeper.
+
+How will you do that?
+
+Because there is a transmission cost and energy cost associated
+
+with that.
+
+And then we have to consider bees as well.
+
+Bees will cover any alien object with B vax.
+
+You put a camera in and after a few days
+
+the camera lens is covered with B vax and you
+
+cannot see anything.
+
+So despite it being a very, very relevant sensor, it
+
+is very, very difficult to use.
+
+So that's why it is has a very low productivity.
+
+If you see overall usability rating of internal imaging towards
+
+the end, that has only one star.
+
+So when it comes when we talk about challenges number
+
+one we have to find out which sensors are relevant.
+
+We have to study bees for that.
+
+Then we have to take practical considerations, uh, and see
+
+which sensors can be used.
+
+And then there is this thing about cost and accuracy?
+
+I can get a temperature sensor, which is very, very
+
+accurate, but costs, let's say, $10.
+
+And there's one which is less accurate but costs only
+
+$1.
+
+And as I said, overall, overall cost of the system
+
+is important.
+
+I will actually go for a $1 sensor and compromise
+
+a bit of on the accuracy because I want the
+
+overall cost of the sensor to be in a range
+
+that beekeeper can afford.
+
+So we have to find a balance between cost and
+
+accuracy.
+
+Power consumption is another problem.
+
+At remote sites, there is no AC power available.
+
+You have to either rely on energy harvesting using solar
+
+panels.
+
+Even in that case, there will be rainy days when
+
+there will be no, uh, solar panel Will will not
+
+operate properly so that your system should be very, very
+
+power efficient.
+
+So whatever small battery it has, it should be able
+
+to last.
+
+Uh, then there is this problem of data transmission, and
+
+it is very much significant in Australia because if you
+
+travel a few hours outside any major city you have
+
+no four G coverage.
+
+How do you transmit the data, This becomes a problem.
+
+Uh, and when you transfer the data, it has the
+
+cost that you have to pay as, uh to the
+
+four G network provider.
+
+And it consumes a lot of power as well.
+
+So if we talk about communication, satellite communication is an
+
+option.
+
+But it is expensive.
+
+Then the alternate is four G.
+
+And if we look at the three G, four G
+
+and five G coverage map of Australia, you will see
+
+the big cities are covered, the major highways are covered.
+
+But there are a lot of areas where the coverage
+
+is not appropriate and beekeepers often deploy their hives in
+
+these areas.
+
+Now there is another alternate that's called NBI OT Narrow
+
+Band, Internet of things.
+
+And you look, if you look at the coverage map
+
+of NBI OT just have a comparison significantly larger area
+
+for NBI OT.
+
+So it solves the coverage problem.
+
+But NBI OT has a limitation.
+
+It can only handle small amounts of data.
+
+I cannot use NBI OT for anything which is big.
+
+So you have to If I want to use NBI
+
+OT, I have to design the system in a way
+
+that it generates only small amounts of data that can
+
+be transmitted using NBI OT.
+
+So what were the research questions that I tried to
+
+answer during my PhD?
+
+First of all, was which sensor should be used while
+
+keeping the design cost of the system low number one
+
+and number two.
+
+That system should be able to remote work in remote
+
+regions of Australia.
+
+And if we are using NBI OT, it should generate
+
+a small amount of data.
+
+Secondly, is it possible to reduce the system design cost
+
+using soft sensor predictions?
+
+I mean, if there is a sensor which is very,
+
+very expensive, is there an alternate?
+
+Can we use some other means to find the value
+
+of that sensor without using that sensor that will bring
+
+the cost of the system down?
+
+And last one is, hm?
+
+Can machine learning algorithms be used to assist in the
+
+selection of the sensors for a specific task and help
+
+fine tune the design of beehive monitoring system?
+
+So as we go through, we will see how I
+
+try to answer these questions during my PhD.
+
+Uh, this was a system that I designed, uh was
+
+based on a micro controller.
+
+Uh, 48 megahertz, decent amount of ram.
+
+All the sensors.
+
+Some were connected using I Square CBU.
+
+Some were connected using SP interface.
+
+There was a battery solar panel weighing scale.
+
+And for the system design we use off the shelf
+
+components.
+
+I did not choose anything which was difficult to buy
+
+or not available.
+
+All the components were very easily available.
+
+We design our own two layer PC B as a
+
+motherboard for these, uh, sensors.
+
+This was our very first design.
+
+We have moved on, and I'll show you in a
+
+while.
+
+Uh, we this is the sensor system that you can
+
+see.
+
+It used to be.
+
+I mounted it on a side.
+
+It was taking up quite a bit of space in
+
+the frame, which we do not want.
+
+But in later versions, we have actually used the size
+
+of the sensor system.
+
+Mhm.
+
+Uh, we tried to keep the system as much power
+
+efficient as possible, so it had a 2% duty cycle.
+
+So my sensor system will wake up every 10 minutes,
+
+collect data and go to sleep again.
+
+And the data collection and transmission cycle took around 12
+
+seconds.
+
+So This comes to 2 2% duty cycle.
+
+We used feature extraction, so I did record audio of
+
+the bees inside the beehive, but audio signal, it is
+
+quite heavy.
+
+So what I did was using a microprocessor within the
+
+monitoring system.
+
+I extracted important features from this audio signal and transmitted
+
+only those important features which were used down to a
+
+few bytes.
+
+So I was at every 10 minutes I was collecting
+
+a total of six kilobytes of data and then reducing
+
+it down to 91 bytes of data that was to
+
+be transmitted.
+
+So for audio signals and vibration data, we used four
+
+transform and found out what were the key values at
+
+certain frequencies and transmitted only those for communication.
+
+We use NBI, OT and Laura, uh, both of them.
+
+Laura is very, very suitable because it is actually practically
+
+free.
+
+But there are some range of limitations with that, and
+
+you also have to deploy a Laura Gateway, which is
+
+at this point of time not readily available.
+
+But in future, I think it will be available in
+
+lots of places.
+
+Then we identified.
+
+We evaluated nine different sensors using this system and 40
+
+different features, and then we found out which is useful
+
+and which is not.
+
+And since we are trying to find out which sensors
+
+should be used, whether machine learning can be used or
+
+not.
+
+For all of this you need data, and that is
+
+very important part.
+
+So we spent considerable amount of time about 18 months
+
+to collect data from eight different hives.
+
+These hives were deployed at different sites at different time,
+
+and we had, in the end, total 2170 days of
+
+data.
+
+And using this data, we actually trained our models.
+
+So one of the data which is very, very important
+
+is hive weight.
+
+So this is the weight of a hive on three
+
+different days on June, which is 4th, 5th and 6th
+
+of June.
+
+And these are the daily weight variations of the hive.
+
+And if you look closely here between eight and 9
+
+p.m. you see a sharp dip in the high weight.
+
+And this is when the bees the foragers leave the
+
+hive in large number, and that actually reduces the weight
+
+of the hive.
+
+And when the bees return to the high weight pollen
+
+and nectar.
+
+We can see the hive weight going up after evening.
+
+The hive loses weight because bees inside are consuming food,
+
+converting it into energy.
+
+The hive, the water content in the nectar is also
+
+evaporating.
+
+And that's also causing a decrease in the weight.
+
+So we see these fluctuations every day here.
+
+If you see, on sixth of June, you can see
+
+some odd variations in the high weight.
+
+And if I pull the rain data for the same
+
+day, we can see it actually rained.
+
+So when it rains, sometimes the water can form puddles
+
+on top of the hives.
+
+Then it can drip.
+
+So these external parameters, they impact the hive weight a
+
+lot.
+
+And how do we measure the high weight?
+
+Uh, these are the hives.
+
+When they were deployed at UW a.
+
+And underneath each hive, you can see this metallic aluminium
+
+thing that is the hive scale.
+
+The thing about these hive scales is they are quite
+
+big, about the same size as the hive.
+
+They are heavy 6 to 7 kilogrammes, and they are
+
+very expensive to make.
+
+Because these hives are deployed outdoors, they have to endure
+
+all the harsh weather conditions And since we had them
+
+made at UW, it cost me around $700 for one
+
+hive scale.
+
+So this is a significant cost for a beekeeper.
+
+We know that we want to measure the weight because
+
+it is important.
+
+But at the same time, weighing scales are so expensive.
+
+Now, that soft sensing that I talked about a while
+
+ago comes into that question.
+
+Can we use some techniques to estimate the weight of
+
+the hive without using the weighing scale?
+
+And if we can do that, that means beekeeper will
+
+get the information that they want.
+
+That is the weight of the hive.
+
+But the cost of these weighing skills will not be
+
+included in the setup.
+
+And that is what actually we try to do.
+
+We try to estimate the high weight.
+
+So the system you see, this is our second revision.
+
+We actually went to a much smaller single PC B.
+
+Uh, it takes much less space inside the hive and
+
+using the data collected collected from the sensor system data
+
+collected from the weather stations, we used artificial intelligence or
+
+machine learning.
+
+And then we estimated the high weight I will very
+
+quickly go through what machine learning or artificial intelligences?
+
+Let's say we have a hive and we have sensor
+
+system deployed inside the hive and using that sensor system,
+
+we are collecting some sensor data in the parallel.
+
+What we will do is we will engage some beekeepers
+
+to inspect those hives on regular basis and provide us
+
+the assessment of hive whether the hive is healthy or
+
+not, if the queen is laying eggs or not.
+
+And we provide both of these things the sensor data
+
+and the information about the hive to a machine learning
+
+algorithm.
+
+And if we have enough quality and quantity of the
+
+training data machine learning algorithm tries to find a relationship
+
+between the two.
+
+So if the hive assessment was good, what was the
+
+sensor data?
+
+If the hive assessment was bad, what was the sensor
+
+data?
+
+And once it has learned this relationship, we can take
+
+the beekeeper out of the equation.
+
+And just by using the sensor data, the machine learning
+
+algorithm can generate an assessment which would be like that
+
+of a beekeeper.
+
+So now the beekeeper does not have to go and
+
+check up on the hive.
+
+We collect the data using sensor system.
+
+Feed that data into a machine learning algorithm.
+
+And that algorithm generates an assessment which is similar to
+
+that of a beekeeper.
+
+Uh, I will not be going into many technical details
+
+of this system, but here we have some hives.
+
+We collect sensor data from the hive.
+
+We extract features, we pass it to our deep model,
+
+which is based on two parallel encoders.
+
+And then this is the output that we get.
+
+The green weight is actually the actual weight of the
+
+hive.
+
+The actual variation of the hive per frame and the
+
+red one is our estimation.
+
+And we can see we estimated something, which was very,
+
+very similar.
+
+Is it always the same?
+
+No.
+
+I'm going to skip the technical, uh uh, specifications of
+
+the system here.
+
+Uh, if we look at the just the numbers in
+
+the red circle you see 0.55 that is the percentage
+
+error.
+
+So we had the actual data from the hive.
+
+We data.
+
+We also had the estimations.
+
+And when we calculated the error, our errors were 0.55%
+
+on average.
+
+So less than 1% of errors.
+
+So here are some examples of actual weight of the
+
+hive and the hive weight estimations in a and B,
+
+you can see our estimations are quite accurate.
+
+Whatever actual weight of the high was, our model is
+
+able to generate very, very similar estimates.
+
+But in example, C and B our estimates.
+
+At the end of the day, we can see an
+
+error that is marked by the red circle.
+
+And if we are to track the weight of high
+
+for multiple days, how do we do that?
+
+We connect all of these estimations with each other, and
+
+if there is an error each day positive, positive, positive.
+
+After multiple days, that error can really blow out of
+
+proportions.
+
+So what I did was I actually saw what is
+
+the error profile.
+
+And this is the profile or error histogram of our
+
+data for all the days.
+
+And if you look at this histogram, it has a
+
+Gaussian shape which is centred around zero.
+
+What it means is that I have some days error,
+
+which is positive.
+
+That means I'm saying, OK, the high weight is more
+
+than normal.
+
+On some days, I'm saying high weight is less than
+
+normal.
+
+So my errors are both positive and negative.
+
+So what this does is that in the long run,
+
+if I stitch a lot of weights together, sometimes it
+
+is over.
+
+Predict predicting.
+
+Sometimes it is under predicting, and as a result, a
+
+lot of these errors cancel each other out.
+
+And here is the weight of a hive track for
+
+300 days and you can see the actual weight and
+
+the estimated weight.
+
+They are quite similar Now.
+
+There's one question here.
+
+What are these sharp changes in the weight of the
+
+hive.
+
+So beekeepers do not just leave their hive.
+
+And during different seasons they have different number of boxes.
+
+And in winter, when the bees generating a lot of
+
+honey, after every few months or a month, they will
+
+take a hive, which is full of honey off, and
+
+put an empty hive.
+
+So that actually creates a change in the weight of
+
+the hive, and we can see these changes.
+
+Whenever you add something to the hive, it will go
+
+up.
+
+If you take something off from the hive, the hive
+
+weight will go down.
+
+Then the last part, I will again quickly go through.
+
+This one was if we can use machine learning to
+
+optimise our monitoring system.
+
+What are we trying to optimise here?
+
+Our goals were make a system which consumes less power,
+
+have a system which is not very costly.
+
+And we want to use machine learning for that.
+
+What actually did was we use machine learning to evaluate
+
+the performance of our system and each sensor individually.
+
+What we see here is a daily map and I
+
+use on an average data that what times are most
+
+important for collecting the be sensor data And this map
+
+is generated using an A I model.
+
+We train the model and we looked inside what it
+
+has learned and this is what the model has learned.
+
+And the white circles you see show us that the
+
+data collected at between five and 6 a.m. and the
+
+data collected around 4 p.m. that is very, very important
+
+because at this point of time, bees are very active,
+
+The nectar is available in the flowers and bees can
+
+go and collect that and that actually causes a significant
+
+change in the high weight.
+
+Now, what can we do using this data?
+
+Let's say you have this information that bees are very
+
+active at this time.
+
+What can we do?
+
+Any suggestions?
+
+Anyone?
+
+OK, we have this information that these are very active
+
+between five and 6 a.m. and between three and 4
+
+p.m. With this information, can we do something to help
+
+our monitoring system?
+
+Sorry.
+
+Say that again.
+
+Yep.
+
+So if we know what times bees are more active
+
+I have to.
+
+I can collect more data at this time and less
+
+data otherwise.
+
+This way.
+
+Whenever I am spending energy on collecting the data, that
+
+energy is well utilised.
+
+When bees are more active, collect more data during the
+
+nighttime.
+
+Bees are not active.
+
+Do I have to collect data every time?
+
+Minutes?
+
+No.
+
+I can collect data every one hour interval.
+
+But at this point of time, I can say OK,
+
+I have to collect data at every five minute interval.
+
+So using this information, you we can optimise the collection
+
+time of our sensor system and make better use of
+
+energy that we are utilising.
+
+This is another map attention map.
+
+And this is based on the features that we used.
+
+And on the top left quadrant, we can see the
+
+values are much higher compared to the other three quadrants.
+
+So that means that the sensors that are here carry
+
+much more information than the other sensors.
+
+And what we can do is if a sensor is
+
+not contributing at all towards weight estimation, we can move
+
+it out of the system.
+
+And once you do that, we are reducing the system
+
+design cost because there is one less sensor.
+
+That sensor was consuming power.
+
+We are saving on power.
+
+That sensor was generating data that we were transmitting.
+
+We are saving on the data transmission as well.
+
+Similarly, if we find out that a sensor is collecting
+
+five different features, three of them are useful.
+
+Two are not.
+
+We can stop collecting those two features that will save
+
+us the processing that is used to extract those features
+
+that will also save us on the data plan because
+
+we have now less features to transmit.
+
+So we did exactly that.
+
+We re modified our system and we said OK, now
+
+we are only going to use this set of sensors
+
+and features and this was the attention map and now
+
+we can see there are much fewer darker regions in
+
+here, but we are not yet sure whether we have
+
+removed the sensors correctly or not.
+
+So what we did was we actually evaluated the system
+
+again, using these very selected features.
+
+And if we look at the results, we have two
+
+columns here, one with all features and one with reduced
+
+features.
+
+And if we compare the results, the results are very,
+
+very similar.
+
+There may be a certain decline of 0.2 grammes in
+
+first case, but given the gain that we had by
+
+removing the so many extra redundant sensors, this is worth
+
+it.
+
+So this is how we use the machine learning algorithm
+
+to optimise our system.
+
+So to conclude what we did was, we designed a
+
+beehive monitoring system with a focus on Australian needs.
+
+Because the commercial monitoring system which are available we are
+
+not the first ones to make a beehive monitoring system,
+
+a tonne of them are available, but most of them
+
+originate from Europe and America.
+
+They either use four G communication and or WiFi communication,
+
+and the four G communication systems do not work here.
+
+So we had to come up with a system which
+
+would use NBI OT, which is available in Australia.
+
+And because of NBI OT, we had to redesign everything
+
+so that it consumes less amount of power generates less
+
+amount of data.
+
+We also developed the first A I model for be
+
+weight estimation to bring the cost of the monitoring system
+
+down.
+
+Uh, we are the first one to leverage NBI OD
+
+communication for beehive monitoring.
+
+And then we also showcase that these a i models
+
+they are not just good for predictions.
+
+They can actually be used to optimise actual hardware monitoring
+
+systems.
+
+Now, if I were to take away a few points
+
+from this, that would be whenever you are about to
+
+tackle a problem.
+
+First thing you have to see is is it at
+
+a level that you can solve it.
+
+For example, we started with the problem of there is
+
+not enough food in the world.
+
+We want to make sure there is enough food for
+
+everyone.
+
+Is that a problem I can solve?
+
+No.
+
+But then OK, I start digging.
+
+Deep food depends upon a lot of things.
+
+30% of it depends upon honey bee pollination, but I
+
+am not in that area.
+
+I'm not researching on honeybees.
+
+There's nothing I can do directly to honeybees.
+
+I cannot modify their genetics.
+
+What I can do is I can contribute to a
+
+tool which helps monitor the honeybees.
+
+So I broke it down.
+
+The problem came down to a level which was related
+
+to electronics engineering in my field.
+
+And then I said, OK, now I can solve this
+
+problem and then to solve this problem, you don't just
+
+say OK, this is a problem.
+
+I'm going to buy a bunch of sensors that I
+
+can find and I'll put them together and the problem
+
+will be solved.
+
+Now you have to understand the problem so that you
+
+can find the right set of sensors and then you
+
+can make a system which is actually of some use.
+
+Then you also have to step in the shoes of
+
+the end user.
+
+For me, I had to talk to a lot of
+
+beekeepers and understand what they hit.
+
+They absolutely hate wires.
+
+So if my monitoring system has a lot of wires
+
+coming in and out, they will not like it.
+
+If it has a lot of costs, they will not
+
+like it.
+
+If it has any external antenna, that will be a
+
+problem when they transport the hives.
+
+So I have to design a system which actually meets
+
+the specifications of the end user.
+
+We have to put the customer the end user first.
+
+Then we define our objectives and say, OK, this is
+
+these are the things that we want to do for
+
+me.
+
+The objectives were have a monitoring system which is low
+
+cost.
+
+Secondly, it works in Australia.
+
+And to achieve these objectives did I start designing a
+
+new communication system.
+
+No NBI OT and Laura.
+
+They are already available along with a bunch of others.
+
+I studied those systems and I narrowed it down.
+
+OK, these two systems are good because I can use
+
+them and they will solve my problem.
+
+Similarly, with machine learning models, I have not designed anything
+
+new in the machine learning models.
+
+There are plenty of them out there are available.
+
+I studied them and I said, OK, these are the
+
+ones they can solve My problem.
+
+I'll have to tweak them a little, and that's what
+
+I did.
+
+I modified those systems so that they work for my
+
+needs and in the end I achieve my goals.
+
+Uh, before we go into questions.
+
+You are asking questions.
+
+I have one question from you.
+
+So the title of this talk was Internet of beehives.
+
+What do you think is missing from the design?
+
+Or how the connectivity of this system can be improved.
+
+So both of these.
+
+The answer to the first part is also related to
+
+connectivity.
+
+We are talking about Internet of beehives.
+
+Whatever I have explained here, do you see something which
+
+is missing?
+
+Oh, you mention about my future.
+
+Are we going to utilise this in the future?
+
+Of course.
+
+Uh, I'm talking about more about connectivity in future.
+
+What do you mean by future?
+
+That's a good question.
+
+You can ask that later, but I'm talking about whatever
+
+we have implemented up until now.
+
+Nothing in the future.
+
+Is there a key feature which is missing in this
+
+design?
+
+That's my question.
+
+Me?
+
+Sorry.
+
+Uh, can you repeat that?
+
+Sorry.
+
+Uh, the connectivity is there to how this communication works
+
+is using NBI OT.
+
+We collect the data, we connect to our MQ TT
+
+host that AQ TT host.
+
+And there is a raspberry pi sitting in the university
+
+that is also connected to the MQ TT host and
+
+whatever data is transmitted, we are logging all the data
+
+here.
+
+I can connect that to anyone so that part of
+
+connectivity is there.
+
+But the thing is, each and every system has a
+
+direct connection to NVIOT and then to my host.
+
+These systems are not talking with each other.
+
+That point is missing.
+
+For example, if I can create a system at a
+
+high side, there are 100 hives and 10 of 10
+
+of them have this monitoring system.
+
+Do I have to use NBI UT for all 10
+
+of them?
+
+Maybe only one of the systems has NBI OT.
+
+The rest of them can talk to that system.
+
+And that system can do the long range transmission because
+
+NBI OT consumes a lot of power.
+
+So if I can use a low power communication between
+
+different hives, data is pulled by one of the system
+
+and that system transmits the data to my host.
+
+That will actually be a good solution.
+
+And that is something that we are working on.
+
+So you can have a look around.
+
+Pass this around.
+
+So this one is the version that we have now.
+
+The next version will be a bit different from this,
+
+but that will be the final version here in the
+
+middle.
+
+That thing you see that can be taken off.
+
+That is the NBI OT module.
+
+So it's, uh, off the shelf solution.
+
+If you want it, you can put it.
+
+If there is no need for NBI OT, you can
+
+take it off.
+
+We have battery here.
+
+Uh, SD card.
+
+The NBI UTIM goes in here.
+
+All the sensors are in here.
+
+This connector here that can be used for the wing
+
+scale, which is external.
+
+So if you want to have a look, please feel
+
+free.
+
+You can pass this around that and I'm open to
+
+Sorry.
+
+Ok, uh, first of all, we will have I think
+
+you more at the end of the up to the
+
+But even at this point, let's have a small platform
+
+system.
+
+And, uh, thank you very much for coming and giving
+
+us a very, very insight.
+
+I have noted a few points which I wanted, because
+
+I am to coordinate with what your project is.
+
+And, um so that you understand What?
+
+Here.
+
+Ok, um, so what?
+
+The one thing which, uh, your project should you will
+
+should be careful is the choice of the censors.
+
+As Umar said, he took a lot of sensors and
+
+there were some criterias on the basis of he decided
+
+that the relevance practically how much it was practical to
+
+use those like the cameras, for example which you gave
+
+the cost and then the accuracy.
+
+That's an issue, which you have.
+
+So do not think every sensor which you see because
+
+you can have many sensors.
+
+So in your project, you should be very careful about
+
+the, uh, about taking that sensor.
+
+So that was also mentioned in his takeaway points, Um,
+
+the data collection to you, as he has shown me
+
+how many days?
+
+300 he collected the data.
+
+So at the end of your project, you should tell
+
+us how much data you have collected and analysed, and
+
+then analysis of that data.
+
+If you see in his whole talk, he has said
+
+how that data is analysed, for example, looking how the
+
+weight is going down.
+
+What are the reason for that going the weight down
+
+of the beehive and looking at different aspects.
+
+And then there was a very important thing that is
+
+the result, the error and the accuracy You have seen
+
+that before.
+
+Machine learning application.
+
+He said, this is the accuracy.
+
+This is the error.
+
+So in your so this we have recorded this presentation.
+
+You can look at the whole scenario whole flow of
+
+this presentation.
+
+And you should know once you would be presenting your
+
+work.
+
+You can take a very good hint from this presentation.
+
+Uh, so with this, uh, I open a question answer
+
+session.
+
+And if you have any question, just feel free to
+
+ask.
+
+There is no bad question, particularly with respect to bees.
+
+So you're welcome to ask any question?
+
+Uh, you're happy.
+
+So we What we did was we had both of
+
+these.
+
+Laura, when we had the systems deployed at UW A.
+
+We were able to use Laura van because there's a
+
+Laura Gateway at UW A.
+
+But when we moved our house to Juan Bay and
+
+other areas, there were no lower gate was available, and
+
+we knew that would happen.
+
+So we had two communication systems in place at places
+
+where Laura Van was available.
+
+We could have used Laura Van where NBI OT was
+
+available.
+
+We could have used NBI OT.
+
+But in the end, to make it consistent, we decided
+
+to go with NBI OT and all the data that
+
+we collected was using NBI OT because having troubleshoot two
+
+systems in a very limited PhD time period, that is
+
+very, very tricky.
+
+But we still are persisting with Laura Van.
+
+The Laura chip is there and if you look at
+
+the board at one end, there is small white antenna
+
+that is Laura Antenna.
+
+And now what we are doing is we are not
+
+using Laura Van Raw Laura for the sensors to talk
+
+with each other.
+
+So this NVIOT board that you see it costs around
+
+1 $40 and if we have this board on each
+
+and every system, that is a significant increase in the
+
+cost.
+
+What we are planning is that only one of the
+
+systems at a particular site should have this NBI OT
+
+board and all the other systems can talk to the
+
+system using Lora, which is quite cheap.
+
+And this system will communicate the data from the O
+
+on behalf of our other devices as well.
+
+So in our future plan, we will be using Lara
+
+and NBI OT in a star gateway topology, where all
+
+of these Lora devices connect to this NBI O gateway
+
+and this MNBU gate transfer the data to our server,
+
+right?
+
+We set up a, uh, aura gateway.
+
+No, we will not become, uh, using a dedicated Laura
+
+Gateway.
+
+So each of the boards has a laura antenna and
+
+a Laura chip, and they can talk with each other.
+
+So I can configure the software in one of the
+
+systems to act as a lower gateway, convert the data
+
+into NBUT packet and transmit it further because to set
+
+up a dedicated Lora Gateway, these gateways, they require AC
+
+power, which is not available.
+
+They of most of them require a land cable connection,
+
+which is not available.
+
+So we are modifying and using our own concept of
+
+lower, uh, lower gateway where the back end is based
+
+on NBI OT.
+
+Not our, uh, normal Internet connection.
+
+Yes.
+
+Any other questions?
+
+Yep.
+
+Is this monitored?
+
+It is monitoring in real time.
+
+Uh, what happens is we can have two ways when
+
+it monitors.
+
+We can transmit it as soon as it is recorded.
+
+But one of the biggest things with these real time
+
+transmitters is they consume a lot of time before our
+
+NVIOT can transmit.
+
+It has to establish a connection.
+
+There is some hand shaking and then it transmits the
+
+data.
+
+So that is a lot of overhead.
+
+So what I have done is I can actually just
+
+just a number that I can change in my code
+
+and I can have it transmit at each recorded data.
+
+Right now, what happens is it collects data every 10
+
+minutes and once it has collected six samples, it transmits
+
+all of them together.
+
+So at every one hour, we get six readings and
+
+this way we are able to reduce the overhead of
+
+communication.
+
+But if the power is available in abundance, it is
+
+absolutely possible to transmit as soon as we collect.
+
+But right, OK, that's actually a good question.
+
+So in some of the pictures, I showed you the
+
+system which I had used, and let's start with the
+
+very first slide.
+
+So, looking at this picture, can you get the idea
+
+of how the frames go in and out of the
+
+hive and if you go further, I had my own
+
+frames, which I had a separate compartment where I had
+
+my system mounted, and I covered it with a cloth.
+
+So bees do not distract it.
+
+Uh, be bees.
+
+Do not destroy it or cover it.
+
+Cover it with other stuff.
+
+So it should be E?
+
+Yep.
+
+Here, in this picture, you see the red and blue
+
+part.
+
+That was my PhD monitoring system, which had one motherboard
+
+and all the modules connected and battery connected so it
+
+would be side or on the side of this frame,
+
+and this frame will go into the hive.
+
+Now, the new boards that you see So this is
+
+actually the top bar of the hive.
+
+The hive is quite rectangular, and this is the top
+
+bar.
+
+So we are working on this casing.
+
+The final version is bit different.
+
+So the sensor boards that you see that goes in
+
+here, this thing closes up and this goes into the
+
+hive.
+
+So we have only top part of the hive consumed.
+
+The bees are in here.
+
+So there's some inlet for the air to go in
+
+and out so that we can measure the carbon dioxide
+
+of the stuff some covering.
+
+So this is a work in progress.
+
+But now we have moved to the top part of
+
+the hive No, only one frame in each hive, because
+
+equipping at this point of time equipping each and every
+
+frame, that would be too expensive.
+
+So at this point of time, only one frame in
+
+one hive will have this, and we are targeting.
+
+For example, if a beekeeper has 100 hives at a
+
+site, even if 10 of them have this system, that
+
+is good enough, because that gives you a general idea
+
+of what is going on as the time progress.
+
+For example, if you remember 15, 20 years back, cell
+
+phones were big, heavy, not user friendly, still very expensive.
+
+But as we went into mass production and everyone started
+
+using cell phones, a lot of money went into their
+
+research.
+
+Their size went down, their cost went down.
+
+Same is the case with these monitoring systems.
+
+As beekeepers start to adopt these in large numbers, their
+
+cost will go down, their size will go down, and
+
+there may be a time when these systems may come
+
+embedded in each and every frame that is possible.
+
+But that is not happening in the near future.
+
+It will take a while to get there.
+
+How big is the market?
+
+Uh, it depends upon which beekeeper you are talking to.
+
+If you talk to, uh, old beekeeper who has been
+
+in this business for 2030 years, they are like, No,
+
+we are good with what we have.
+
+If you talk about to a newer beekeeper, someone who
+
+is very eager, they are more open to adopting this
+
+technology and market of this thing depends upon the cost.
+
+If you are able to market a system which costs
+
+$100 I believe every second beekeeper will be up for
+
+it.
+
+Right now, the cost is 607 $100 per system.
+
+And that is high for most of the beekeepers because
+
+they do not see the value in it.
+
+So it depends upon who you are.
+
+Asking this question.
+
+Yes.
+
+Curious how he's gonna know to have somebody around me.
+
+I had to because this project was actually funded by
+
+CRC for honeybee products and we had a beekeeper on
+
+board.
+
+I worked with many commercial beekeepers.
+
+I had to first go and sell my project to
+
+them that this is what I want to do.
+
+Some thought it's because they had to work voluntarily.
+
+I was not paying anyone anything.
+
+So if once someone saw a benefit in it and
+
+they say OK, we can help you because when I
+
+am there I am putting my sensor system in someone's
+
+hive.
+
+I am eating the space from their hive and then
+
+I'm taking their time and a as well help me
+
+put it like this.
+
+I want to go and take it out and every
+
+time they have to do it.
+
+So I had I have worked with a few commercial
+
+beekeepers, but we had one beekeeper which was on board
+
+at UW.
+
+A.
+
+She's still here Tiff me and she helped me a
+
+lot.
+
+So it was a collaborative effort.
+
+I had to.
+
+In the end, I can now manage to open my
+
+own hive, do a few things, but in beekeeping, they
+
+say that it takes about 6 to 7 years of
+
+beekeeping to get to a basic level so I can
+
+open a hive.
+
+But I won't know what is happening If the bees
+
+are healthy or not, it takes a very experienced beekeeper
+
+to have a look and provide that assessment.
+
+So that is not something that I can do, right?
+
+So the data that's been collected, by the way, but
+
+have you collecting damage as you or, uh, So what
+
+sort of data have you collected?
+
+Yep.
+
+So what we did was we collected temperature, humidity, carbon
+
+dioxide, sound vibrations and all of this data actually reflects
+
+upon what bees are doing.
+
+For example, on a very, very on a day where
+
+bees are very active, the sound level will be quite
+
+high inside the hive, the outside temperature will also be
+
+suitable.
+
+So if I have all the data from inside the
+
+hive and the external weather data from a bomb station,
+
+I can actually estimate whether the bees are actively foraging
+
+or not.
+
+And if they are actively foraging, they are bringing the
+
+honey in, and that can be used to estimate whether
+
+the high weight is going up or down.
+
+So we are using all the other sensor data, which
+
+is easy to collect and not that expensive to estimate
+
+the high weight because we had an actual weighing scale
+
+underneath each hive.
+
+So using that actual wing scale, we were collecting that
+
+actual weight data in real time and then we generated
+
+estimates using the internal sensor data.
+
+And then we had both of these to compare.
+
+Yes, our ground growth was actual sensor data, Which was
+
+we Data which was available.
+
+So I had eight of these scales deployed with eight
+
+of these systems.
+
+Yes, Yes, yeah, yeah.
+
+A prototype of user interface.
+
+My background is in electronics engineering.
+
+I knew nothing about the bees, but I worked with
+
+the bees in the end, when it came to user
+
+interface, what I did was my system by python interface
+
+will generate an automated email to every beekeeper each day,
+
+which will give them the introduction.
+
+OK, this is happening.
+
+This is the temperature software is absolutely not my area.
+
+This is something that we are trying to work on
+
+and maybe find someone external who can do that.
+
+Uh, if you look at the products which are out
+
+there, some of them are not very good products, but
+
+their user interface is quite user friendly and that actually
+
+helps sell the product.
+
+So this is something that we have to work on
+
+at this point of time.
+
+It since it was not my area, I have not
+
+worked on any user interface.
+
+It was just a standard email that bees were very
+
+active.
+
+At this point of time, this was the highest temperature,
+
+lowest temperature.
+
+This much was a weight gain.
+
+A few plots attached with that email.
+
+And that was it.
+
+Yes.
+
+You had a question.
+
+Yeah, the sensors.
+
+Does it mean by so each of the sensor boards
+
+that you see it has a 48 megahertz processor, so
+
+there is quite a bit of processing power available.
+
+But the more I use this processor, the more power
+
+I use.
+
+So I'll have to see, in this case, the data
+
+will be processed by each and every node itself.
+
+It will only be transmitted.
+
+This thing has to store it for a while and
+
+then transmit it.
+
+So my gateway does not require much of processing.
+
+What it has to do is convert that lower packet
+
+into an NBI OT packet and transmit it.
+
+And that conversion does not take a lot of processing.
+
+The NBI O transmitter is already there, so I don't
+
+see there's any much extra processing involved with this gateway.
+
+But when you make a note of is it like
+
+a, uh custom made software that makes a no download.
+
+The if the software will be different because one of
+
+the systems let's say we have 10 systems.
+
+Nine of them have lower transmitters.
+
+One of them has NBA transmitter.
+
+So other nine systems, they'll wake up every 10 minutes,
+
+collect data, transmit, go to sleep.
+
+This system with NBI OT is awake all the time
+
+so that it receives any incoming lower packet.
+
+Transmit it far, far further.
+
+And when it's time for this system to collect the
+
+data, it will collect its own data and transmit it.
+
+So it is doing the transmission on behalf of all
+
+of them.
+
+That's all what it is doing.
+
+No more questions.
+
+OK?
+
+Do you want me to thank hope again for this
+
+wonderful talk for the very practical project?
+
+And I and it has won many prices and we
+
+thank for us.
