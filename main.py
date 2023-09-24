@@ -53,7 +53,7 @@ def generate_prompt(file_content, prompt="this is the recording of the class, su
 
 
 # Example Usage
-input_path = './text/5506/28_aug.txt'
+input_path = './text/5506/18_sept.txt'
 prompt = 'this is the recording of the class, summary all the content detailed'
 
 content = read_file_content(input_path)
